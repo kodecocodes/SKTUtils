@@ -11,6 +11,7 @@
 
 #define SKT_DEGREES_TO_RADIANS(__DEGREES__) ((__DEGREES__) * M_PI / 180)
 #define SKT_RADIANS_TO_DEGREES(__RADIANS__) ((__RADIANS__) * 180 / M_PI)
+#define ARC4RANDOM_MAX      0x100000000
 
 static inline CGPoint SKTAdd(const CGPoint a, const CGPoint b) {
     return CGPointMake(a.x + b.x, a.y + b.y);
@@ -41,7 +42,7 @@ static inline CGPoint SKTForAngle(const CGFloat a) {
 	return CGPointMake(cosf(a), sinf(a));
 }
 
-static inline CGFloat SKTSign(CGFloat a) {
+static inline CGFloat SKTSign(const CGFloat a) {
     return a >= 0 ? 1 : -1;
 }
 
@@ -55,3 +56,6 @@ static inline CGFloat SKTShortestAngleBetween(const CGFloat a, const CGFloat b) 
     return angle;
 }
 
+static inline CGFloat SKTRandRange(const CGFloat min, const CGFloat max) {
+    return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
+}
