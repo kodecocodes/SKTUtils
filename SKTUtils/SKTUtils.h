@@ -53,6 +53,9 @@ static inline CGFloat SKTShortestAngleBetween(const CGFloat a, const CGFloat b) 
     if (angle >= M_PI) {
         angle -= M_PI * 2;
     }
+    if (angle <= -M_PI) {
+        angle += M_PI * 2;
+    }
     return angle;
 }
 
