@@ -7,7 +7,3 @@
 //
 
 #import "SKTUtils.h"
-
-@implementation SKTUtils
-
-@end
