@@ -73,7 +73,7 @@ SKT_INLINE CGFloat CGPointToAngle(CGPoint point) {
     return atan2f(point.y, point.x);
 }
 
-SKT_INLINE CGPoint ScalarForAngle(CGFloat value) {
+SKT_INLINE CGPoint CGPointForAngle(CGFloat value) {
 	return CGPointMake(cosf(value), sinf(value));
 }
 
