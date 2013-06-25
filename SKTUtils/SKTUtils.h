@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+// Chapters 1-3
 #define SKT_DEGREES_TO_RADIANS(__DEGREES__) ((__DEGREES__) * M_PI / 180)
 #define SKT_RADIANS_TO_DEGREES(__RADIANS__) ((__RADIANS__) * 180 / M_PI)
 #define ARC4RANDOM_MAX      0x100000000
