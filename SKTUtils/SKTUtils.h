@@ -6,50 +6,85 @@
 //  Copyright (c) 2013 Razeware LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <GLKit/GLKMath.h>
+
+#pragma mark -
+#pragma mark Define
+
+#define SKT_INLINE      static __inline__
 
 // Chapters 1-3
-#define SKT_DEGREES_TO_RADIANS(__DEGREES__) ((__DEGREES__) * M_PI / 180)
-#define SKT_RADIANS_TO_DEGREES(__RADIANS__) ((__RADIANS__) * 180 / M_PI)
 #define ARC4RANDOM_MAX      0x100000000
 
-static inline CGPoint SKTAdd(const CGPoint a, const CGPoint b) {
+#pragma mark -
+#pragma mark Prototypes
+
+SKT_INLINE GLKVector2   GLKVector2FromCGPoint(CGPoint point);
+
+SKT_INLINE CGPoint      CGPointFromGLKVector2(GLKVector2 vector);
+SKT_INLINE CGPoint      CGPointSubtract(CGPoint point1, CGPoint point2);
+SKT_INLINE CGPoint      CGPointAdd(CGPoint point1, CGPoint point2);
+SKT_INLINE CGPoint      CGPointMultiply(CGPoint point1, CGFloat point2);
+SKT_INLINE CGPoint      CGPointNormalize(CGPoint point);
+SKT_INLINE CGPoint      CGPointForAngle(CGFloat value);
+
+SKT_INLINE CGFloat      CGPointLength(CGPoint point);
+SKT_INLINE CGFloat      CGPointToAngle(CGPoint point);
+SKT_INLINE CGFloat      ScalarSign(CGFloat value);
+SKT_INLINE CGFloat      ScalarShortestAngleBetween(CGFloat value1, CGFloat value2);
+SKT_INLINE CGFloat      ScalarRandRange(CGFloat min, CGFloat max);
+    
+#pragma mark -
+#pragma mark Implementations
+
+SKT_INLINE CGPoint CGPointFromGLKVector2(GLKVector2 vector)
+{
+    return CGPointMake(vector.x, vector.y);
+}
+
+SKT_INLINE GLKVector2 GLKVector2FromCGPoint(CGPoint point)
+{
+    return GLKVector2Make(point.x, point.y);
+}
+
+SKT_INLINE CGPoint CGPointSubtract(CGPoint point1, CGPoint point2)
+{
+    return CGPointMake(point1.x - point2.x, point1.y - point2.y);
+}
+
+SKT_INLINE CGPoint CGPointAdd(CGPoint a, CGPoint b) {
     return CGPointMake(a.x + b.x, a.y + b.y);
 }
 
-static inline CGPoint SKTSub(const CGPoint a, const CGPoint b) {
-    return CGPointMake(a.x - b.x, a.y - b.y);
+SKT_INLINE CGPoint CGPointMultiply(CGPoint point, CGFloat value) {
+    return CGPointMake(point.x * value, point.y * value);
 }
 
-static inline CGPoint SKTMult(const CGPoint a, CGFloat b) {
-    return CGPointMake(a.x * b, a.y * b);
+SKT_INLINE CGFloat CGPointLength(CGPoint point) {
+    return sqrtf(point.x * point.x + point.y * point.y);
 }
 
-static inline CGFloat SKTLength(const CGPoint a) {
-    return sqrtf(a.x * a.x + a.y * a.y);
+SKT_INLINE CGPoint CGPointNormalize(CGPoint point) {
+    CGFloat length = GLKVector2Length(GLKVector2FromCGPoint(point));
+    return CGPointMake(point.x / length, point.y / length);
 }
 
-static inline CGPoint SKTNormalize(const CGPoint a) {
-    CGFloat length = SKTLength(a);
-    return CGPointMake(a.x / length, a.y / length);
+SKT_INLINE CGFloat CGPointToAngle(CGPoint point) {
+    return atan2f(point.y, point.x);
 }
 
-static inline CGFloat SKTToAngle(const CGPoint a) {
-    return atan2f(a.y, a.x);
+SKT_INLINE CGPoint ScalarForAngle(CGFloat value) {
+	return CGPointMake(cosf(value), sinf(value));
 }
 
-static inline CGPoint SKTForAngle(const CGFloat a) {
-	return CGPointMake(cosf(a), sinf(a));
-}
-
-static inline CGFloat SKTSign(const CGFloat a) {
-    return a >= 0 ? 1 : -1;
+SKT_INLINE CGFloat ScalarSign(CGFloat value) {
+    return value >= 0 ? 1 : -1;
 }
 
 // Returns shortest angle between two angles, between -M_PI and M_PI
-static inline CGFloat SKTShortestAngleBetween(const CGFloat a, const CGFloat b) {
-    CGFloat difference = b - a;
+static inline CGFloat ScalarShortestAngleBetween(CGFloat value1, CGFloat value2) {
+    CGFloat difference = value2 - value1;
     CGFloat angle = fmodf(difference, M_PI * 2);
     if (angle >= M_PI) {
         angle -= M_PI * 2;
@@ -60,6 +95,6 @@ static inline CGFloat SKTShortestAngleBetween(const CGFloat a, const CGFloat b) 
     return angle;
 }
 
-static inline CGFloat SKTRandRange(const CGFloat min, const CGFloat max) {
+static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max) {
     return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
 }
