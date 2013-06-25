@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKVector2.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #define SKT_DEGREES_TO_RADIANS(__DEGREES__) ((__DEGREES__) * M_PI / 180)
 #define SKT_RADIANS_TO_DEGREES(__RADIANS__) ((__RADIANS__) * 180 / M_PI)

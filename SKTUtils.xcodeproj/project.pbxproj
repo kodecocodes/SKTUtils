@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		35D5DD861778AD4E00AB6725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D5DD851778AD4E00AB6725 /* Foundation.framework */; };
 		35D5DD8B1778AD4E00AB6725 /* SKTUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 35D5DD8A1778AD4E00AB6725 /* SKTUtils.h */; };
-		35D5DD8D1778AD4E00AB6725 /* SKTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D5DD8C1778AD4E00AB6725 /* SKTUtils.m */; };
+		35D5DD8D1778AD4E00AB6725 /* SKTUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35D5DD8C1778AD4E00AB6725 /* SKTUtils.mm */; };
 		35D5DD941778AD4E00AB6725 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D5DD931778AD4E00AB6725 /* XCTest.framework */; };
 		35D5DD951778AD4E00AB6725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D5DD851778AD4E00AB6725 /* Foundation.framework */; };
 		35D5DD971778AD4E00AB6725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D5DD961778AD4E00AB6725 /* UIKit.framework */; };
 		35D5DD9A1778AD4E00AB6725 /* libSKTUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D5DD821778AD4E00AB6725 /* libSKTUtils.a */; };
 		35D5DDA01778AD4E00AB6725 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35D5DD9E1778AD4E00AB6725 /* InfoPlist.strings */; };
 		35D5DDA21778AD4E00AB6725 /* SKTUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D5DDA11778AD4E00AB6725 /* SKTUtilsTests.m */; };
+		35D5DE561779135D00AB6725 /* SKTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D5DE551779135D00AB6725 /* SKTAudio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +47,15 @@
 		35D5DD851778AD4E00AB6725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35D5DD891778AD4E00AB6725 /* SKTUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKTUtils-Prefix.pch"; sourceTree = "<group>"; };
 		35D5DD8A1778AD4E00AB6725 /* SKTUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
-		35D5DD8C1778AD4E00AB6725 /* SKTUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTUtils.m; sourceTree = "<group>"; };
+		35D5DD8C1778AD4E00AB6725 /* SKTUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SKTUtils.mm; sourceTree = "<group>"; };
 		35D5DD921778AD4E00AB6725 /* SKTUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKTUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D5DD931778AD4E00AB6725 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		35D5DD961778AD4E00AB6725 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		35D5DD9D1778AD4E00AB6725 /* SKTUtilsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKTUtilsTests-Info.plist"; sourceTree = "<group>"; };
 		35D5DD9F1778AD4E00AB6725 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35D5DDA11778AD4E00AB6725 /* SKTUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTUtilsTests.m; sourceTree = "<group>"; };
+		35D5DE541779135D00AB6725 /* SKTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTAudio.h; sourceTree = "<group>"; };
+		35D5DE551779135D00AB6725 /* SKTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTAudio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				35D5DD8A1778AD4E00AB6725 /* SKTUtils.h */,
-				35D5DD8C1778AD4E00AB6725 /* SKTUtils.m */,
+				35D5DD8C1778AD4E00AB6725 /* SKTUtils.mm */,
+				35D5DE541779135D00AB6725 /* SKTAudio.h */,
+				35D5DE551779135D00AB6725 /* SKTAudio.m */,
 				35D5DD881778AD4E00AB6725 /* Supporting Files */,
 			);
 			path = SKTUtils;
@@ -224,7 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35D5DD8D1778AD4E00AB6725 /* SKTUtils.m in Sources */,
+				35D5DD8D1778AD4E00AB6725 /* SKTUtils.mm in Sources */,
+				35D5DE561779135D00AB6725 /* SKTAudio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +409,7 @@
 				35D5DDA71778AD4E00AB6725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35D5DDA81778AD4E00AB6725 /* Build configuration list for PBXNativeTarget "SKTUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +418,7 @@
 				35D5DDAA1778AD4E00AB6725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
