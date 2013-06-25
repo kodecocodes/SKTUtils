@@ -25,7 +25,7 @@ SKT_INLINE GLKVector2   GLKVector2FromCGPoint(CGPoint point);
 SKT_INLINE CGPoint      CGPointFromGLKVector2(GLKVector2 vector);
 SKT_INLINE CGPoint      CGPointSubtract(CGPoint point1, CGPoint point2);
 SKT_INLINE CGPoint      CGPointAdd(CGPoint point1, CGPoint point2);
-SKT_INLINE CGPoint      CGPointMultiply(CGPoint point1, CGFloat point2);
+SKT_INLINE CGPoint      CGPointMultiplyScalar(CGPoint point1, CGFloat point2);
 SKT_INLINE CGPoint      CGPointNormalize(CGPoint point);
 SKT_INLINE CGPoint      CGPointForAngle(CGFloat value);
 
@@ -33,7 +33,7 @@ SKT_INLINE CGFloat      CGPointLength(CGPoint point);
 SKT_INLINE CGFloat      CGPointToAngle(CGPoint point);
 SKT_INLINE CGFloat      ScalarSign(CGFloat value);
 SKT_INLINE CGFloat      ScalarShortestAngleBetween(CGFloat value1, CGFloat value2);
-SKT_INLINE CGFloat      ScalarRandRange(CGFloat min, CGFloat max);
+SKT_INLINE CGFloat      ScalarRandomRange(CGFloat min, CGFloat max);
     
 #pragma mark -
 #pragma mark Implementations
@@ -73,7 +73,7 @@ SKT_INLINE CGFloat CGPointToAngle(CGPoint point) {
     return atan2f(point.y, point.x);
 }
 
-SKT_INLINE CGPoint ScalarForAngle(CGFloat value) {
+SKT_INLINE CGPoint CGPointForAngle(CGFloat value) {
 	return CGPointMake(cosf(value), sinf(value));
 }
 
