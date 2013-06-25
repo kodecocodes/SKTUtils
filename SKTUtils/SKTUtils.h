@@ -50,24 +50,23 @@ SKT_INLINE GLKVector2 GLKVector2FromCGPoint(CGPoint point)
 
 SKT_INLINE CGPoint CGPointSubtract(CGPoint point1, CGPoint point2)
 {
-    return CGPointMake(point1.x - point2.x, point1.y - point2.y);
+    return CGPointFromGLKVector2(GLKVector2Subtract(GLKVector2FromCGPoint(point1), GLKVector2FromCGPoint(point2)));
 }
 
-SKT_INLINE CGPoint CGPointAdd(CGPoint a, CGPoint b) {
-    return CGPointMake(a.x + b.x, a.y + b.y);
+SKT_INLINE CGPoint CGPointAdd(CGPoint point1, CGPoint point2) {
+    return CGPointFromGLKVector2(GLKVector2Add(GLKVector2FromCGPoint(point1), GLKVector2FromCGPoint(point2)));
 }
 
-SKT_INLINE CGPoint CGPointMultiply(CGPoint point, CGFloat value) {
-    return CGPointMake(point.x * value, point.y * value);
+SKT_INLINE CGPoint CGPointMultiplyScalar(CGPoint point, CGFloat value) {
+    return CGPointFromGLKVector2(GLKVector2MultiplyScalar(GLKVector2FromCGPoint(point), value));
 }
 
 SKT_INLINE CGFloat CGPointLength(CGPoint point) {
-    return sqrtf(point.x * point.x + point.y * point.y);
+    return GLKVector2Length(GLKVector2FromCGPoint(point));
 }
 
 SKT_INLINE CGPoint CGPointNormalize(CGPoint point) {
-    CGFloat length = GLKVector2Length(GLKVector2FromCGPoint(point));
-    return CGPointMake(point.x / length, point.y / length);
+    return CGPointFromGLKVector2(GLKVector2Normalize(GLKVector2FromCGPoint(point)));
 }
 
 SKT_INLINE CGFloat CGPointToAngle(CGPoint point) {
