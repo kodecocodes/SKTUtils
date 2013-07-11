@@ -30,4 +30,9 @@
     [self.backgroundMusicPlayer play];
 }
 
+- (void)pauseBackgroundMusic
+{
+    [self.backgroundMusicPlayer pause];
+}
+
 @end
