@@ -7,54 +7,31 @@
 //
 
 #import <CoreGraphics/CoreGraphics.h>
+#import <SpriteKit/SpriteKit.h>
 #import <GLKit/GLKMath.h>
-
-#pragma mark -
-#pragma mark Define
 
 #define SKT_INLINE      static __inline__
 
 // Chapters 1-3
-#define ARC4RANDOM_MAX      0x100000000
+#define ARC4RANDOM_MAX      0xFFFFFFFFu
 
-#pragma mark -
-#pragma mark Prototypes
+#define DegreesToRadians(d) (M_PI * (d) / 180.0f)
+#define RadiansToDegrees(r) ((r) * 180.0f / M_PI)
 
-SKT_INLINE GLKVector2   GLKVector2FromCGPoint(CGPoint point);
-
-SKT_INLINE CGPoint      CGPointFromGLKVector2(GLKVector2 vector);
-SKT_INLINE CGPoint      CGPointSubtract(CGPoint point1, CGPoint point2);
-SKT_INLINE CGPoint      CGPointAdd(CGPoint point1, CGPoint point2);
-SKT_INLINE CGPoint      CGPointMultiplyScalar(CGPoint point1, CGFloat point2);
-SKT_INLINE CGPoint      CGPointNormalize(CGPoint point);
-SKT_INLINE CGPoint      CGPointForAngle(CGFloat value);
-
-SKT_INLINE CGFloat      CGPointLength(CGPoint point);
-SKT_INLINE CGFloat      CGPointToAngle(CGPoint point);
-SKT_INLINE CGFloat      ScalarSign(CGFloat value);
-SKT_INLINE CGFloat      ScalarShortestAngleBetween(CGFloat value1, CGFloat value2);
-SKT_INLINE CGFloat      ScalarRandomRange(CGFloat min, CGFloat max);
-    
-#pragma mark -
-#pragma mark Implementations
-
-SKT_INLINE CGPoint CGPointFromGLKVector2(GLKVector2 vector)
-{
+SKT_INLINE CGPoint CGPointFromGLKVector2(GLKVector2 vector) {
     return CGPointMake(vector.x, vector.y);
 }
 
-SKT_INLINE GLKVector2 GLKVector2FromCGPoint(CGPoint point)
-{
+SKT_INLINE GLKVector2 GLKVector2FromCGPoint(CGPoint point) {
     return GLKVector2Make(point.x, point.y);
 }
 
-SKT_INLINE CGPoint CGPointSubtract(CGPoint point1, CGPoint point2)
-{
-    return CGPointFromGLKVector2(GLKVector2Subtract(GLKVector2FromCGPoint(point1), GLKVector2FromCGPoint(point2)));
+SKT_INLINE CGPoint CGPointAdd(CGPoint point1, CGPoint point2) {
+    return CGPointMake(point1.x + point2.x, point1.y + point2.y);
 }
 
-SKT_INLINE CGPoint CGPointAdd(CGPoint point1, CGPoint point2) {
-    return CGPointFromGLKVector2(GLKVector2Add(GLKVector2FromCGPoint(point1), GLKVector2FromCGPoint(point2)));
+SKT_INLINE CGPoint CGPointSubtract(CGPoint point1, CGPoint point2) {
+    return CGPointMake(point1.x - point2.x, point1.y - point2.y);
 }
 
 SKT_INLINE CGPoint CGPointMultiplyScalar(CGPoint point, CGFloat value) {
@@ -74,7 +51,7 @@ SKT_INLINE CGFloat CGPointToAngle(CGPoint point) {
 }
 
 SKT_INLINE CGPoint CGPointForAngle(CGFloat value) {
-	return CGPointMake(cosf(value), sinf(value));
+    return CGPointMake(cosf(value), sinf(value));
 }
 
 SKT_INLINE CGFloat ScalarSign(CGFloat value) {
@@ -82,7 +59,7 @@ SKT_INLINE CGFloat ScalarSign(CGFloat value) {
 }
 
 // Returns shortest angle between two angles, between -M_PI and M_PI
-static inline CGFloat ScalarShortestAngleBetween(CGFloat value1, CGFloat value2) {
+SKT_INLINE CGFloat ScalarShortestAngleBetween(CGFloat value1, CGFloat value2) {
     CGFloat difference = value2 - value1;
     CGFloat angle = fmodf(difference, M_PI * 2);
     if (angle >= M_PI) {
@@ -94,6 +71,18 @@ static inline CGFloat ScalarShortestAngleBetween(CGFloat value1, CGFloat value2)
     return angle;
 }
 
-static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max) {
+SKT_INLINE CGFloat RandomFloat(void) {
+    return (CGFloat)arc4random()/ARC4RANDOM_MAX;
+}
+
+SKT_INLINE CGFloat RandomFloatRange(CGFloat min, CGFloat max) {
     return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
+}
+
+SKT_INLINE SKColor *SKColorWithRGB(int r, int g, int b) {
+    return [SKColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f];
+}
+
+SKT_INLINE SKColor *SKColorWithRGBA(int r, int g, int b, int a) {
+    return [SKColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a/255.0f];
 }
