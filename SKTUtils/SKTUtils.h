@@ -86,3 +86,7 @@ SKT_INLINE SKColor *SKColorWithRGB(int r, int g, int b) {
 SKT_INLINE SKColor *SKColorWithRGBA(int r, int g, int b, int a) {
     return [SKColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a/255.0f];
 }
+
+SKT_INLINE CGFloat Clamp(CGFloat value, CGFloat min, CGFloat max) {
+  return value < min ? min : value > max ? max : value;
+}
