@@ -34,6 +34,14 @@ SKT_INLINE CGPoint CGPointSubtract(CGPoint point1, CGPoint point2) {
     return CGPointMake(point1.x - point2.x, point1.y - point2.y);
 }
 
+SKT_INLINE CGPoint CGPointMultiply(CGPoint point1, CGPoint point2) {
+    return CGPointMake(point1.x * point2.x, point1.y * point2.y);
+}
+
+SKT_INLINE CGPoint CGPointDivide(CGPoint point1, CGPoint point2) {
+    return CGPointMake(point1.x / point2.x, point1.y / point2.y);
+}
+
 SKT_INLINE CGPoint CGPointMultiplyScalar(CGPoint point, CGFloat value) {
     return CGPointFromGLKVector2(GLKVector2MultiplyScalar(GLKVector2FromCGPoint(point), value));
 }
@@ -46,12 +54,23 @@ SKT_INLINE CGPoint CGPointNormalize(CGPoint point) {
     return CGPointFromGLKVector2(GLKVector2Normalize(GLKVector2FromCGPoint(point)));
 }
 
+SKT_INLINE CGFloat CGPointDistance(CGPoint point1, CGPoint point2)
+{
+	return CGPointLength(CGPointSubtract(point1, point2));
+}
+
 SKT_INLINE CGFloat CGPointToAngle(CGPoint point) {
     return atan2f(point.y, point.x);
 }
 
 SKT_INLINE CGPoint CGPointForAngle(CGFloat value) {
     return CGPointMake(cosf(value), sinf(value));
+}
+
+SKT_INLINE CGPoint CGPointLerp(CGPoint startPoint, CGPoint endPoint, float t)
+{
+    return CGPointMake(startPoint.x + (endPoint.x - startPoint.x) * t,
+                       startPoint.y + (endPoint.y - startPoint.y) * t);
 }
 
 SKT_INLINE CGFloat ScalarSign(CGFloat value) {
@@ -77,6 +96,10 @@ SKT_INLINE CGFloat RandomFloat(void) {
 
 SKT_INLINE CGFloat RandomFloatRange(CGFloat min, CGFloat max) {
     return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
+}
+
+SKT_INLINE CGFloat RandomSign(void) {
+	return arc4random_uniform(2) == 0 ? 1.0f : -1.0f;
 }
 
 SKT_INLINE SKColor *SKColorWithRGB(int r, int g, int b) {
