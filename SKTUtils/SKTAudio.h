@@ -15,5 +15,6 @@
 + (instancetype)sharedInstance;
 - (void)playBackgroundMusic:(NSString *)filename;
 - (void)pauseBackgroundMusic;
+- (void)playSoundEffect:(NSString*)filename;
 
 @end
