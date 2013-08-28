@@ -10,6 +10,7 @@
 
 @interface SKTAudio()
 @property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
+@property (nonatomic) AVAudioPlayer * soundEffectPlayer;
 @end
 
 @implementation SKTAudio
@@ -34,5 +35,15 @@
 {
     [self.backgroundMusicPlayer pause];
 }
+
+- (void)playSoundEffect:(NSString*)filename {
+    NSError *error;
+    NSURL * soundEffectURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+    self.soundEffectPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundEffectURL error:&error];
+    self.soundEffectPlayer.numberOfLoops = 0;
+    [self.soundEffectPlayer prepareToPlay];
+    [self.soundEffectPlayer play];
+}
+
 
 @end
