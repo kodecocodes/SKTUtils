@@ -5,7 +5,9 @@
 
 + (instancetype)skt_emitterNamed:(NSString *)name
 {
-	return [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
+	SKEmitterNode *emitter = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
+	emitter.particleTexture.filteringMode = SKTextureFilteringNearest;
+	return emitter;
 }
 
 @end
