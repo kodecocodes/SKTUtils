@@ -22,24 +22,37 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SKAction (SKTExtras)
+/** Disable debug drawing by setting this to NO. Default value is YES. */
+extern BOOL SKTDebugDrawEnabled;
+
+@interface SKNode (SKTDebugDraw)
 
 /**
- * Shorthand for:
- *   [SKAction sequence:@[[SKAction waitForDuration:duration], action]]
+ * Draws a stroked path on top of this node.
+ *
+ * @return the debug shape
  */
-+ (instancetype)skt_afterDelay:(NSTimeInterval)duration perform:(SKAction *)action;
+- (SKShapeNode *)skt_attachDebugFrameFromPath:(CGPathRef)path color:(SKColor *)color;
 
 /**
- * Shorthand for:
- *   [SKAction sequence:@[[SKAction waitForDuration:duration], [SKAction runBlock:^{ ... }]]]
+ * Draws a stroked rectangle on top of this node.
+ *
+ * @return the debug shape
  */
-+ (instancetype)skt_afterDelay:(NSTimeInterval)duration runBlock:(dispatch_block_t)block;
+- (SKShapeNode *)skt_attachDebugRectWithSize:(CGSize)size color:(SKColor *)color;
 
 /**
- * Shorthand for:
- *   [SKAction sequence:@[[SKAction waitForDuration:duration], [SKAction removeFromParent]]]
+ * Draws a stroked circle on top of this node.
+ *
+ * @return the debug shape
  */
-+ (instancetype)skt_removeFromParentAfterDelay:(NSTimeInterval)duration;
+- (SKShapeNode *)skt_attachDebugCircleWithRadius:(CGFloat)radius color:(SKColor *)color;
+
+/**
+ * Draws a line on top of this node.
+ *
+ * @return the debug shape
+ */
+- (SKShapeNode *)skt_attachDebugLineFromPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint color:(SKColor *)color;
 
 @end
