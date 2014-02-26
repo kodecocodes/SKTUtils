@@ -36,4 +36,14 @@
   return [self skt_afterDelay:duration perform:[SKAction removeFromParent]];
 }
 
++ (instancetype)skt_jumpWithHeight:(float)height duration:(float)duration originalPosition:(CGPoint)originalPosition {
+
+  return [SKAction customActionWithDuration:duration actionBlock:^(SKNode *node, CGFloat elapsedTime) {
+      float fraction = elapsedTime / duration;
+      float yOff = height * 4 * fraction * (1 - fraction);
+      node.position = CGPointMake(originalPosition.x, originalPosition.y + yOff);
+  }];
+
+}
+
 @end
