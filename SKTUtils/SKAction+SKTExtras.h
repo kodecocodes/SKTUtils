@@ -42,4 +42,9 @@
  */
 + (instancetype)skt_removeFromParentAfterDelay:(NSTimeInterval)duration;
 
+/** 
+ * Creates an action to perform a parabolic jump.
+ */
++ (instancetype)skt_jumpWithHeight:(float)height duration:(float)duration originalPosition:(CGPoint)originalPosition;
+
 @end
