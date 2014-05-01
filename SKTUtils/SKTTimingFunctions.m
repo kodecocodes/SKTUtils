@@ -70,7 +70,7 @@ SKTTimingFunction SKTTimingFunctionQuarticEaseIn = ^(float t) {
 
 SKTTimingFunction SKTTimingFunctionQuarticEaseOut = ^(float t) {
   const float f = t - 1.0f;
-  return 1.0f + f * f * f * f;
+  return 1.0f - f * f * f * f;
 };
 
 SKTTimingFunction SKTTimingFunctionQuarticEaseInOut = ^(float t) {
@@ -91,7 +91,7 @@ SKTTimingFunction SKTTimingFunctionQuinticEaseOut = ^(float t) {
   return 1.0f + f * f * f * f * f;
 };
 
-SKTTimingFunction TimingFunctionQuinticEaseInOut = ^(float t) {
+SKTTimingFunction SKTTimingFunctionQuinticEaseInOut = ^(float t) {
   if (t < 0.5f) {
     return 16.0f * t * t * t * t * t;
   } else {
