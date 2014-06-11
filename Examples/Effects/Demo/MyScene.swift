@@ -7,8 +7,8 @@ import SpriteKit
 let FLASH_BALL     = false
 let FLASH_BORDER   = true
 let FLASH_BARRIER  = true
-let SCALE_BALL     = false  // TODO: this breaks stuff if true!
-let SCALE_BORDER   = false  // TODO: this breaks stuff if true!
+let SCALE_BALL     = true
+let SCALE_BORDER   = true
 let SCALE_BARRIER  = true
 let SQUASH_BALL    = false
 let STRETCH_BALL   = false
@@ -16,7 +16,7 @@ let SCREEN_SHAKE   = true
 let SCREEN_ZOOM    = true
 let SCREEN_TUMBLE  = true
 let COLOR_GLITCH   = false
-let BARRIER_JELLY  = false
+let BARRIER_JELLY  = true
 
 // How fat the borders around the screen are.
 let BorderThickness: Float = 20.0
@@ -25,9 +25,6 @@ let BorderThickness: Float = 20.0
 let BallCategory: UInt32    = 1 << 0
 let BorderCategory: UInt32  = 1 << 1
 let BarrierCategory: UInt32 = 1 << 2
-
-class UIButton {
-}
 
 class MyScene: SKScene, SKPhysicsContactDelegate {
 
@@ -60,7 +57,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let tempLabel = SKLabelNode(fontNamed: "HelveticaNeue-Light")
 
     // Set this to true to enable debug shapes.
-    debugDrawEnabled = true
+    debugDrawEnabled = false
 
     scaleMode = .ResizeFill
     backgroundColor = sceneBackgroundColor
@@ -133,9 +130,25 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   }
 
   func newBorderNodeWithLength(length: Float, horizontal: Bool) -> SKNode {
-    let path = UIBezierPath(rect: CGRectMake(0, 0, BorderThickness, length))
+    // IMPORTANT: When using SKTScaleEffect, the node that you're scaling must
+    // not have a physics body, otherwise the physics body gets scaled as well
+    // and weird stuff will happen. So make a new SKNode, give it the physics
+    // body, and add the node that you're scaling as a child node!
 
-    let body = SKPhysicsBody(polygonFromPath: path.CGPath)
+    var rect = CGRectMake(0, 0, BorderThickness, length)
+
+    let node = SKShapeNode()
+    node.path = UIBezierPath(rect: rect).CGPath
+    node.fillColor = borderColor
+    node.strokeColor = SKColor.clearColor()
+    node.lineWidth = 0
+    node.glowWidth = 0
+    node.name = horizontal ? "horizontalBorder" : "verticalBorder"
+    node.position = CGPointMake(-BorderThickness/2.0, -length/2.0)
+  
+    rect.offset(dx: -BorderThickness/2.0, dy: -length/2.0)
+
+    let body = SKPhysicsBody(polygonFromPath: UIBezierPath(rect: rect).CGPath)
     body.dynamic = false
     body.friction = 0
     body.linearDamping = 0
@@ -145,18 +158,9 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     body.collisionBitMask = BallCategory
     body.contactTestBitMask = BallCategory
 
-    let node = SKShapeNode()
-    node.path = path.CGPath
-    node.fillColor = borderColor
-    node.strokeColor = SKColor.clearColor()
-    node.lineWidth = 0
-    node.glowWidth = 0
-    node.physicsBody = body
-    node.name = horizontal ? "horizontalBorder" : "verticalBorder"
-    node.position = CGPointMake(-BorderThickness / 2.0, -length / 2.0)
-
     let pivotNode = SKNode()
     pivotNode.addChild(node)
+    pivotNode.physicsBody = body
     return pivotNode
   }
 
@@ -185,18 +189,26 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
     // Create the shape node that draws the barrier on the screen. This is a
     // child of the pivot node, so it rotates and scales along with the pivot.
-    let node = SKShapeNode()
-    node.path = path.CGPath
-    node.fillColor = barrierColor
-    node.strokeColor = SKColor.clearColor()
-    node.lineWidth = 0
-    node.glowWidth = 0
-    node.position = CGPointMake(-width/2.0, -height/2.0)
-    pivotNode.addChild(node)
+    let shapeNode = SKShapeNode()
+    shapeNode.path = path.CGPath
+    shapeNode.fillColor = barrierColor
+    shapeNode.strokeColor = SKColor.clearColor()
+    shapeNode.lineWidth = 0
+    shapeNode.glowWidth = 0
+    shapeNode.position = CGPointMake(-width/2.0, -height/2.0)
+
+    // Because of SKTScaleEffect we cannot scale the pivotNode directly. It
+    // also doesn't look good to scale the SKShapeNode because its "anchor
+    // point" is always in its bottom-left corner. To solve this, we add
+    // another node that sits between pivotNode and shapeNode, so that any
+    // scaling appears to happen from the barrier shape's center.
+    let containerNode = SKNode()
+    pivotNode.addChild(containerNode)
+    containerNode.addChild(shapeNode)
 
     // Create the physics body. This has the same shape as the shape node
-    // but is attached to the pivot node. (It could also have been attached
-    // to the shape node -- it doesn't really matter where it goes.)
+    // but is attached to the pivot node. (You don't want to attach it directly
+    // to the shape node because that causes trouble with SKTScaleEffect.)
     let body = SKPhysicsBody(rectangleOfSize: CGSizeMake(width, height))
     body.dynamic = false
     body.friction = 0
@@ -208,29 +220,26 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     body.contactTestBitMask = body.collisionBitMask
     pivotNode.physicsBody = body
 
-    // Make the barrier shape appear with an animation. We have to run this
-    // action on the pivot node, otherwise it happens from the barrier shape's
-    // bottom-left corner instead of its center.
-    pivotNode.xScale = 0.15
-    pivotNode.yScale = 0.15
-    pivotNode.alpha = 0.0
+    // Zoom in the barrier shape. Because of SKTScaleEffect we do this on the
+    // container node, not on the SKShapeNode directly.
+    containerNode.xScale = 0.15
+    containerNode.yScale = 0.15
 
-    // NOTE: Instead of doing CGPointMake(pivotNode.xScale, pivotNode.yScale)
-    // you should be able to use pivotNode.scaleAsPoint. However, in Xcode 6
-    // beta 1, this crashes the compiler.
-    let scaleEffect = SKTScaleEffect(node: pivotNode, duration: 1.0, startScale: CGPointMake(pivotNode.xScale, pivotNode.yScale), endScale: CGPointMake(1.0, 1.0))
+    let scaleEffect = SKTScaleEffect(node: containerNode, duration: 1.0, startScale: CGPointMake(containerNode.xScale, containerNode.yScale), endScale: CGPointMake(1.0, 1.0))
     scaleEffect.timingFunction = SKTTimingFunctionBackEaseOut
 
+    containerNode.runAction(SKAction.actionWithEffect(scaleEffect))
+
+    // Also rotate and fade in the barrier. It's OK to apply these to the 
+    // pivotNode directly.
     let rotateEffect = SKTRotateEffect(node: pivotNode, duration: 1.0, startAngle: Float.random() * π/4, endAngle:pivotNode.zRotation)
     rotateEffect.timingFunction = SKTTimingFunctionBackEaseOut
 
-    let action = SKAction.group([
+    pivotNode.alpha = 0.0
+    pivotNode.runAction(SKAction.group([
       SKAction.fadeInWithDuration(1.0),
-      SKAction.actionWithEffect(scaleEffect),
       SKAction.actionWithEffect(rotateEffect)
-      ])
-
-    pivotNode.runAction(action)
+      ]))
   }
 
   func barrierNode() -> SKNode! {
@@ -306,13 +315,19 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   }
 
   func addEffectToBall(ball: SKNode) {
-    ball.xScale = 0.2
-    ball.yScale = 0.2
+    let spriteNode = ball.children[0] as SKSpriteNode
 
-    let scaleEffect = SKTScaleEffect(node: ball, duration: 0.5, startScale:CGPointMake(ball.xScale, ball.yScale), endScale:CGPointMake(1.0, 1.0))
+    spriteNode.xScale = 0.2
+    spriteNode.yScale = 0.2
+
+    // TODO: Instead of doing CGPointMake(spriteNode.xScale, spriteNode.yScale)
+    // you should be able to use spriteNode.scaleAsPoint. However, in Xcode 6
+    // beta 1, this crashes the compiler.
+
+    let scaleEffect = SKTScaleEffect(node: spriteNode, duration: 0.5, startScale:CGPointMake(spriteNode.xScale, spriteNode.yScale), endScale:CGPointMake(1.0, 1.0))
     scaleEffect.timingFunction = SKTTimingFunctionBackEaseOut
 
-    ball.runAction(SKAction.actionWithEffect(scaleEffect))
+    spriteNode.runAction(SKAction.actionWithEffect(scaleEffect))
   }
 
   /**
@@ -380,7 +395,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
       handleBallCollision(body1.node)
 
       if body2.categoryBitMask & BorderCategory != 0 {
-        handleCollisionBetweenBall(body1.node, border:body2.node as SKShapeNode, contactPoint:contactPoint)
+        handleCollisionBetweenBall(body1.node, border:body2.node, contactPoint:contactPoint)
       } else if body2.categoryBitMask & BarrierCategory != 0 {
         handleCollisionBetweenBall(body1.node, barrier:body2.node)
       }
@@ -414,12 +429,14 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
   }
 
-  func handleCollisionBetweenBall(ball: SKNode, border: SKShapeNode, contactPoint: CGPoint) {
+  func handleCollisionBetweenBall(ball: SKNode, border: SKNode, contactPoint: CGPoint) {
+    let borderShapeNode = border.children[0] as SKShapeNode
+  
     // Draw the flashing border above the other borders.
     border.bringToFront()
 
     if FLASH_BORDER {
-      flashShapeNode(border, fromColor: borderFlashColor, toColor: borderColor)
+      flashShapeNode(borderShapeNode, fromColor: borderFlashColor, toColor: borderColor)
     }
 
     if BARRIER_JELLY {
@@ -427,11 +444,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if SCREEN_TUMBLE {
-      screenTumbleAtContactPoint(contactPoint, border:border)
+      screenTumbleAtContactPoint(contactPoint, border: borderShapeNode)
     }
 
     if SCALE_BORDER {
-      scaleBorder(border)
+      scaleBorder(borderShapeNode)
     }
   }
 
@@ -441,8 +458,9 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if FLASH_BARRIER {
-      let node = barrier.children[0] as SKShapeNode
-      flashShapeNode(node, fromColor: barrierFlashColor, toColor: barrierColor)
+      let containerNode = barrier.children[0] as SKNode
+      let shapeNode = containerNode.children[0] as SKShapeNode
+      flashShapeNode(shapeNode, fromColor: barrierFlashColor, toColor: barrierColor)
     }
 
     if COLOR_GLITCH {
@@ -484,7 +502,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * Scales the ball up and then down again. This effect is cumulative; if
    * the ball collides again while still scaled up, it scales up even more.
    */
-  func scaleBall(node: SKNode) {
+  func scaleBall(node: SKSpriteNode) {
     let currentScale = CGPointMake(node.xScale, node.yScale)
     let newScale = currentScale * 1.2
 
@@ -543,13 +561,18 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * Quickly scales the barrier down and up again.
    */
   func scaleBarrier(node: SKNode) {
-    let currentScale = CGPointMake(node.xScale, node.yScale)
+    // This is the SKnode that holds the SKShapeNode. We need to scale this
+    // container node and not the shape node directly, so that the barrier
+    // shape appears to scale from the center instead of one of its corners.
+    let containerNode = node.children[0] as SKNode
+  
+    let currentScale = CGPointMake(containerNode.xScale, containerNode.yScale)
     let newScale = currentScale * 0.5
 
-    let scaleEffect = SKTScaleEffect(node: node, duration: 0.5, startScale: newScale, endScale: currentScale)
+    let scaleEffect = SKTScaleEffect(node: containerNode, duration: 0.5, startScale: newScale, endScale: currentScale)
     scaleEffect.timingFunction = SKTTimingFunctionElasticEaseOut
 
-    node.runAction(SKAction.actionWithEffect(scaleEffect))
+    containerNode.runAction(SKAction.actionWithEffect(scaleEffect))
   }
 
   /**
@@ -584,11 +607,12 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    */
   func screenTumbleAtContactPoint(contactPoint: CGPoint, border: SKShapeNode) {
     let length: Float = (border.name == "horizontalBorder") ? size.width / 2.0 : size.height / 2.0
-    let point = convertPoint(contactPoint, toNode: border)
+    
+    let point = border.convertPoint(contactPoint, fromNode: worldLayer)
     let distanceToCenter = (point.y - length) / length
     let angle = 10.degreesToRadians() * distanceToCenter
 
-    worldPivot.runAction(SKAction.screenRotateWithNode(worldPivot, angle:angle, oscillations:1, duration:1))
+    worldPivot.runAction(SKAction.screenRotateWithNode(worldPivot, angle: angle, oscillations: 1, duration: 1))
   }
 
   /**
@@ -596,10 +620,12 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * timing, making it wobble like jelly.
    */
   func jelly(node: SKNode) {
-    let scaleEffect = SKTScaleEffect(node: node, duration: 0.25, startScale: CGPointMake(1.25, 1.25), endScale: CGPointMake(node.xScale, node.yScale))
+    let containerNode = node.children[0] as SKNode
+  
+    let scaleEffect = SKTScaleEffect(node: containerNode, duration: 0.25, startScale: CGPointMake(1.25, 1.25), endScale: CGPointMake(containerNode.xScale, containerNode.yScale))
 
     scaleEffect.timingFunction = SKTTimingFunctionBounceEaseOut
 
-    node.runAction(SKAction.actionWithEffect(scaleEffect))
+    containerNode.runAction(SKAction.actionWithEffect(scaleEffect))
   }
 }

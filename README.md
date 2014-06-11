@@ -43,6 +43,12 @@ The process for `SKTRotateEffect` and `SKTScaleEffect` is identical, but you spe
 
 You can combine multiple effects at the same time, e.g. have more than one scale effect going at once on the same node.
 
+## Warning about SKTScaleEffect
+
+IMPORTANT: When using `SKTScaleEffect`, the node that you're scaling must not have a physics body, otherwise the physics body gets scaled as well and collision detection becomes unpredictable (objects may suddenly move through other objects).
+
+To solve this, make a new `SKNode`, give it the physics body, and add the node that you're scaling as a child node.
+
 ## Caveats
 
 Currently there is no "relative" version of the effects. You always have to supply an absolute starting and ending position, rotation angle, or scale. Most of the time this is no big deal, but it does mean you cannot put them into repeating actions.
