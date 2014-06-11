@@ -7,35 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0610101945ED26002D27B1 /* SKAction+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extras.swift */; };
+		7B0610111945ED26002D27B1 /* SKAction+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extras.swift */; };
+		7B0610121945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */; };
+		7B0610131945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */; };
+		7B0610141945ED26002D27B1 /* SKNode+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100C1945ED26002D27B1 /* SKNode+Extras.swift */; };
+		7B0610151945ED26002D27B1 /* SKNode+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100C1945ED26002D27B1 /* SKNode+Extras.swift */; };
+		7B0610161945ED26002D27B1 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100D1945ED26002D27B1 /* SKTEffects.swift */; };
+		7B0610171945ED26002D27B1 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100D1945ED26002D27B1 /* SKTEffects.swift */; };
+		7B0610181945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */; };
+		7B0610191945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */; };
+		7B06101A1945ED26002D27B1 /* SKTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100F1945ED26002D27B1 /* SKTUtils.swift */; };
+		7B06101B1945ED26002D27B1 /* SKTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100F1945ED26002D27B1 /* SKTUtils.swift */; };
+		7B0610231945ED5F002D27B1 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06101E1945ED5F002D27B1 /* CGPointTests.swift */; };
+		7B0610241945ED5F002D27B1 /* CGVectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06101F1945ED5F002D27B1 /* CGVectorTests.swift */; };
+		7B0610251945ED5F002D27B1 /* FloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0610201945ED5F002D27B1 /* FloatTests.swift */; };
+		7B0610261945ED5F002D27B1 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0610211945ED5F002D27B1 /* IntTests.swift */; };
+		7B2A707E1945FA2E00585C2D /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A707D1945FA2E00585C2D /* MyScene.swift */; };
+		7B3D972319485E7F00D0AB26 /* SKNode+DebugDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */; };
+		7B3D97251948634200D0AB26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D97241948634200D0AB26 /* ViewController.swift */; };
+		7B3D9727194864E600D0AB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D9726194864E600D0AB26 /* AppDelegate.swift */; };
+		7B3D972919486AB800D0AB26 /* SKEmitterNode+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972819486AB800D0AB26 /* SKEmitterNode+Extras.swift */; };
+		7B3D972B19486C2A00D0AB26 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */; };
 		7BAE7852182FBA95009B4DA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7851182FBA95009B4DA0 /* Foundation.framework */; };
 		7BAE7854182FBA95009B4DA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7853182FBA95009B4DA0 /* CoreGraphics.framework */; };
 		7BAE7856182FBA95009B4DA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7855182FBA95009B4DA0 /* UIKit.framework */; };
 		7BAE7858182FBA95009B4DA0 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7857182FBA95009B4DA0 /* SpriteKit.framework */; };
 		7BAE785E182FBA95009B4DA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE785C182FBA95009B4DA0 /* InfoPlist.strings */; };
-		7BAE7860182FBA95009B4DA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE785F182FBA95009B4DA0 /* main.m */; };
-		7BAE7864182FBA95009B4DA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE7863182FBA95009B4DA0 /* AppDelegate.m */; };
 		7BAE7867182FBA95009B4DA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE7865182FBA95009B4DA0 /* Main.storyboard */; };
-		7BAE786A182FBA95009B4DA0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE7869182FBA95009B4DA0 /* ViewController.m */; };
-		7BAE786D182FBA95009B4DA0 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE786C182FBA95009B4DA0 /* MyScene.m */; };
 		7BAE7871182FBA95009B4DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE7870182FBA95009B4DA0 /* Images.xcassets */; };
 		7BAE7878182FBA95009B4DA0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7877182FBA95009B4DA0 /* XCTest.framework */; };
 		7BAE7879182FBA95009B4DA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7851182FBA95009B4DA0 /* Foundation.framework */; };
 		7BAE787A182FBA95009B4DA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7855182FBA95009B4DA0 /* UIKit.framework */; };
-		7BAE7882182FBA95009B4DA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE7880182FBA95009B4DA0 /* InfoPlist.strings */; };
-		7BAE7884182FBA95009B4DA0 /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE7883182FBA95009B4DA0 /* DemoTests.m */; };
 		7BAE7890182FBBB6009B4DA0 /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE788E182FBBB6009B4DA0 /* Ball.png */; };
 		7BAE7891182FBBB6009B4DA0 /* Ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE788F182FBBB6009B4DA0 /* Ball@2x.png */; };
-		7BCC2E24183266B300E5DA2D /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E16183266B300E5DA2D /* SKAction+SKTExtras.m */; };
-		7BCC2E25183266B300E5DA2D /* SKEmitterNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E18183266B300E5DA2D /* SKEmitterNode+SKTExtras.m */; };
-		7BCC2E26183266B300E5DA2D /* SKNode+SKTDebugDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E1A183266B300E5DA2D /* SKNode+SKTDebugDraw.m */; };
-		7BCC2E27183266B300E5DA2D /* SKNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E1C183266B300E5DA2D /* SKNode+SKTExtras.m */; };
-		7BCC2E28183266B300E5DA2D /* SKTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E1E183266B300E5DA2D /* SKTAudio.m */; };
-		7BCC2E29183266B300E5DA2D /* SKTEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E20183266B300E5DA2D /* SKTEffects.m */; };
-		7BCC2E2A183266B300E5DA2D /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E22183266B300E5DA2D /* SKTTimingFunctions.m */; };
-		7BCC2E2D1832918500E5DA2D /* SKAction+SKTSpecialEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2E2C1832918500E5DA2D /* SKAction+SKTSpecialEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7B0610281945EDC5002D27B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
+			remoteInfo = Demo;
+		};
+		7B06102A1945EDC5002D27B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
+			remoteInfo = Demo;
+		};
+		7B2A70751945EE6200585C2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
+			remoteInfo = Demo;
+		};
+		7B2A70771945EE6300585C2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
+			remoteInfo = Demo;
+		};
+		7B2A70791945EE6300585C2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
+			remoteInfo = Demo;
+		};
+		7B5793D319475BB900A005C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
+			remoteInfo = Demo;
+		};
 		7BAE787B182FBA95009B4DA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
@@ -46,6 +96,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B06100A1945ED26002D27B1 /* SKAction+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extras.swift"; sourceTree = "<group>"; };
+		7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		7B06100C1945ED26002D27B1 /* SKNode+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extras.swift"; sourceTree = "<group>"; };
+		7B06100D1945ED26002D27B1 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		7B06100F1945ED26002D27B1 /* SKTUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTUtils.swift; sourceTree = "<group>"; };
+		7B06101E1945ED5F002D27B1 /* CGPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
+		7B06101F1945ED5F002D27B1 /* CGVectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGVectorTests.swift; sourceTree = "<group>"; };
+		7B0610201945ED5F002D27B1 /* FloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatTests.swift; sourceTree = "<group>"; };
+		7B0610211945ED5F002D27B1 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
+		7B2A707D1945FA2E00585C2D /* MyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
+		7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+DebugDraw.swift"; sourceTree = "<group>"; };
+		7B3D97241948634200D0AB26 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B3D9726194864E600D0AB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B3D972819486AB800D0AB26 /* SKEmitterNode+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+Extras.swift"; sourceTree = "<group>"; };
+		7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		7BAE784E182FBA95009B4DA0 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAE7851182FBA95009B4DA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BAE7853182FBA95009B4DA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,40 +119,13 @@
 		7BAE7857182FBA95009B4DA0 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		7BAE785B182FBA95009B4DA0 /* Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Demo-Info.plist"; sourceTree = "<group>"; };
 		7BAE785D182FBA95009B4DA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7BAE785F182FBA95009B4DA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7BAE7861182FBA95009B4DA0 /* Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Prefix.pch"; sourceTree = "<group>"; };
-		7BAE7862182FBA95009B4DA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7BAE7863182FBA95009B4DA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7BAE7866182FBA95009B4DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7BAE7868182FBA95009B4DA0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7BAE7869182FBA95009B4DA0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7BAE786B182FBA95009B4DA0 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		7BAE786C182FBA95009B4DA0 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		7BAE7870182FBA95009B4DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7BAE7876182FBA95009B4DA0 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAE7877182FBA95009B4DA0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7BAE787F182FBA95009B4DA0 /* DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoTests-Info.plist"; sourceTree = "<group>"; };
-		7BAE7881182FBA95009B4DA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7BAE7883182FBA95009B4DA0 /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		7BAE788E182FBBB6009B4DA0 /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball.png; sourceTree = "<group>"; };
 		7BAE788F182FBBB6009B4DA0 /* Ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball@2x.png"; sourceTree = "<group>"; };
-		7BCC2E15183266B300E5DA2D /* SKAction+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTExtras.h"; sourceTree = "<group>"; };
-		7BCC2E16183266B300E5DA2D /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTExtras.m"; sourceTree = "<group>"; };
-		7BCC2E17183266B300E5DA2D /* SKEmitterNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+SKTExtras.h"; sourceTree = "<group>"; };
-		7BCC2E18183266B300E5DA2D /* SKEmitterNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+SKTExtras.m"; sourceTree = "<group>"; };
-		7BCC2E19183266B300E5DA2D /* SKNode+SKTDebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+SKTDebugDraw.h"; sourceTree = "<group>"; };
-		7BCC2E1A183266B300E5DA2D /* SKNode+SKTDebugDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+SKTDebugDraw.m"; sourceTree = "<group>"; };
-		7BCC2E1B183266B300E5DA2D /* SKNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+SKTExtras.h"; sourceTree = "<group>"; };
-		7BCC2E1C183266B300E5DA2D /* SKNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+SKTExtras.m"; sourceTree = "<group>"; };
-		7BCC2E1D183266B300E5DA2D /* SKTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTAudio.h; sourceTree = "<group>"; };
-		7BCC2E1E183266B300E5DA2D /* SKTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTAudio.m; sourceTree = "<group>"; };
-		7BCC2E1F183266B300E5DA2D /* SKTEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTEffects.h; sourceTree = "<group>"; };
-		7BCC2E20183266B300E5DA2D /* SKTEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTEffects.m; sourceTree = "<group>"; };
-		7BCC2E21183266B300E5DA2D /* SKTTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTTimingFunctions.h; sourceTree = "<group>"; };
-		7BCC2E22183266B300E5DA2D /* SKTTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTTimingFunctions.m; sourceTree = "<group>"; };
-		7BCC2E23183266B300E5DA2D /* SKTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
-		7BCC2E2B1832918500E5DA2D /* SKAction+SKTSpecialEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTSpecialEffects.h"; sourceTree = "<group>"; };
-		7BCC2E2C1832918500E5DA2D /* SKAction+SKTSpecialEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTSpecialEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,14 +189,11 @@
 		7BAE7859182FBA95009B4DA0 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				7BAE7862182FBA95009B4DA0 /* AppDelegate.h */,
-				7BAE7863182FBA95009B4DA0 /* AppDelegate.m */,
-				7BAE7865182FBA95009B4DA0 /* Main.storyboard */,
-				7BAE7868182FBA95009B4DA0 /* ViewController.h */,
-				7BAE7869182FBA95009B4DA0 /* ViewController.m */,
-				7BAE786B182FBA95009B4DA0 /* MyScene.h */,
-				7BAE786C182FBA95009B4DA0 /* MyScene.m */,
+				7B3D9726194864E600D0AB26 /* AppDelegate.swift */,
+				7B3D97241948634200D0AB26 /* ViewController.swift */,
+				7B2A707D1945FA2E00585C2D /* MyScene.swift */,
 				7BAE7870182FBA95009B4DA0 /* Images.xcassets */,
+				7BAE7865182FBA95009B4DA0 /* Main.storyboard */,
 				7BAE785A182FBA95009B4DA0 /* Supporting Files */,
 			);
 			path = Demo;
@@ -167,9 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAE785B182FBA95009B4DA0 /* Demo-Info.plist */,
-				7BAE7861182FBA95009B4DA0 /* Demo-Prefix.pch */,
 				7BAE785C182FBA95009B4DA0 /* InfoPlist.strings */,
-				7BAE785F182FBA95009B4DA0 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,7 +211,10 @@
 		7BAE787D182FBA95009B4DA0 /* DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				7BAE7883182FBA95009B4DA0 /* DemoTests.m */,
+				7B06101E1945ED5F002D27B1 /* CGPointTests.swift */,
+				7B06101F1945ED5F002D27B1 /* CGVectorTests.swift */,
+				7B0610201945ED5F002D27B1 /* FloatTests.swift */,
+				7B0610211945ED5F002D27B1 /* IntTests.swift */,
 				7BAE787E182FBA95009B4DA0 /* Supporting Files */,
 			);
 			path = DemoTests;
@@ -187,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				7BAE787F182FBA95009B4DA0 /* DemoTests-Info.plist */,
-				7BAE7880182FBA95009B4DA0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,23 +240,15 @@
 		7BCC2E14183266B300E5DA2D /* SKTUtils */ = {
 			isa = PBXGroup;
 			children = (
-				7BCC2E15183266B300E5DA2D /* SKAction+SKTExtras.h */,
-				7BCC2E16183266B300E5DA2D /* SKAction+SKTExtras.m */,
-				7BCC2E2B1832918500E5DA2D /* SKAction+SKTSpecialEffects.h */,
-				7BCC2E2C1832918500E5DA2D /* SKAction+SKTSpecialEffects.m */,
-				7BCC2E17183266B300E5DA2D /* SKEmitterNode+SKTExtras.h */,
-				7BCC2E18183266B300E5DA2D /* SKEmitterNode+SKTExtras.m */,
-				7BCC2E19183266B300E5DA2D /* SKNode+SKTDebugDraw.h */,
-				7BCC2E1A183266B300E5DA2D /* SKNode+SKTDebugDraw.m */,
-				7BCC2E1B183266B300E5DA2D /* SKNode+SKTExtras.h */,
-				7BCC2E1C183266B300E5DA2D /* SKNode+SKTExtras.m */,
-				7BCC2E1D183266B300E5DA2D /* SKTAudio.h */,
-				7BCC2E1E183266B300E5DA2D /* SKTAudio.m */,
-				7BCC2E1F183266B300E5DA2D /* SKTEffects.h */,
-				7BCC2E20183266B300E5DA2D /* SKTEffects.m */,
-				7BCC2E21183266B300E5DA2D /* SKTTimingFunctions.h */,
-				7BCC2E22183266B300E5DA2D /* SKTTimingFunctions.m */,
-				7BCC2E23183266B300E5DA2D /* SKTUtils.h */,
+				7B06100A1945ED26002D27B1 /* SKAction+Extras.swift */,
+				7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */,
+				7B3D972819486AB800D0AB26 /* SKEmitterNode+Extras.swift */,
+				7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */,
+				7B06100C1945ED26002D27B1 /* SKNode+Extras.swift */,
+				7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */,
+				7B06100D1945ED26002D27B1 /* SKTEffects.swift */,
+				7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */,
+				7B06100F1945ED26002D27B1 /* SKTUtils.swift */,
 			);
 			name = SKTUtils;
 			path = ../../SKTUtils;
@@ -258,6 +286,12 @@
 			);
 			dependencies = (
 				7BAE787C182FBA95009B4DA0 /* PBXTargetDependency */,
+				7B0610291945EDC5002D27B1 /* PBXTargetDependency */,
+				7B06102B1945EDC5002D27B1 /* PBXTargetDependency */,
+				7B2A70761945EE6200585C2D /* PBXTargetDependency */,
+				7B2A70781945EE6300585C2D /* PBXTargetDependency */,
+				7B2A707A1945EE6300585C2D /* PBXTargetDependency */,
+				7B5793D419475BB900A005C6 /* PBXTargetDependency */,
 			);
 			name = DemoTests;
 			productName = DemoTests;
@@ -314,7 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAE7882182FBA95009B4DA0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,18 +358,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAE786D182FBA95009B4DA0 /* MyScene.m in Sources */,
-				7BCC2E29183266B300E5DA2D /* SKTEffects.m in Sources */,
-				7BAE786A182FBA95009B4DA0 /* ViewController.m in Sources */,
-				7BCC2E25183266B300E5DA2D /* SKEmitterNode+SKTExtras.m in Sources */,
-				7BCC2E24183266B300E5DA2D /* SKAction+SKTExtras.m in Sources */,
-				7BCC2E2D1832918500E5DA2D /* SKAction+SKTSpecialEffects.m in Sources */,
-				7BCC2E2A183266B300E5DA2D /* SKTTimingFunctions.m in Sources */,
-				7BCC2E28183266B300E5DA2D /* SKTAudio.m in Sources */,
-				7BAE7864182FBA95009B4DA0 /* AppDelegate.m in Sources */,
-				7BCC2E27183266B300E5DA2D /* SKNode+SKTExtras.m in Sources */,
-				7BAE7860182FBA95009B4DA0 /* main.m in Sources */,
-				7BCC2E26183266B300E5DA2D /* SKNode+SKTDebugDraw.m in Sources */,
+				7B3D9727194864E600D0AB26 /* AppDelegate.swift in Sources */,
+				7B3D972319485E7F00D0AB26 /* SKNode+DebugDraw.swift in Sources */,
+				7B0610101945ED26002D27B1 /* SKAction+Extras.swift in Sources */,
+				7B0610141945ED26002D27B1 /* SKNode+Extras.swift in Sources */,
+				7B0610121945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */,
+				7B06101A1945ED26002D27B1 /* SKTUtils.swift in Sources */,
+				7B3D97251948634200D0AB26 /* ViewController.swift in Sources */,
+				7B0610181945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */,
+				7B2A707E1945FA2E00585C2D /* MyScene.swift in Sources */,
+				7B3D972B19486C2A00D0AB26 /* SKTAudio.swift in Sources */,
+				7B0610161945ED26002D27B1 /* SKTEffects.swift in Sources */,
+				7B3D972919486AB800D0AB26 /* SKEmitterNode+Extras.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,13 +377,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAE7884182FBA95009B4DA0 /* DemoTests.m in Sources */,
+				7B0610151945ED26002D27B1 /* SKNode+Extras.swift in Sources */,
+				7B0610231945ED5F002D27B1 /* CGPointTests.swift in Sources */,
+				7B0610171945ED26002D27B1 /* SKTEffects.swift in Sources */,
+				7B0610261945ED5F002D27B1 /* IntTests.swift in Sources */,
+				7B0610111945ED26002D27B1 /* SKAction+Extras.swift in Sources */,
+				7B0610241945ED5F002D27B1 /* CGVectorTests.swift in Sources */,
+				7B0610191945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */,
+				7B06101B1945ED26002D27B1 /* SKTUtils.swift in Sources */,
+				7B0610131945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */,
+				7B0610251945ED5F002D27B1 /* FloatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7B0610291945EDC5002D27B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
+			targetProxy = 7B0610281945EDC5002D27B1 /* PBXContainerItemProxy */;
+		};
+		7B06102B1945EDC5002D27B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
+			targetProxy = 7B06102A1945EDC5002D27B1 /* PBXContainerItemProxy */;
+		};
+		7B2A70761945EE6200585C2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
+			targetProxy = 7B2A70751945EE6200585C2D /* PBXContainerItemProxy */;
+		};
+		7B2A70781945EE6300585C2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
+			targetProxy = 7B2A70771945EE6300585C2D /* PBXContainerItemProxy */;
+		};
+		7B2A707A1945EE6300585C2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
+			targetProxy = 7B2A70791945EE6300585C2D /* PBXContainerItemProxy */;
+		};
+		7B5793D419475BB900A005C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
+			targetProxy = 7B5793D319475BB900A005C6 /* PBXContainerItemProxy */;
+		};
 		7BAE787C182FBA95009B4DA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
@@ -373,14 +445,6 @@
 				7BAE7866182FBA95009B4DA0 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7BAE7880182FBA95009B4DA0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7BAE7881182FBA95009B4DA0 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -461,13 +525,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -482,10 +549,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -502,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -514,8 +584,15 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DemoTests/DemoTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -524,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -532,8 +610,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "DemoTests/DemoTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

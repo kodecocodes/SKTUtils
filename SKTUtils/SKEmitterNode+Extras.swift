@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Razeware LLC
+ * Copyright (c) 2013-2014 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,30 +20,15 @@
  * THE SOFTWARE.
  */
 
-#import "SKAction+SKTExtras.h"
+import SpriteKit
 
-@implementation SKAction (SKTExtras)
-
-+ (instancetype)skt_afterDelay:(NSTimeInterval)duration perform:(SKAction *)action {
-  return [SKAction sequence:@[[SKAction waitForDuration:duration], action]];
+extension SKEmitterNode {
+  /**
+   * Convenience method for loading an SKEmitterNode from a .sks file in the
+   * application bundle.
+   */
+  class func emitterNodeNamed(name: NSString) -> SKEmitterNode {
+    let path = NSBundle.mainBundle().pathForResource(name, ofType: "sks")
+    return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as SKEmitterNode
+  }
 }
-
-+ (instancetype)skt_afterDelay:(NSTimeInterval)duration runBlock:(dispatch_block_t)block {
-  return [self skt_afterDelay:duration perform:[SKAction runBlock:block]];
-}
-
-+ (instancetype)skt_removeFromParentAfterDelay:(NSTimeInterval)duration {
-  return [self skt_afterDelay:duration perform:[SKAction removeFromParent]];
-}
-
-+ (instancetype)skt_jumpWithHeight:(float)height duration:(float)duration originalPosition:(CGPoint)originalPosition {
-
-  return [SKAction customActionWithDuration:duration actionBlock:^(SKNode *node, CGFloat elapsedTime) {
-      float fraction = elapsedTime / duration;
-      float yOff = height * 4 * fraction * (1 - fraction);
-      node.position = CGPointMake(originalPosition.x, originalPosition.y + yOff);
-  }];
-
-}
-
-@end
