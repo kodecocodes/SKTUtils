@@ -26,7 +26,7 @@ extension SKAction {
   /**
    * Performs an action after the specified delay.
    */
-  class func afterDelay(delay: NSTimeInterval, perform action: SKAction) -> SKAction! {
+  class func afterDelay(delay: NSTimeInterval, performAction action: SKAction) -> SKAction! {
     return SKAction.sequence([SKAction.waitForDuration(delay), action])
   }
 
@@ -34,14 +34,14 @@ extension SKAction {
    * Performs a block after the specified delay.
    */
   class func afterDelay(delay: NSTimeInterval, runBlock block: dispatch_block_t!) -> SKAction! {
-    return SKAction.afterDelay(delay, perform: SKAction.runBlock(block))
+    return SKAction.afterDelay(delay, performAction: SKAction.runBlock(block))
   }
 
   /**
    * Removes the node from its parent after the specified delay.
    */
   class func removeFromParentAfterDelay(delay: NSTimeInterval) -> SKAction! {
-    return SKAction.afterDelay(delay, perform: SKAction.removeFromParent())
+    return SKAction.afterDelay(delay, performAction: SKAction.removeFromParent())
   }
 
   /**

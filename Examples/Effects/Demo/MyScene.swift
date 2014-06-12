@@ -83,12 +83,12 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     // Put the game objects into the world. We use delays here to make some
     // objects appear earlier than others, which looks cooler.
     addBorders()
-    afterDelay(1.5, perform: addBarrier)
-    afterDelay(2.5, perform: addBalls)
-    afterDelay(6.0, perform: showLabel)
+    afterDelay(1.5, runBlock: addBarrier)
+    afterDelay(2.5, runBlock: addBalls)
+    afterDelay(6.0, runBlock: showLabel)
 
     // Make the barrier rotate around its center.
-    afterDelay(4.0, perform: animateBarrier)
+    afterDelay(4.0, runBlock: animateBarrier)
   }
 
   /**
@@ -167,7 +167,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   func addEffectToBorder(border: SKNode, startPosition: CGPoint, endPosition: CGPoint, delay: NSTimeInterval) {
     let moveEffect = SKTMoveEffect(node: border, duration: 0.5, startPosition: startPosition, endPosition: endPosition)
     moveEffect.timingFunction = SKTTimingFunctionBounceEaseOut
-    border.runAction(SKAction.afterDelay(delay, perform:SKAction.actionWithEffect(moveEffect)))
+    border.runAction(SKAction.afterDelay(delay, performAction: SKAction.actionWithEffect(moveEffect)))
   }
 
   /** 
