@@ -31,7 +31,7 @@ import SpriteKit
 class SKTEffect {
   /*unowned*/ var node: SKNode  // TODO: make unowned (crashes on beta 1)
   var duration: NSTimeInterval
-  var timingFunction: ((Float) -> Float)?
+  var timingFunction: ((CGFloat) -> CGFloat)?
 
   init(node: SKNode, duration: NSTimeInterval) {
     self.node = node
@@ -39,7 +39,7 @@ class SKTEffect {
     timingFunction = SKTTimingFunctionLinear
   }
 
-  func update(t: Float) {
+  func update(t: CGFloat) {
     // subclasses implement this
   }
 }
@@ -59,7 +59,7 @@ class SKTMoveEffect: SKTEffect {
     super.init(node: node, duration: duration)
   }
   
-  override func update(t: Float) {
+  override func update(t: CGFloat) {
     // This allows multiple SKTMoveEffect objects to modify the same node
     // at the same time.
     let newPosition = startPosition + delta*t
@@ -84,7 +84,7 @@ class SKTScaleEffect: SKTEffect {
     super.init(node: node, duration: duration)
   }
 
-  override func update(t: Float) {
+  override func update(t: CGFloat) {
     let newScale = startScale + delta*t
     let diff = newScale / previousScale
     previousScale = newScale
@@ -108,7 +108,7 @@ class SKTRotateEffect: SKTEffect {
     super.init(node: node, duration: duration)
   }
 
-  override func update(t: Float) {
+  override func update(t: CGFloat) {
     let newAngle = startAngle + delta*t
     let diff = newAngle - previousAngle
     previousAngle = newAngle
@@ -122,7 +122,7 @@ class SKTRotateEffect: SKTEffect {
 extension SKAction {
   class func actionWithEffect(effect: SKTEffect) -> SKAction! {
     return SKAction.customActionWithDuration(effect.duration) {(node, elapsedTime) in
-      var t: Float = elapsedTime / CGFloat(effect.duration)
+      var t = elapsedTime / CGFloat(effect.duration)
 
       if let timingFunction = effect.timingFunction {
         t = timingFunction(t)  // the magic happens here

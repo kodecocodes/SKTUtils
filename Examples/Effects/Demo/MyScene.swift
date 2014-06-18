@@ -19,7 +19,7 @@ let COLOR_GLITCH   = false
 let BARRIER_JELLY  = true
 
 // How fat the borders around the screen are.
-let BorderThickness: Float = 20.0
+let BorderThickness: CGFloat = 20.0
 
 // Categories for physics collisions.
 let BallCategory: UInt32    = 1 << 0
@@ -97,7 +97,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * rotated by different angles.
    */
   func addBorders() {
-    let distance: Float = 50.0
+    let distance: CGFloat = 50.0
 
     let leftBorder = newBorderNodeWithLength(size.height, horizontal: false)
     leftBorder.position = CGPointMake(BorderThickness / 2.0 - distance, size.height / 2.0)
@@ -110,12 +110,12 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
     let topBorder = newBorderNodeWithLength(size.width, horizontal: true)
     topBorder.position = CGPointMake(size.width / 2.0, size.height - BorderThickness / 2.0 + distance)
-    topBorder.zRotation = -Halfπ
+    topBorder.zRotation = -π/2
     worldLayer.addChild(topBorder)
 
     let bottomBorder = newBorderNodeWithLength(size.width, horizontal: true)
     bottomBorder.position = CGPointMake(size.width / 2.0, BorderThickness / 2.0 - distance)
-    bottomBorder.zRotation = Halfπ
+    bottomBorder.zRotation = π/2
     worldLayer.addChild(bottomBorder)
 
     // Make the borders appear with a bounce animation.
@@ -129,7 +129,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     addEffectToBorder(bottomBorder, startPosition: bottomBorder.position, endPosition: CGPointMake(bottomBorder.position.x, bottomBorder.position.y + distance), delay: 1.0)
   }
 
-  func newBorderNodeWithLength(length: Float, horizontal: Bool) -> SKNode {
+  func newBorderNodeWithLength(length: CGFloat, horizontal: Bool) -> SKNode {
     // IMPORTANT: When using SKTScaleEffect, the node that you're scaling must
     // not have a physics body, otherwise the physics body gets scaled as well
     // and weird stuff will happen. So make a new SKNode, give it the physics
@@ -180,11 +180,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let pivotNode = SKNode()
     pivotNode.name = "barrier"
     pivotNode.position = CGPointMake(size.width / 2.0, size.height / 2.0)
-    pivotNode.zRotation = Halfπ
+    pivotNode.zRotation = π/2
     worldLayer.addChild(pivotNode)
 
     let width = BorderThickness * 2
-    let height: Float = 140
+    let height: CGFloat = 140
     let path = UIBezierPath(rect: CGRectMake(0, 0, width, height))
 
     // Create the shape node that draws the barrier on the screen. This is a
@@ -232,7 +232,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
     // Also rotate and fade in the barrier. It's OK to apply these to the 
     // pivotNode directly.
-    let rotateEffect = SKTRotateEffect(node: pivotNode, duration: 1.0, startAngle: Float.random() * π/4, endAngle:pivotNode.zRotation)
+    let rotateEffect = SKTRotateEffect(node: pivotNode, duration: 1.0, startAngle: CGFloat.random() * π/4, endAngle:pivotNode.zRotation)
     rotateEffect.timingFunction = SKTTimingFunctionBackEaseOut
 
     pivotNode.alpha = 0.0
@@ -277,9 +277,9 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
       ball.runAction(SKAction.afterDelay(1.0, runBlock:{
         // Assign a random angle to the ball's velocity.
-        let ballSpeed: Float = 200
-        let angle = (Float.random() * 360).degreesToRadians()
-        ball.physicsBody.velocity = CGVectorMake(cosf(angle)*ballSpeed, sinf(angle)*ballSpeed)
+        let ballSpeed: CGFloat = 200
+        let angle = (CGFloat.random() * 360).degreesToRadians()
+        ball.physicsBody.velocity = CGVectorMake(cos(angle)*ballSpeed, sin(angle)*ballSpeed)
       }))
     }
   }
@@ -362,8 +362,8 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    */
   override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
     worldLayer.enumerateChildNodesWithName("ball") {(node, stop) in
-      let speed: Float = 50
-      let impulse = CGVectorMake(Float.random(min: -speed, max: speed), Float.random(min: -speed, max: speed))
+      let speed: CGFloat = 50
+      let impulse = CGVectorMake(CGFloat.random(min: -speed, max: speed), CGFloat.random(min: -speed, max: speed))
       node.physicsBody.applyImpulse(impulse)
 
       if STRETCH_BALL {
@@ -517,7 +517,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * Squashing is useful for when an object collides with another object.
    */
   func squashBall(node: SKNode) {
-    let ratio: Float = 1.5
+    let ratio: CGFloat = 1.5
     let currentScale = CGPointMake(node.xScale, node.yScale)
     let newScale = currentScale * CGPointMake(ratio, 1.0/ratio)
 
@@ -532,7 +532,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * Stretching is useful for when an object accelerates.
    */
   func stretchBall(node: SKNode) {
-    let ratio: Float = 1.5
+    let ratio: CGFloat = 1.5
     let currentScale = CGPointMake(node.xScale, node.yScale)
     let newScale = currentScale * CGPointMake(1.0/ratio, ratio)
 
@@ -606,7 +606,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * where the ball hit the border (further from the center is a bigger angle).
    */
   func screenTumbleAtContactPoint(contactPoint: CGPoint, border: SKShapeNode) {
-    let length: Float = (border.name == "horizontalBorder") ? size.width / 2.0 : size.height / 2.0
+    let length: CGFloat = (border.name == "horizontalBorder") ? size.width / 2.0 : size.height / 2.0
     
     let point = border.convertPoint(contactPoint, fromNode: worldLayer)
     let distanceToCenter = (point.y - length) / length

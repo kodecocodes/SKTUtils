@@ -24,13 +24,30 @@ import CoreGraphics
 import SpriteKit
 
 /** The value of π as a Float */
-let π = Float(M_PI)
+let π = CGFloat(M_PI)
 
-/** The value of π/2 as a Float */
-let Halfπ = Float(M_PI_2)
+// These functions are needed for 32-bit architectures
+#if !(arch(x86_64) || arch(arm64))
+func atan2(y: CGFloat, x: CGFloat) -> CGFloat {
+  return atan2f(y, x)
+}
 
-/** The value of 2π as a Float */
-let Twoπ = Float(M_PI * 2.0)
+func cos(a: CGFloat) -> CGFloat {
+  return cosf(a)
+}
+
+func sin(a: CGFloat) -> CGFloat {
+  return sinf(a)
+}
+
+func sqrt(a: CGFloat) -> CGFloat {
+  return sqrtf(a)
+}
+
+func pow(x: CGFloat, y: CGFloat) -> CGFloat {
+  return powf(x, y)
+}
+#endif
 
 extension CGPoint {
   /**
@@ -44,14 +61,14 @@ extension CGPoint {
    * Given an angle in radians, creates a vector of length 1.0 and returns the
    * result as a new CGPoint. An angle of 0 is assumed to point to the right.
    */
-  init(angle: Float) {
-    return self.init(x: cosf(angle), y: sinf(angle))
+  init(angle: CGFloat) {
+    return self.init(x: cos(angle), y: sin(angle))
   }
 
   /**
    * Adds (dx, dy) to the point.
    */
-  mutating func offset(#dx: Float, dy: Float) -> CGPoint {
+  mutating func offset(#dx: CGFloat, dy: CGFloat) -> CGPoint {
     x += dx
     y += dy
     return self
@@ -69,14 +86,14 @@ extension CGPoint {
   /**
    * Returns the length (magnitude) of the vector described by the CGPoint.
    */
-  func length() -> Float {
-    return sqrtf(x*x + y*y)
+  func length() -> CGFloat {
+    return sqrt(x*x + y*y)
   }
 
   /**
    * Returns the squared length of the vector described by the CGPoint.
    */
-  func lengthSquared() -> Float {
+  func lengthSquared() -> CGFloat {
     return x*x + y*y
   }
 
@@ -99,7 +116,7 @@ extension CGPoint {
   /**
    * Calculates the distance between two CGPoints. Pythagoras!
    */
-  func distanceTo(point: CGPoint) -> Float {
+  func distanceTo(point: CGPoint) -> CGFloat {
     return (self - point).length()
   }
 
@@ -107,8 +124,8 @@ extension CGPoint {
    * Returns the angle in radians of the vector described by the CGPoint.
    * The range of the angle is -π to π; an angle of 0 points to the right.
    */
-  var angle: Float {
-    return atan2f(y, x)
+  var angle: CGFloat {
+    return atan2(y, x)
   }
 }
 
@@ -158,14 +175,14 @@ extension CGPoint {
  * Multiplies the x and y fields of a CGPoint with the same scalar value and
  * returns the result as a new CGPoint.
  */
-@infix func * (point: CGPoint, scalar: Float) -> CGPoint {
+@infix func * (point: CGPoint, scalar: CGFloat) -> CGPoint {
   return CGPoint(x: point.x * scalar, y: point.y * scalar)
 }
 
 /**
  * Multiplies the x and y fields of a CGPoint with the same scalar value.
  */
-@assignment func *= (inout point: CGPoint, scalar: Float) {
+@assignment func *= (inout point: CGPoint, scalar: CGFloat) {
   point = point * scalar
 }
 
@@ -187,21 +204,21 @@ extension CGPoint {
  * Divides the x and y fields of a CGPoint by the same scalar value and returns
  * the result as a new CGPoint.
  */
-@infix func / (point: CGPoint, scalar: Float) -> CGPoint {
+@infix func / (point: CGPoint, scalar: CGFloat) -> CGPoint {
   return CGPoint(x: point.x / scalar, y: point.y / scalar)
 }
 
 /**
  * Divides the x and y fields of a CGPoint by the same scalar value.
  */
-@assignment func /= (inout point: CGPoint, scalar: Float) {
+@assignment func /= (inout point: CGPoint, scalar: CGFloat) {
   point = point / scalar
 }
 
 /**
  * Performs a linear interpolation between two CGPoint values.
  */
-func lerp(#start: CGPoint, #end: CGPoint, #t: Float) -> CGPoint {
+func lerp(#start: CGPoint, #end: CGPoint, #t: CGFloat) -> CGPoint {
   return CGPoint(x: start.x + (end.x - start.x)*t, y: start.y + (end.y - start.y)*t)
 }
 
@@ -217,14 +234,14 @@ extension CGVector {
    * Given an angle in radians, creates a vector of length 1.0 and returns the
    * result as a new CGVector. An angle of 0 is assumed to point to the right.
    */
-  init(angle: Float) {
-    return self.init(dx: cosf(angle), dy: sinf(angle))
+  init(angle: CGFloat) {
+    return self.init(dx: cos(angle), dy: sin(angle))
   }
 
   /**
    * Adds (dx, dy) to the vector.
    */
-  mutating func offset(#dx: Float, dy: Float) -> CGVector {
+  mutating func offset(#dx: CGFloat, dy: CGFloat) -> CGVector {
     self.dx += dx
     self.dy += dy
     return self
@@ -242,14 +259,14 @@ extension CGVector {
   /**
    * Returns the length (magnitude) of the vector described by the CGVector.
    */
-  func length() -> Float {
-    return sqrtf(dx*dx + dy*dy)
+  func length() -> CGFloat {
+    return sqrt(dx*dx + dy*dy)
   }
 
   /**
    * Returns the squared length of the vector described by the CGVector.
    */
-  func lengthSquared() -> Float {
+  func lengthSquared() -> CGFloat {
     return dx*dx + dy*dy
   }
 
@@ -272,7 +289,7 @@ extension CGVector {
   /**
    * Calculates the distance between two CGVectors. Pythagoras!
    */
-  func distanceTo(vector: CGVector) -> Float {
+  func distanceTo(vector: CGVector) -> CGFloat {
     return (self - vector).length()
   }
 
@@ -280,8 +297,8 @@ extension CGVector {
    * Returns the angle in radians of the vector described by the CGVector.
    * The range of the angle is -π to π; an angle of 0 points to the right.
    */
-  var angle: Float {
-    return atan2f(dy, dx)
+  var angle: CGFloat {
+    return atan2(dy, dx)
   }
 }
 
@@ -331,14 +348,14 @@ extension CGVector {
  * Multiplies the x and y fields of a CGVector with the same scalar value and
  * returns the result as a new CGVector.
  */
-@infix func * (vector: CGVector, scalar: Float) -> CGVector {
+@infix func * (vector: CGVector, scalar: CGFloat) -> CGVector {
   return CGVector(dx: vector.dx * scalar, dy: vector.dy * scalar)
 }
 
 /**
  * Multiplies the x and y fields of a CGVector with the same scalar value.
  */
-@assignment func *= (inout vector: CGVector, scalar: Float) {
+@assignment func *= (inout vector: CGVector, scalar: CGFloat) {
   vector = vector * scalar
 }
 
@@ -360,21 +377,21 @@ extension CGVector {
  * Divides the dx and dy fields of a CGVector by the same scalar value and
  * returns the result as a new CGVector.
  */
-@infix func / (vector: CGVector, scalar: Float) -> CGVector {
+@infix func / (vector: CGVector, scalar: CGFloat) -> CGVector {
   return CGVector(dx: vector.dx / scalar, dy: vector.dy / scalar)
 }
 
 /**
  * Divides the dx and dy fields of a CGVector by the same scalar value.
  */
-@assignment func /= (inout vector: CGVector, scalar: Float) {
+@assignment func /= (inout vector: CGVector, scalar: CGFloat) {
   vector = vector / scalar
 }
 
 /**
  * Performs a linear interpolation between two CGVector values.
  */
-func lerp(#start: CGVector, #end: CGVector, #t: Float) -> CGVector {
+func lerp(#start: CGVector, #end: CGVector, #t: CGFloat) -> CGVector {
   return CGVector(dx: start.dx + (end.dx - start.dx)*t, dy: start.dy + (end.dy - start.dy)*t)
 }
 
@@ -438,25 +455,25 @@ extension Int {
 //  }
 }
 
-extension Float {
+extension CGFloat {
   /**
    * Converts an angle in degrees to radians.
    */
-  func degreesToRadians() -> Float {
+  func degreesToRadians() -> CGFloat {
     return π * self / 180.0
   }
 
   /**
    * Converts an angle in radians to degrees.
    */
-  func radiansToDegrees() -> Float {
+  func radiansToDegrees() -> CGFloat {
     return self * 180.0 / π
   }
 
   /**
    * Ensures that the float value stays with the range min...max, inclusive.
    */
-  func clamped(#min: Float, max: Float) -> Float {
+  func clamped(#min: CGFloat, max: CGFloat) -> CGFloat {
     assert(min < max)
     return (self < min) ? min : ((self > max) ? max : self)
   }
@@ -464,7 +481,7 @@ extension Float {
   /**
    * Ensures that the float value stays with the range min...max, inclusive.
    */
-  mutating func clamp(#min: Float, max: Float) -> Float {
+  mutating func clamp(#min: CGFloat, max: CGFloat) -> CGFloat {
     self = clamped(min: min, max: max)
     return self
   }
@@ -475,14 +492,14 @@ extension Float {
 //  /**
 //   * Ensures that the float value stays with the specified range.
 //   */
-//  func clamped(range: Range<Float>) -> Float {
+//  func clamped(range: Range<Float>) -> CGFloat {
 //    return (self < range.startIndex) ? range.startIndex : ((self > range.endIndex) ? range.endIndex : self)
 //  }
 //
 //  /**
 //   * Ensures that the float value stays with the specified range.
 //   */
-//  mutating func clamp(range: Range<Float>) -> Float {
+//  mutating func clamp(range: Range<CGFloat>) -> CGFloat {
 //    self = clamped(range)
 //    return self
 //  }
@@ -490,23 +507,23 @@ extension Float {
   /**
    * Returns 1.0 if a floating point value is positive; -1.0 if it is negative.
    */
-  func sign() -> Float {
+  func sign() -> CGFloat {
     return (self >= 0.0) ? 1.0 : -1.0
   }
 
   /**
    * Returns a random floating point number between 0.0 and 1.0, inclusive.
    */
-  static func random() -> Float {
-    return Float(arc4random()) / 0xFFFFFFFF
+  static func random() -> CGFloat {
+    return CGFloat(arc4random()) / 0xFFFFFFFF
   }
 
   /**
    * Returns a random floating point number in the range min...max, inclusive.
    */
-  static func random(#min: Float, max: Float) -> Float {
+  static func random(#min: CGFloat, max: CGFloat) -> CGFloat {
     assert(min < max)
-    return Float.random() * (max - min) + min
+    return CGFloat.random() * (max - min) + min
   }
 
 // NOTE: floating-point ranges are weird in Swift. x..y works OK, but x...y
@@ -516,14 +533,14 @@ extension Float {
 //  /**
 //   * Returns a random floating point number in the specified range.
 //   */
-//  static func random(range: Range<Float>) -> Float {
-//    return Float.random() * (range.endIndex - range.startIndex) + range.startIndex
+//  static func random(range: Range<CGFloat>) -> CGFloat {
+//    return CGFloat.random() * (range.endIndex - range.startIndex) + range.startIndex
 //  }
 
   /**
    * Randomly returns either 1.0 or -1.0.
    */
-  static func randomSign() -> Float {
+  static func randomSign() -> CGFloat {
     return (arc4random_uniform(2) == 0) ? 1.0 : -1.0
   }
 }
@@ -532,7 +549,7 @@ extension Float {
  * Returns the shortest angle between two angles. The result is always between
  * -π and π.
  */
-func shortestAngleBetween(angle1: Float, angle2: Float) -> Float {
+func shortestAngleBetween(angle1: CGFloat, angle2: CGFloat) -> CGFloat {
   let twoπ = π * 2.0
   let angle = (angle1 - angle2) % twoπ
   if (angle >= π) {
@@ -557,9 +574,9 @@ extension SKColor {
    * Creates and returns a new SKColor object using RGB components specified as
    * values from 0 to 255, and alpha between 0.0 and 1.0.
    */
-  convenience init(r: Int, g: Int, b: Int, a: Float) {
-    return self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: a)
-  }
+//  convenience init(r: Int, g: Int, b: Int, a: Float) {
+//    return self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: a)
+//  }
 
   // NOTE: calling it init(red: Int, green: Int, blue: Int, alpha: Float)
   // crashes Xcode! Reported as bug 17221567

@@ -61,12 +61,12 @@ extension SKNode {
    * @param rate How fast the node rotates. Must have a value between 0.0 and
    *        1.0, where smaller means slower; 1.0 is instantaneous.
    */
-  func rotateToVelocity(velocity: CGVector, rate: Float) {
+  func rotateToVelocity(velocity: CGVector, rate: CGFloat) {
     // Determine what the rotation angle of the node ought to be based on the
     // current velocity of its physics body. This assumes that at 0 degrees the
     // node is pointed up, not to the right, so to compensate we subtract π/4
     // (90 degrees) from the calculated angle.
-    let newAngle = atan2f(velocity.dy, velocity.dx) - π/2
+    let newAngle = atan2(velocity.dy, velocity.dx) - π/2
 
     // This always makes the node rotate over the shortest possible distance.
     // Because the range of atan2() is -180 to 180 degrees, a rotation from,

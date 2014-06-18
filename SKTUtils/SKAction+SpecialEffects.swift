@@ -50,7 +50,7 @@ extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  class func screenRotateWithNode(node: SKNode, angle: Float, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
+  class func screenRotateWithNode(node: SKNode, angle: CGFloat, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
     let oldAngle = node.zRotation
     let newAngle = oldAngle + angle
     
