@@ -550,15 +550,17 @@ extension CGFloat {
  * -π and π.
  */
 func shortestAngleBetween(angle1: CGFloat, angle2: CGFloat) -> CGFloat {
-  let twoπ = π * 2.0
-  let angle = (angle1 - angle2) % twoπ
-  if (angle >= π) {
-    return angle - twoπ
-  } else if (angle <= -π) {
-    return angle + twoπ
-  } else {
+    let twoπ = π * 2.0
+    var angle = (angle2 - angle1) % twoπ
+    
+    if (angle >= π) {
+        angle = angle - twoπ
+    }
+    
+    if (angle <= -π) {
+        angle = angle + twoπ
+    }
     return angle
-  }
 }
 
 extension SKColor {
