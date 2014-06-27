@@ -35,7 +35,7 @@ extension SKColor {
    * Creates and returns a new SKColor object using RGB components specified as
    * values from 0 to 255, and alpha between 0.0 and 1.0.
    */
-  convenience init(r: Int, g: Int, b: Int, a: Float) {
+  convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
     return self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: a)
   }
 
