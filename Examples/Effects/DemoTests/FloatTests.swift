@@ -17,6 +17,19 @@ class FloatTests: XCTestCase {
     XCTAssertEqual(CGFloat(-10).clamped(-5, 6), -5)
   }
 
+  func testClampedReverseOrder() {
+    XCTAssertEqual(CGFloat(10).clamped(6, -5), 6)
+    XCTAssertEqual(CGFloat(7).clamped(6, -5), 6)
+    XCTAssertEqual(CGFloat(6).clamped(6, -5), 6)
+    XCTAssertEqual(CGFloat(5).clamped(6, -5), 5)
+    XCTAssertEqual(CGFloat(1).clamped(6, -5), 1)
+    XCTAssertEqual(CGFloat(0).clamped(6, -5), 0)
+    XCTAssertEqual(CGFloat(-4).clamped(6, -5), -4)
+    XCTAssertEqual(CGFloat(-5).clamped(6, -5), -5)
+    XCTAssertEqual(CGFloat(-6).clamped(6, -5), -5)
+    XCTAssertEqual(CGFloat(-10).clamped(6, -5), -5)
+  }
+
   func testThatClampedDoesNotChangeOriginalValue() {
     let original: CGFloat = 50
     let clamped = original.clamped(100, 200)

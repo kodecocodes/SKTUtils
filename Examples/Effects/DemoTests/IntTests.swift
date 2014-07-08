@@ -49,18 +49,31 @@ class IntTests: XCTestCase {
     XCTAssertEqual((-10).clamped(7 ... -5), 7)  // !?
   }
 
-//  func testClamped() {
-//    XCTAssertEqual(10.clamped(min: -5, max: 6), 6)
-//    XCTAssertEqual(7.clamped(min: -5, max: 6), 6)
-//    XCTAssertEqual(6.clamped(min: -5, max: 6), 6)
-//    XCTAssertEqual(5.clamped(min: -5, max: 6), 5)
-//    XCTAssertEqual(1.clamped(min: -5, max: 6), 1)
-//    XCTAssertEqual(0.clamped(min: -5, max: 6), 0)
-//    XCTAssertEqual((-4).clamped(min: -5, max: 6), -4)
-//    XCTAssertEqual((-5).clamped(min: -5, max: 6), -5)
-//    XCTAssertEqual((-6).clamped(min: -5, max: 6), -5)
-//    XCTAssertEqual((-10).clamped(min: -5, max: 6), -5)
-//  }
+  func testClamped() {
+    XCTAssertEqual(10.clamped(-5, 6), 6)
+    XCTAssertEqual(7.clamped(-5, 6), 6)
+    XCTAssertEqual(6.clamped(-5, 6), 6)
+    XCTAssertEqual(5.clamped(-5, 6), 5)
+    XCTAssertEqual(1.clamped(-5, 6), 1)
+    XCTAssertEqual(0.clamped(-5, 6), 0)
+    XCTAssertEqual((-4).clamped(-5, 6), -4)
+    XCTAssertEqual((-5).clamped(-5, 6), -5)
+    XCTAssertEqual((-6).clamped(-5, 6), -5)
+    XCTAssertEqual((-10).clamped(-5, 6), -5)
+  }
+
+  func testClampedReverseOrder() {
+    XCTAssertEqual(10.clamped(6, -5), 6)
+    XCTAssertEqual(7.clamped(6, -5), 6)
+    XCTAssertEqual(6.clamped(6, -5), 6)
+    XCTAssertEqual(5.clamped(6, -5), 5)
+    XCTAssertEqual(1.clamped(6, -5), 1)
+    XCTAssertEqual(0.clamped(6, -5), 0)
+    XCTAssertEqual((-4).clamped(6, -5), -4)
+    XCTAssertEqual((-5).clamped(6, -5), -5)
+    XCTAssertEqual((-6).clamped(6, -5), -5)
+    XCTAssertEqual((-10).clamped(6, -5), -5)
+  }
 
   func testThatClampedDoesNotChangeOriginalValue() {
     let original = 50
@@ -76,15 +89,21 @@ class IntTests: XCTestCase {
 
   func testThatRandomStaysInHalfOpenRange() {
     for i in 0..<1000 {
-      let value = Int.random(-10 ..< 10)
-      XCTAssert(value >= -10 && value < 10)
+      let v = Int.random(-10 ..< 10)
+      XCTAssert(v >= -10 && v < 10)
+
+      let w = Int.random(10)
+      XCTAssert(w >= 0 && w < 10)
     }
   }
 
   func testThatRandomStaysInOpenRange() {
     for i in 0..<1000 {
-      let value = Int.random(-10 ... 10)
-      XCTAssert(value >= -10 && value <= 10)
+      let v = Int.random(-10 ... 10)
+      XCTAssert(v >= -10 && v <= 10)
+
+      let w = Int.random(min: -10, max: 10)
+      XCTAssert(w >= -10 && w <= 10)
     }
   }
 }
