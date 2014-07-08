@@ -109,6 +109,20 @@ extension CGPoint {
 }
 
 /**
+ * Adds a CGVector to this CGPoint and returns the result as a new CGPoint.
+ */
+@infix func + (left: CGPoint, right: CGVector) -> CGPoint {
+  return CGPoint(x: left.x + right.dx, y: left.y + right.dy)
+}
+
+/**
+ * Increments a CGPoint with the value of a CGVector.
+ */
+@assignment func += (inout left: CGPoint, right: CGVector) {
+  left = left + right
+}
+
+/**
  * Subtracts two CGPoint values and returns the result as a new CGPoint.
  */
 @infix func - (left: CGPoint, right: CGPoint) -> CGPoint {
@@ -119,6 +133,20 @@ extension CGPoint {
  * Decrements a CGPoint with the value of another.
  */
 @assignment func -= (inout left: CGPoint, right: CGPoint) {
+  left = left - right
+}
+
+/**
+ * Subtracts a CGVector from a CGPoint and returns the result as a new CGPoint.
+ */
+@infix func - (left: CGPoint, right: CGVector) -> CGPoint {
+  return CGPoint(x: left.x - right.dx, y: left.y - right.dy)
+}
+
+/**
+ * Decrements a CGPoint with the value of a CGVector.
+ */
+@assignment func -= (inout left: CGPoint, right: CGVector) {
   left = left - right
 }
 
@@ -152,6 +180,20 @@ extension CGPoint {
 }
 
 /**
+ * Multiplies a CGPoint with a CGVector and returns the result as a new CGPoint.
+ */
+@infix func * (left: CGPoint, right: CGVector) -> CGPoint {
+  return CGPoint(x: left.x * right.dx, y: left.y * right.dy)
+}
+
+/**
+ * Multiplies a CGPoint with a CGVector.
+ */
+@assignment func *= (inout left: CGPoint, right: CGVector) {
+  left = left * right
+}
+
+/**
  * Divides two CGPoint values and returns the result as a new CGPoint.
  */
 @infix func / (left: CGPoint, right: CGPoint) -> CGPoint {
@@ -178,6 +220,20 @@ extension CGPoint {
  */
 @assignment func /= (inout point: CGPoint, scalar: CGFloat) {
   point = point / scalar
+}
+
+/**
+ * Divides a CGPoint by a CGVector and returns the result as a new CGPoint.
+ */
+@infix func / (left: CGPoint, right: CGVector) -> CGPoint {
+  return CGPoint(x: left.x / right.dx, y: left.y / right.dy)
+}
+
+/**
+ * Divides a CGPoint by a CGVector.
+ */
+@assignment func /= (inout left: CGPoint, right: CGVector) {
+  left = left / right
 }
 
 /**

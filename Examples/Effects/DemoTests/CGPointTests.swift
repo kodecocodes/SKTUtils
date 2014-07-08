@@ -6,6 +6,7 @@ import SpriteKit
 class CGPointTests: XCTestCase {
   var pt1 = CGPoint(x: 100, y: 50)
   let pt2 = CGPoint(x: 10, y: 5)
+  let v = CGVector(dx: 2, dy: 0.5)
 
   func testAddingTwoPoints() {
     XCTAssertEqual(pt1 + pt2, CGPoint(x: 110, y: 55))
@@ -16,6 +17,11 @@ class CGPointTests: XCTestCase {
     XCTAssertEqual(pt1, CGPoint(x: 110, y: 55))
   }
 
+  func testAddingVectorToPoint() {
+    pt1 += v
+    XCTAssertEqual(pt1, CGPoint(x: 102, y: 50.5))
+  }
+
   func testSubtractingTwoPoints() {
     XCTAssertEqual(pt1 - pt2, CGPoint(x: 90, y: 45))
   }
@@ -23,6 +29,11 @@ class CGPointTests: XCTestCase {
   func testSubtractingPointFromPoint() {
     pt1 -= pt2
     XCTAssertEqual(pt1, CGPoint(x: 90, y: 45))
+  }
+
+  func testSubtractingVectorFromPoint() {
+    pt1 -= v
+    XCTAssertEqual(pt1, CGPoint(x: 98, y: 49.5))
   }
 
   func testMultiplyingTwoPoints() {
@@ -43,6 +54,15 @@ class CGPointTests: XCTestCase {
     XCTAssertEqual(pt1, CGPoint(x: 250, y: 125))
   }
 
+  func testMultiplyingPointAndVector() {
+    XCTAssertEqual(pt1 * v, CGPoint(x: 200, y: 25))
+  }
+
+  func testMultiplyingPointByVector() {
+    pt1 *= v
+    XCTAssertEqual(pt1, CGPoint(x: 200, y: 25))
+  }
+
   func testDividingTwoPoints() {
     XCTAssertEqual(pt1 / pt2, CGPoint(x: 10, y: 10))
   }
@@ -59,6 +79,15 @@ class CGPointTests: XCTestCase {
   func testDividingPointByFloat() {
     pt1 /= 2.5
     XCTAssertEqual(pt1, CGPoint(x: 40, y: 20))
+  }
+
+  func testDividingPointAndVector() {
+    XCTAssertEqual(pt1 / v, CGPoint(x: 50, y: 100))
+  }
+
+  func testDividingPointByVector() {
+    pt1 /= v
+    XCTAssertEqual(pt1, CGPoint(x: 50, y: 100))
   }
 
   func testOffsettingPoint() {
