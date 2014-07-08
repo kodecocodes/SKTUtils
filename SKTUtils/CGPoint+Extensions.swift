@@ -49,15 +49,6 @@ extension CGPoint {
   }
 
   /**
-   * Returns a string with the point's coordinates.
-   *
-   * Note: You don't really need this; simply doing println(point) also works.
-   */
-  func description() -> String {
-    return NSStringFromCGPoint(self)
-  }
-
-  /**
    * Returns the length (magnitude) of the vector described by the CGPoint.
    */
   func length() -> CGFloat {

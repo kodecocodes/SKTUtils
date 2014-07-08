@@ -49,15 +49,6 @@ extension CGVector {
   }
 
   /**
-   * Returns a string with the vector's coordinates.
-   *
-   * Note: You don't really need this; simply doing println(vector) also works.
-   */
-  func description() -> String {
-    return NSStringFromCGVector(self)
-  }
-
-  /**
    * Returns the length (magnitude) of the vector described by the CGVector.
    */
   func length() -> CGFloat {
