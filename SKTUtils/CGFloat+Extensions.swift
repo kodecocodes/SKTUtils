@@ -64,38 +64,21 @@ extension CGFloat {
   }
 
   /**
-   * Ensures that the float value stays with the range min...max, inclusive.
+   * Ensures that the float value stays between the given values, inclusive.
    */
-  func clamped(#min: CGFloat, max: CGFloat) -> CGFloat {
-    assert(min < max)
-    return (self < min) ? min : ((self > max) ? max : self)
+  func clamped(v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+    let min = v1 < v2 ? v1 : v2
+    let max = v1 > v2 ? v1 : v2
+    return self < min ? min : (self > max ? max : self)
   }
 
   /**
-   * Ensures that the float value stays with the range min...max, inclusive.
+   * Ensures that the float value stays between the given values, inclusive.
    */
-  mutating func clamp(#min: CGFloat, max: CGFloat) -> CGFloat {
-    self = clamped(min: min, max: max)
+  mutating func clamp(v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+    self = clamped(v1, v2)
     return self
   }
-
-// I'm not entire sure whether a range makes sense here. What does x..y mean?
-// Do we clamp it to y-FLT_EPSILON ?
-//
-//  /**
-//   * Ensures that the float value stays with the specified range.
-//   */
-//  func clamped(range: Range<Float>) -> CGFloat {
-//    return (self < range.startIndex) ? range.startIndex : ((self > range.endIndex) ? range.endIndex : self)
-//  }
-//
-//  /**
-//   * Ensures that the float value stays with the specified range.
-//   */
-//  mutating func clamp(range: Range<CGFloat>) -> CGFloat {
-//    self = clamped(range)
-//    return self
-//  }
 
   /**
    * Returns 1.0 if a floating point value is positive; -1.0 if it is negative.
@@ -118,17 +101,6 @@ extension CGFloat {
     assert(min < max)
     return CGFloat.random() * (max - min) + min
   }
-
-// NOTE: floating-point ranges are weird in Swift. x..y works OK, but x...y
-// actually reports endIndex as y + 1. AFAICT there is no way to see whether
-// the endIndex is inclusive or not. Reported as bug 17221898
-//
-//  /**
-//   * Returns a random floating point number in the specified range.
-//   */
-//  static func random(range: Range<CGFloat>) -> CGFloat {
-//    return CGFloat.random() * (range.endIndex - range.startIndex) + range.startIndex
-//  }
 
   /**
    * Randomly returns either 1.0 or -1.0.
@@ -153,7 +125,3 @@ func shortestAngleBetween(angle1: CGFloat, angle2: CGFloat) -> CGFloat {
     }
     return angle
 }
-
-//func clamp<T: Comparable>(value: T, min: T, max: T) -> T {
-//  return value < min ? min : value > max ? max : value
-//}
