@@ -4,26 +4,26 @@ import XCTest
 class IntTests: XCTestCase {
 
   func testClampedHalfOpenRange() {
-    XCTAssertEqual(10.clamped(-5 .. 7), 6)
-    XCTAssertEqual(7.clamped(-5 .. 7), 6)
-    XCTAssertEqual(6.clamped(-5 .. 7), 6)
-    XCTAssertEqual(5.clamped(-5 .. 7), 5)
-    XCTAssertEqual(1.clamped(-5 .. 7), 1)
-    XCTAssertEqual(0.clamped(-5 .. 7), 0)
-    XCTAssertEqual((-4).clamped(-5 .. 7), -4)
-    XCTAssertEqual((-5).clamped(-5 .. 7), -5)
-    XCTAssertEqual((-6).clamped(-5 .. 7), -5)
-    XCTAssertEqual((-10).clamped(-5 .. 7), -5)
+    XCTAssertEqual(10.clamped(-5 ..< 7), 6)
+    XCTAssertEqual(7.clamped(-5 ..< 7), 6)
+    XCTAssertEqual(6.clamped(-5 ..< 7), 6)
+    XCTAssertEqual(5.clamped(-5 ..< 7), 5)
+    XCTAssertEqual(1.clamped(-5 ..< 7), 1)
+    XCTAssertEqual(0.clamped(-5 ..< 7), 0)
+    XCTAssertEqual((-4).clamped(-5 ..< 7), -4)
+    XCTAssertEqual((-5).clamped(-5 ..< 7), -5)
+    XCTAssertEqual((-6).clamped(-5 ..< 7), -5)
+    XCTAssertEqual((-10).clamped(-5 ..< 7), -5)
   }
 
   func testClampedEmptyHalfOpenRange() {
-    XCTAssertEqual(10.clamped(7 .. 7), 6)     // weird, huh!
-    XCTAssertEqual((-10).clamped(7 .. 7), 7)
+    XCTAssertEqual(10.clamped(7 ..< 7), 6)     // weird, huh!
+    XCTAssertEqual((-10).clamped(7 ..< 7), 7)
   }
 
   func testClampedInverseHalfOpenRange() {
-    XCTAssertEqual(10.clamped(7 .. -5), -6)    // !?
-    XCTAssertEqual((-10).clamped(7 .. -5), 7)  // !?
+    XCTAssertEqual(10.clamped(7 ..< -5), -6)    // !?
+    XCTAssertEqual((-10).clamped(7 ..< -5), 7)  // !?
   }
 
   func testClampedOpenRange() {
@@ -75,14 +75,14 @@ class IntTests: XCTestCase {
   }
 
   func testThatRandomStaysInHalfOpenRange() {
-    for i in 0..1000 {
-      let value = Int.random(-10 .. 10)
+    for i in 0..<1000 {
+      let value = Int.random(-10 ..< 10)
       XCTAssert(value >= -10 && value < 10)
     }
   }
 
   func testThatRandomStaysInOpenRange() {
-    for i in 0..1000 {
+    for i in 0..<1000 {
       let value = Int.random(-10 ... 10)
       XCTAssert(value >= -10 && value <= 10)
     }

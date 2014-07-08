@@ -5,46 +5,46 @@ import CoreGraphics
 class FloatTests: XCTestCase {
 
   func testClamped() {
-    XCTAssertEqual(CGFloat(10).clamped(min: -5, max: 6), 6)
-    XCTAssertEqual(CGFloat(7).clamped(min: -5, max: 6), 6)
-    XCTAssertEqual(CGFloat(6).clamped(min: -5, max: 6), 6)
-    XCTAssertEqual(CGFloat(5).clamped(min: -5, max: 6), 5)
-    XCTAssertEqual(CGFloat(1).clamped(min: -5, max: 6), 1)
-    XCTAssertEqual(CGFloat(0).clamped(min: -5, max: 6), 0)
-    XCTAssertEqual(CGFloat(-4).clamped(min: -5, max: 6), -4)
-    XCTAssertEqual(CGFloat(-5).clamped(min: -5, max: 6), -5)
-    XCTAssertEqual(CGFloat(-6).clamped(min: -5, max: 6), -5)
-    XCTAssertEqual(CGFloat(-10).clamped(min: -5, max: 6), -5)
+    XCTAssertEqual(CGFloat(10).clamped(-5, 6), 6)
+    XCTAssertEqual(CGFloat(7).clamped(-5, 6), 6)
+    XCTAssertEqual(CGFloat(6).clamped(-5, 6), 6)
+    XCTAssertEqual(CGFloat(5).clamped(-5, 6), 5)
+    XCTAssertEqual(CGFloat(1).clamped(-5, 6), 1)
+    XCTAssertEqual(CGFloat(0).clamped(-5, 6), 0)
+    XCTAssertEqual(CGFloat(-4).clamped(-5, 6), -4)
+    XCTAssertEqual(CGFloat(-5).clamped(-5, 6), -5)
+    XCTAssertEqual(CGFloat(-6).clamped(-5, 6), -5)
+    XCTAssertEqual(CGFloat(-10).clamped(-5, 6), -5)
   }
 
   func testThatClampedDoesNotChangeOriginalValue() {
     let original: CGFloat = 50
-    let clamped = original.clamped(min: 100, max: 200)
+    let clamped = original.clamped(100, 200)
     XCTAssertEqual(original, 50)
   }
 
   func testThatClampReturnsNewValue() {
     var original: CGFloat = 50
-    original.clamp(min: 100, max: 200)
+    original.clamp(100, 200)
     XCTAssertEqual(original, 100)
   }
 
   func testThatRandomStaysBetweenOneAndZero() {
-    for i in 0..1000 {
+    for i in 0..<1000 {
       let value = CGFloat.random()
       XCTAssert(value >= 0 && value <= 1)
     }
   }
 
   func testThatRandomStaysInRange() {
-    for i in 0..1000 {
+    for i in 0..<1000 {
       let value = CGFloat.random(min: -10, max: 10)
       XCTAssert(value >= -10 && value <= 10)
     }
   }
 
   func testThatRandomSignIsMinusOrPlusOne() {
-    for i in 0..1000 {
+    for i in 0..<1000 {
       let value = CGFloat.randomSign()
       XCTAssert(value == -1.0 || value == 1.0)
     }
