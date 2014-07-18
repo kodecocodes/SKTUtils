@@ -67,7 +67,8 @@ extension CGVector {
    * the result as a new CGVector.
    */
   func normalized() -> CGVector {
-    return self / length()
+    let len = length()
+    return len>0 ? self / len : CGVector.zeroVector
   }
 
   /**
