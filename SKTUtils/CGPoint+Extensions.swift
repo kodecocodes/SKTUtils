@@ -67,7 +67,8 @@ extension CGPoint {
    * the result as a new CGPoint.
    */
   func normalized() -> CGPoint {
-    return self / length()
+    let len = length()
+    return len>0 ? self / len : CGPoint.zeroPoint
   }
 
   /**
