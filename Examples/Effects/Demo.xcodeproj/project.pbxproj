@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3509C990195B2E7E00E8B081 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3509C98F195B2E7E00E8B081 /* Double+Extensions.swift */; };
 		7B0610101945ED26002D27B1 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */; };
 		7B0610111945ED26002D27B1 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */; };
 		7B0610121945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */; };
@@ -107,7 +106,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3509C98F195B2E7E00E8B081 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
 		7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
 		7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 				7B77E68F19544FFA00DB0E4D /* CGFloat+Extensions.swift */,
 				7B77E68D19544FFA00DB0E4D /* CGPoint+Extensions.swift */,
 				7B77E68E19544FFA00DB0E4D /* CGVector+Extensions.swift */,
-				3509C98F195B2E7E00E8B081 /* Double+Extensions.swift */,
 				7B77E69019544FFA00DB0E4D /* Int+Extensions.swift */,
 				7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */,
 				7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */,
@@ -393,7 +390,6 @@
 				7B77E69A19544FFA00DB0E4D /* Vector3.swift in Sources */,
 				7B77E69419544FFA00DB0E4D /* CGVector+Extensions.swift in Sources */,
 				7B0610181945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */,
-				3509C990195B2E7E00E8B081 /* Double+Extensions.swift in Sources */,
 				7B77E69619544FFA00DB0E4D /* CGFloat+Extensions.swift in Sources */,
 				7B2A707E1945FA2E00585C2D /* MyScene.swift in Sources */,
 				7B3D972B19486C2A00D0AB26 /* SKTAudio.swift in Sources */,
