@@ -24,7 +24,6 @@
 		7B0610251945ED5F002D27B1 /* FloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0610201945ED5F002D27B1 /* FloatTests.swift */; };
 		7B0610261945ED5F002D27B1 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0610211945ED5F002D27B1 /* IntTests.swift */; };
 		7B2A707E1945FA2E00585C2D /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A707D1945FA2E00585C2D /* MyScene.swift */; };
-		7B3D972319485E7F00D0AB26 /* SKNode+DebugDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */; };
 		7B3D97251948634200D0AB26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D97241948634200D0AB26 /* ViewController.swift */; };
 		7B3D9727194864E600D0AB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D9726194864E600D0AB26 /* AppDelegate.swift */; };
 		7B3D972919486AB800D0AB26 /* SKEmitterNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972819486AB800D0AB26 /* SKEmitterNode+Extensions.swift */; };
@@ -117,7 +116,6 @@
 		7B0610201945ED5F002D27B1 /* FloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatTests.swift; sourceTree = "<group>"; };
 		7B0610211945ED5F002D27B1 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		7B2A707D1945FA2E00585C2D /* MyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
-		7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+DebugDraw.swift"; sourceTree = "<group>"; };
 		7B3D97241948634200D0AB26 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B3D9726194864E600D0AB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B3D972819486AB800D0AB26 /* SKEmitterNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+Extensions.swift"; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */,
 				7B06100F1945ED26002D27B1 /* SKColor+Extensions.swift */,
 				7B3D972819486AB800D0AB26 /* SKEmitterNode+Extensions.swift */,
-				7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */,
 				7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */,
 				7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */,
 				7B06100D1945ED26002D27B1 /* SKTEffects.swift */,
@@ -379,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B3D9727194864E600D0AB26 /* AppDelegate.swift in Sources */,
-				7B3D972319485E7F00D0AB26 /* SKNode+DebugDraw.swift in Sources */,
 				7B0610101945ED26002D27B1 /* SKAction+Extensions.swift in Sources */,
 				7B0610141945ED26002D27B1 /* SKNode+Extensions.swift in Sources */,
 				7B77E69219544FFA00DB0E4D /* CGPoint+Extensions.swift in Sources */,

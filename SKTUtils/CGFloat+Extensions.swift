@@ -22,31 +22,8 @@
 
 import CoreGraphics
 
-/** The value of π as a Float */
+/** The value of π as a CGFloat */
 let π = CGFloat(M_PI)
-
-// These functions are needed for 32-bit architectures
-#if !(arch(x86_64) || arch(arm64))
-func atan2(y: CGFloat, x: CGFloat) -> CGFloat {
-  return atan2f(y, x)
-}
-
-func cos(a: CGFloat) -> CGFloat {
-  return cosf(a)
-}
-
-func sin(a: CGFloat) -> CGFloat {
-  return sinf(a)
-}
-
-func sqrt(a: CGFloat) -> CGFloat {
-  return sqrtf(a)
-}
-
-func pow(x: CGFloat, y: CGFloat) -> CGFloat {
-  return powf(x, y)
-}
-#endif
 
 extension CGFloat {
   /**
@@ -91,7 +68,7 @@ extension CGFloat {
    * Returns a random floating point number between 0.0 and 1.0, inclusive.
    */
   static func random() -> CGFloat {
-    return CGFloat(arc4random()) / 0xFFFFFFFF
+    return CGFloat(Float(arc4random()) / 0xFFFFFFFF) 
   }
 
   /**

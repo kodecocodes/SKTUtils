@@ -56,9 +56,6 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     // first text label.
     let tempLabel = SKLabelNode(fontNamed: "HelveticaNeue-Light")
 
-    // Set this to true to enable debug shapes.
-    debugDrawEnabled = false
-
     scaleMode = .ResizeFill
     backgroundColor = sceneBackgroundColor
 
@@ -286,11 +283,6 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
   func newBallNode() -> SKNode {
     let sprite = SKSpriteNode(imageNamed: "Ball")
-
-    // Attach debug shapes.
-    sprite.attachDebugRectWithSize(sprite.size, color: SKColor.redColor())
-    sprite.attachDebugCircleWithRadius(sprite.size.width/2.0, color: SKColor.yellowColor())
-    sprite.attachDebugLineFromPoint(CGPointZero, toPoint: CGPointMake(0, sprite.size.height / 2.0), color: SKColor.yellowColor())
 
     // Create a circular physics body. It collides with the borders and
     // with other balls. It is slightly smaller than the sprite.
