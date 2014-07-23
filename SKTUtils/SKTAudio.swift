@@ -54,13 +54,13 @@ class SKTAudio {
   }
 
   func pauseBackgroundMusic() {
-    if backgroundMusicPlayer.playing {
+    if backgroundMusicPlayer?.playing {
       backgroundMusicPlayer.pause()
     }
   }
 
   func resumeBackgroundMusic() {
-    if !backgroundMusicPlayer.playing {
+    if !backgroundMusicPlayer?.playing {
       backgroundMusicPlayer.play()
     }
   }
