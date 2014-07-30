@@ -37,10 +37,10 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   // node that centers the world on the screen.
   let worldPivot: SKNode
 
-  let sceneBackgroundColor = SKColor(red: 8, green: 57, blue: 71)
-  let borderColor = SKColor(red: 160, green: 160, blue: 160)
+  let sceneBackgroundColor = SKColorWithRGB(8, 57, 71)
+  let borderColor = SKColorWithRGB(160, 160, 160)
   let borderFlashColor = SKColor.whiteColor()
-  let barrierColor = SKColor(red: 212, green: 212, blue: 212)
+  let barrierColor = SKColorWithRGB(212, 212, 212)
   let barrierFlashColor = SKColor.whiteColor()
   let ballFlashColor  = SKColor.redColor()
 
