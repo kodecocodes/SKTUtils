@@ -31,11 +31,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   // The layer that contains all the nodes. Having a separate world node is
   // necessary for the screen shake effect because you cannot apply that to
   // an SKScene directly.
-  let worldLayer: SKNode
+  let worldLayer = SKNode()
 
   // For screen zoom and tumble, the world layer must sit in a separate pivot
   // node that centers the world on the screen.
-  let worldPivot: SKNode
+  let worldPivot = SKNode()
 
   let sceneBackgroundColor = SKColorWithRGB(8, 57, 71)
   let borderColor = SKColorWithRGB(160, 160, 160)
@@ -46,10 +46,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
   // ---- Initialization ----
 
-  init(size: CGSize) {
-    worldLayer = SKNode()
-    worldPivot = SKNode()
+  required init(coder aDecoder: NSCoder!) {
+    super.init(coder: aDecoder)
+  }
 
+  override init(size: CGSize) {
     super.init(size: size)
 
     // Preload the font, otherwise there is a small delay when creating the

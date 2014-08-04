@@ -98,42 +98,42 @@ extension CGVector {
 /**
  * Adds two CGVector values and returns the result as a new CGVector.
  */
-@infix func + (left: CGVector, right: CGVector) -> CGVector {
+func + (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx + right.dx, dy: left.dy + right.dy)
 }
 
 /**
  * Increments a CGVector with the value of another.
  */
-@assignment func += (inout left: CGVector, right: CGVector) {
+func += (inout left: CGVector, right: CGVector) {
   left = left + right
 }
 
 /**
  * Subtracts two CGVector values and returns the result as a new CGVector.
  */
-@infix func - (left: CGVector, right: CGVector) -> CGVector {
+func - (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx - right.dx, dy: left.dy - right.dy)
 }
 
 /**
  * Decrements a CGVector with the value of another.
  */
-@assignment func -= (inout left: CGVector, right: CGVector) {
+func -= (inout left: CGVector, right: CGVector) {
   left = left - right
 }
 
 /**
  * Multiplies two CGVector values and returns the result as a new CGVector.
  */
-@infix func * (left: CGVector, right: CGVector) -> CGVector {
+func * (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx * right.dx, dy: left.dy * right.dy)
 }
 
 /**
  * Multiplies a CGVector with another.
  */
-@assignment func *= (inout left: CGVector, right: CGVector) {
+func *= (inout left: CGVector, right: CGVector) {
   left = left * right
 }
 
@@ -141,28 +141,28 @@ extension CGVector {
  * Multiplies the x and y fields of a CGVector with the same scalar value and
  * returns the result as a new CGVector.
  */
-@infix func * (vector: CGVector, scalar: CGFloat) -> CGVector {
+func * (vector: CGVector, scalar: CGFloat) -> CGVector {
   return CGVector(dx: vector.dx * scalar, dy: vector.dy * scalar)
 }
 
 /**
  * Multiplies the x and y fields of a CGVector with the same scalar value.
  */
-@assignment func *= (inout vector: CGVector, scalar: CGFloat) {
+func *= (inout vector: CGVector, scalar: CGFloat) {
   vector = vector * scalar
 }
 
 /**
  * Divides two CGVector values and returns the result as a new CGVector.
  */
-@infix func / (left: CGVector, right: CGVector) -> CGVector {
+func / (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx / right.dx, dy: left.dy / right.dy)
 }
 
 /**
  * Divides a CGVector by another.
  */
-@assignment func /= (inout left: CGVector, right: CGVector) {
+func /= (inout left: CGVector, right: CGVector) {
   left = left / right
 }
 
@@ -170,14 +170,14 @@ extension CGVector {
  * Divides the dx and dy fields of a CGVector by the same scalar value and
  * returns the result as a new CGVector.
  */
-@infix func / (vector: CGVector, scalar: CGFloat) -> CGVector {
+func / (vector: CGVector, scalar: CGFloat) -> CGVector {
   return CGVector(dx: vector.dx / scalar, dy: vector.dy / scalar)
 }
 
 /**
  * Divides the dx and dy fields of a CGVector by the same scalar value.
  */
-@assignment func /= (inout vector: CGVector, scalar: CGFloat) {
+func /= (inout vector: CGVector, scalar: CGFloat) {
   vector = vector / scalar
 }
 

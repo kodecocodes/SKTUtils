@@ -27,8 +27,8 @@ import AVFoundation
  * short sound effects. For when using SKActions just isn't good enough.
  */
 class SKTAudio {
-  var backgroundMusicPlayer: AVAudioPlayer!
-  var soundEffectPlayer: AVAudioPlayer!
+  var backgroundMusicPlayer: AVAudioPlayer?
+  var soundEffectPlayer: AVAudioPlayer?
 
   class func sharedInstance() -> SKTAudio {
     return SKTAudioInstance
@@ -43,25 +43,28 @@ class SKTAudio {
 
     var error: NSError? = nil
     backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    if backgroundMusicPlayer == nil {
+    if let player = backgroundMusicPlayer {
+      player.numberOfLoops = -1
+      player.prepareToPlay()
+      player.play()
+    } else {
       println("Could not create audio player: \(error!)")
-      return
     }
-
-    backgroundMusicPlayer.numberOfLoops = -1
-    backgroundMusicPlayer.prepareToPlay()
-    backgroundMusicPlayer.play()
   }
 
   func pauseBackgroundMusic() {
-    if backgroundMusicPlayer?.playing {
-      backgroundMusicPlayer.pause()
+    if let player = backgroundMusicPlayer {
+      if player.playing {
+        player.pause()
+      }
     }
   }
 
   func resumeBackgroundMusic() {
-    if !backgroundMusicPlayer?.playing {
-      backgroundMusicPlayer.play()
+    if let player = backgroundMusicPlayer {
+      if !player.playing {
+        player.play()
+      }
     }
   }
 
@@ -74,14 +77,13 @@ class SKTAudio {
 
     var error: NSError? = nil
     soundEffectPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    if soundEffectPlayer == nil {
+    if let player = soundEffectPlayer {
+      player.numberOfLoops = 0
+      player.prepareToPlay()
+      player.play()
+    } else {
       println("Could not create audio player: \(error!)")
-      return
     }
-
-    soundEffectPlayer.numberOfLoops = 0
-    soundEffectPlayer.prepareToPlay()
-    soundEffectPlayer.play()
   }
 }
 
