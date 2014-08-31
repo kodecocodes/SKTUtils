@@ -22,10 +22,10 @@
 
 import SpriteKit
 
-extension SKNode {
+public extension SKNode {
 
   /** Lets you treat the node's scale as a CGPoint value. */
-  var scaleAsPoint: CGPoint {
+  public var scaleAsPoint: CGPoint {
     get {
       return CGPoint(x: xScale, y: yScale)
     }
@@ -39,14 +39,14 @@ extension SKNode {
    * Runs an action on the node that performs a closure or function after 
    * a given time.
    */
-  func afterDelay(delay: NSTimeInterval, runBlock block: dispatch_block_t) {
+  public func afterDelay(delay: NSTimeInterval, runBlock block: dispatch_block_t) {
     runAction(SKAction.sequence([SKAction.waitForDuration(delay), SKAction.runBlock(block)]))
   }
 
   /**
    * Makes this node the frontmost node in its parent.
    */
-  func bringToFront() {
+  public func bringToFront() {
     let parent = self.parent
     removeFromParent()
     parent.addChild(self)
@@ -61,7 +61,7 @@ extension SKNode {
    * @param rate How fast the node rotates. Must have a value between 0.0 and
    *        1.0, where smaller means slower; 1.0 is instantaneous.
    */
-  func rotateToVelocity(velocity: CGVector, rate: CGFloat) {
+  public func rotateToVelocity(velocity: CGVector, rate: CGFloat) {
     // Determine what the rotation angle of the node ought to be based on the
     // current velocity of its physics body. This assumes that at 0 degrees the
     // node is pointed up, not to the right, so to compensate we subtract π/4
