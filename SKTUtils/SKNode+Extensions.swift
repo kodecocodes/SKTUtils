@@ -49,7 +49,7 @@ public extension SKNode {
   public func bringToFront() {
     let parent = self.parent
     removeFromParent()
-    parent.addChild(self)
+    parent?.addChild(self)
   }
 
   /**
