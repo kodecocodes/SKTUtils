@@ -43,7 +43,7 @@
 		481EEDDC19B3AFFE00469716 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		481EEDDD19B3AFFE00469716 /* SKTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
 		481EEDDE19B3AFFE00469716 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
-		481EEDEE19B3B0B900469716 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = SKTUtils/MyPlayground.playground; sourceTree = "<group>"; };
+		48478CB819C0486300983D79 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 		481EEDAE19B3AF5500469716 = {
 			isa = PBXGroup;
 			children = (
-				481EEDEE19B3B0B900469716 /* MyPlayground.playground */,
+				48478CB819C0486300983D79 /* MyPlayground.playground */,
 				481EEDBA19B3AF5500469716 /* SKTUtils */,
 				481EEDB919B3AF5500469716 /* Products */,
 			);
