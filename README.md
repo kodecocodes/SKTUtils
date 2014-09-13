@@ -172,3 +172,7 @@ The **Examples/Playground** folder contains an Xcode workspace with a Playground
 4. Press **Option+Command+Enter** to open the Assistant Editor so you can see the output.
 
 Have fun playing with SKTUtils!
+
+## Unit tests
+
+The **Examples/Tests** folder contains an Xcode project with unit tests for SKTUtils. Press Command+U to run the tests.
