@@ -40,17 +40,13 @@ let color = SKColor(red: 255, green: 128, blue: 64)
 let action = SKAction.afterDelay(2.0, runBlock: { /* your code here */ })
 ```
 
-It adds debug drawing capabilities to `SKNode`:
-
-```swift
-sprite.attachDebugRectWithSize(sprite.size, color: SKColor.redColor())
-```
-
 And much more... including `SKTEffects`, which lets you make your games much more [juicy](http://bitly.com/juice-it)!
 
 ## Introducting SKTEffects
  
 Sprite Kit has a handy feature named *actions* that make it really easy to move, rotate and scale your sprites. However, a big downside is the omission of timing functions beyond the standard *ease in* and *ease out*. The `SKTEffects` classes from this package add support for many more easing functions to Sprite Kit.
+
+Note: The iOS 8 version of Sprite Kit includes an `SKAction.timingFunction` property, but unfortunately it is [pretty useless](https://openradar.appspot.com/radar?id=6464265753985024). It's a step in the right direction, but it still won't let you perform the kinds of effects that make games juicy.
 
 It lets you do things like this with just a few lines of code:
 
@@ -140,6 +136,10 @@ let action = SKAction.sequence([
 
 If the node has moved during the delay, either through another `SKAction`, physics, or the app changing the node's `position` property, then the effect will start in the wrong place.
 
+### Let's get SKTEffects included in Sprite Kit!
+
+If you think custom timing functions are an important feature to have built into Sprite Kit, then go to [bugreport.apple.com](http://bugreport.apple.com]) and [duplicate this feature request](https://openradar.appspot.com/radar?id=5910148803461120). The more they receive, the better!
+
 ## The demo app
 
 The **Examples/Effects** folder contains a little demo project that shows how to do animations with more interesting timing functions. This app uses physics to move the balls and detect collisions.
@@ -162,58 +162,13 @@ All the fun happens in **MyScene.swift**. There are several `let` statements at 
 
 Tap the screen to add a random impulse to the balls.
 
-## Let's get this included in Sprite Kit!
+## Playground
 
-If you think custom timing functions are an important feature to have built into Sprite Kit, then go to [bugreport.apple.com](http://bugreport.apple.com]) and file the following feature request. The more they receive, the better! Thanks! :)
+The **Examples/Playground** folder contains an Xcode workspace with a Playground. To use this,
 
-> Title: SKActionTimingModes are insufficient
-> 
-> The SKAction class from Sprite Kit allows you to specify a timing mode, using an enum with the following values: Linear, Ease In, Ease Out, Ease In + Out. 
-> 
-> Unfortunately, a lot of the common timing modes that are used in games are missing (bounce, elastic, etc). More importantly, there is no easy way to add your own timing modes.
-> 
-> This is an example of what I'd like to see. You define a block that takes a float and returns a float: 
-> 
->   typedef float (^SKActionTimingFunction)(float t);
-> 
-> The value of t is always between 0 and 1 and describes how far along the animation is. The block returns a modified value of t that curves the timing. 
-> 
-> Some examples:
-> 
->   SKActionTimingFunction SKActionTimingFunctionLinear = ^(float t) {
->     return t;
->   };
-> 
->   SKActionTimingFunction SKActionTimingFunctionQuadraticEaseIn = ^(float t) {
->      return t * t;
->   };
-> 
->   SKActionTimingFunction SKActionTimingFunctionQuadraticEaseOut = ^(float t) {
->     return t * (2.0f - t);
->   };
-> 
->   SKActionTimingFunction SKActionTimingFunctionQuadraticEaseInOut = ^(float t) {
->   if (t < 0.5f) {
->     return 2.0f * t * t;
->   } else {
->     const float f = t - 1.0f;
->     return 1.0f - 2.0f * f * f;
->   }
->   };
-> 
-> But beyond the standard ease in & out, it easily allows users of Sprite Kit to extend this with more interesting effects, such as:
-> 
->   SKActionTimingFunction SKActionTimingFunctionBackEaseInOut = ^(float t) {
->   const float s = 1.70158f;
->   if (t < 0.5f) {
->     const float f = 2.0f * t;
->     return 0.5f * ((s + 1.0f) * f - s) * f * f;
->   } else {
->     const float f = 2.0f * (1.0f - t);
->     return 1.0f - 0.5f * ((s + 1.0f) * f - s) * f * f;
->   }
->   };
-> 
-> These kinds of timing curves are available in many other gaming toolkits. Not having this kind of flexibility makes Sprite Kit a lot less useful. Users of Sprite Kit need to be able to supply their own timing functions.
-> 
-> Note: Core Animation allows you to specify a timing function using a bezier path and 4 control points. That would be useful but by itself it is not enough. Having a block that takes a t value between 0 and 1, and can do any custom transformation on that, is a must.
+1. Open **SKTUtils.xcworkspace** in Xcode.
+2. Press **Command+B** to build the SKTUtils module -- this is important!
+3. Open **MyPlayground.playground** and start messing around.
+4. Press **Option+Command+Enter** to open the Assistant Editor so you can see the output.
+
+Have fun playing with SKTUtils!

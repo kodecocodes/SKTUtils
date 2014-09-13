@@ -321,6 +321,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
+					7BAE784D182FBA95009B4DA0 = {
+						DevelopmentTeam = MGCEKGP4Y4;
+					};
 					7BAE7875182FBA95009B4DA0 = {
 						TestTargetID = 7BAE784D182FBA95009B4DA0;
 					};
