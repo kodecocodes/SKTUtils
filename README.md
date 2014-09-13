@@ -8,7 +8,7 @@ This code was originally written for the book [iOS Games by Tutorials](http://ra
 
 ## What can SKTUtils do for you?
 
-It defines handy constants such as `π` and `Twoπ`.
+It defines handy constants such as `π`.
 
 It extends `CGPoint` and `CGVector` so you can do:
 

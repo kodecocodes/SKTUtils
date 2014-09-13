@@ -46,7 +46,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
   // ---- Initialization ----
 
-  required init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
 
@@ -277,7 +277,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
         // Assign a random angle to the ball's velocity.
         let ballSpeed: CGFloat = 200
         let angle = (CGFloat.random() * 360).degreesToRadians()
-        ball.physicsBody.velocity = CGVectorMake(cos(angle)*ballSpeed, sin(angle)*ballSpeed)
+        ball.physicsBody!.velocity = CGVectorMake(cos(angle)*ballSpeed, sin(angle)*ballSpeed)
       }))
     }
   }
@@ -353,11 +353,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   /**
    * Adds a random impulse to the balls whenever the user taps the screen.
    */
-  override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
     worldLayer.enumerateChildNodesWithName("ball") {(node, stop) in
       let speed: CGFloat = 50
       let impulse = CGVectorMake(CGFloat.random(min: -speed, max: speed), CGFloat.random(min: -speed, max: speed))
-      node.physicsBody.applyImpulse(impulse)
+      node.physicsBody!.applyImpulse(impulse)
 
       if STRETCH_BALL {
         self.stretchBall(node.children[0] as SKNode)
@@ -372,8 +372,8 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    */
   override func didSimulatePhysics() {
     worldLayer.enumerateChildNodesWithName("ball") {(node, stop) in
-      if node.physicsBody.velocity.length() > 0.0 {
-        node.rotateToVelocity(node.physicsBody.velocity, rate:0.1)
+      if node.physicsBody!.velocity.length() > 0.0 {
+        node.rotateToVelocity(node.physicsBody!.velocity, rate:0.1)
       }
     }
   }
@@ -385,12 +385,12 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
   func checkContactBetweenBody1(body1: SKPhysicsBody, body2: SKPhysicsBody, contactPoint: CGPoint) {
     if body1.categoryBitMask & BallCategory != 0 {
-      handleBallCollision(body1.node)
+      handleBallCollision(body1.node!)
 
       if body2.categoryBitMask & BorderCategory != 0 {
-        handleCollisionBetweenBall(body1.node, border:body2.node, contactPoint:contactPoint)
+        handleCollisionBetweenBall(body1.node!, border:body2.node!, contactPoint:contactPoint)
       } else if body2.categoryBitMask & BarrierCategory != 0 {
-        handleCollisionBetweenBall(body1.node, barrier:body2.node)
+        handleCollisionBetweenBall(body1.node!, barrier:body2.node!)
       }
     }
   }
@@ -414,11 +414,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if SCREEN_SHAKE {
-      screenShakeWithVelocity(node.physicsBody.velocity)
+      screenShakeWithVelocity(node.physicsBody!.velocity)
     }
 
     if SCREEN_ZOOM {
-      screenZoomWithVelocity(node.physicsBody.velocity)
+      screenZoomWithVelocity(node.physicsBody!.velocity)
     }
   }
 

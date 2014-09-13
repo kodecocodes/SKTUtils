@@ -29,8 +29,8 @@ import SpriteKit
  * we need to replicate the actions using SKTEffect subclasses.
  */
 public class SKTEffect {
-  /*unowned*/ var node: SKNode  // TODO: make unowned (crashes on beta 1)
-  public var duration: NSTimeInterval
+  unowned var node: SKNode
+  var duration: NSTimeInterval
   public var timingFunction: ((CGFloat) -> CGFloat)?
 
   public init(node: SKNode, duration: NSTimeInterval) {
@@ -97,9 +97,9 @@ public class SKTScaleEffect: SKTEffect {
  * Rotates a node to a certain angle.
  */
 public class SKTRotateEffect: SKTEffect {
-  public var startAngle: CGFloat
-  public var delta: CGFloat
-  public var previousAngle: CGFloat
+  var startAngle: CGFloat
+  var delta: CGFloat
+  var previousAngle: CGFloat
 
   public init(node: SKNode, duration: NSTimeInterval, startAngle: CGFloat, endAngle: CGFloat) {
     previousAngle = node.zRotation
@@ -121,7 +121,7 @@ public class SKTRotateEffect: SKTEffect {
  */
 public extension SKAction {
   public class func actionWithEffect(effect: SKTEffect) -> SKAction! {
-    return SKAction.customActionWithDuration(effect.duration) {(node, elapsedTime) in
+    return SKAction.customActionWithDuration(effect.duration) { node, elapsedTime in
       var t = elapsedTime / CGFloat(effect.duration)
 
       if let timingFunction = effect.timingFunction {

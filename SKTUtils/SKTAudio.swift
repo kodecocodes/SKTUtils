@@ -87,4 +87,4 @@ public class SKTAudio {
   }
 }
 
-public let SKTAudioInstance = SKTAudio()
+private let SKTAudioInstance = SKTAudio()
