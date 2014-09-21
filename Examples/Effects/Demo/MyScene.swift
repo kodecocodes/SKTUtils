@@ -240,8 +240,8 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
       ]))
   }
 
-  func barrierNode() -> SKNode! {
-    return worldLayer.childNodeWithName("barrier")
+  func barrierNode() -> SKNode {
+    return worldLayer.childNodeWithName("barrier")!
   }
 
   /**
@@ -378,7 +378,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
   }
 
-  func didBeginContact(contact: SKPhysicsContact!) {
+  func didBeginContact(contact: SKPhysicsContact) {
     checkContactBetweenBody1(contact.bodyA, body2: contact.bodyB, contactPoint: contact.contactPoint)
     checkContactBetweenBody1(contact.bodyB, body2: contact.bodyA, contactPoint: contact.contactPoint)
   }
