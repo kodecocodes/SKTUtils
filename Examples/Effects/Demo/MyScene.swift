@@ -31,33 +31,31 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   // The layer that contains all the nodes. Having a separate world node is
   // necessary for the screen shake effect because you cannot apply that to
   // an SKScene directly.
-  let worldLayer: SKNode
+  let worldLayer = SKNode()
 
   // For screen zoom and tumble, the world layer must sit in a separate pivot
   // node that centers the world on the screen.
-  let worldPivot: SKNode
+  let worldPivot = SKNode()
 
-  let sceneBackgroundColor = SKColor(red: 8, green: 57, blue: 71)
-  let borderColor = SKColor(red: 160, green: 160, blue: 160)
+  let sceneBackgroundColor = SKColorWithRGB(8, 57, 71)
+  let borderColor = SKColorWithRGB(160, 160, 160)
   let borderFlashColor = SKColor.whiteColor()
-  let barrierColor = SKColor(red: 212, green: 212, blue: 212)
+  let barrierColor = SKColorWithRGB(212, 212, 212)
   let barrierFlashColor = SKColor.whiteColor()
   let ballFlashColor  = SKColor.redColor()
 
   // ---- Initialization ----
 
-  init(size: CGSize) {
-    worldLayer = SKNode()
-    worldPivot = SKNode()
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
 
+  override init(size: CGSize) {
     super.init(size: size)
 
     // Preload the font, otherwise there is a small delay when creating the
     // first text label.
     let tempLabel = SKLabelNode(fontNamed: "HelveticaNeue-Light")
-
-    // Set this to true to enable debug shapes.
-    debugDrawEnabled = false
 
     scaleMode = .ResizeFill
     backgroundColor = sceneBackgroundColor
@@ -242,8 +240,8 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
       ]))
   }
 
-  func barrierNode() -> SKNode! {
-    return worldLayer.childNodeWithName("barrier")
+  func barrierNode() -> SKNode {
+    return worldLayer.childNodeWithName("barrier")!
   }
 
   /**
@@ -279,18 +277,13 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
         // Assign a random angle to the ball's velocity.
         let ballSpeed: CGFloat = 200
         let angle = (CGFloat.random() * 360).degreesToRadians()
-        ball.physicsBody.velocity = CGVectorMake(cos(angle)*ballSpeed, sin(angle)*ballSpeed)
+        ball.physicsBody!.velocity = CGVectorMake(cos(angle)*ballSpeed, sin(angle)*ballSpeed)
       }))
     }
   }
 
   func newBallNode() -> SKNode {
     let sprite = SKSpriteNode(imageNamed: "Ball")
-
-    // Attach debug shapes.
-    sprite.attachDebugRectWithSize(sprite.size, color: SKColor.redColor())
-    sprite.attachDebugCircleWithRadius(sprite.size.width/2.0, color: SKColor.yellowColor())
-    sprite.attachDebugLineFromPoint(CGPointZero, toPoint: CGPointMake(0, sprite.size.height / 2.0), color: SKColor.yellowColor())
 
     // Create a circular physics body. It collides with the borders and
     // with other balls. It is slightly smaller than the sprite.
@@ -360,11 +353,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   /**
    * Adds a random impulse to the balls whenever the user taps the screen.
    */
-  override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
     worldLayer.enumerateChildNodesWithName("ball") {(node, stop) in
       let speed: CGFloat = 50
       let impulse = CGVectorMake(CGFloat.random(min: -speed, max: speed), CGFloat.random(min: -speed, max: speed))
-      node.physicsBody.applyImpulse(impulse)
+      node.physicsBody!.applyImpulse(impulse)
 
       if STRETCH_BALL {
         self.stretchBall(node.children[0] as SKNode)
@@ -379,25 +372,25 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    */
   override func didSimulatePhysics() {
     worldLayer.enumerateChildNodesWithName("ball") {(node, stop) in
-      if node.physicsBody.velocity.length() > 0.0 {
-        node.rotateToVelocity(node.physicsBody.velocity, rate:0.1)
+      if node.physicsBody!.velocity.length() > 0.0 {
+        node.rotateToVelocity(node.physicsBody!.velocity, rate:0.1)
       }
     }
   }
 
-  func didBeginContact(contact: SKPhysicsContact!) {
+  func didBeginContact(contact: SKPhysicsContact) {
     checkContactBetweenBody1(contact.bodyA, body2: contact.bodyB, contactPoint: contact.contactPoint)
     checkContactBetweenBody1(contact.bodyB, body2: contact.bodyA, contactPoint: contact.contactPoint)
   }
 
   func checkContactBetweenBody1(body1: SKPhysicsBody, body2: SKPhysicsBody, contactPoint: CGPoint) {
     if body1.categoryBitMask & BallCategory != 0 {
-      handleBallCollision(body1.node)
+      handleBallCollision(body1.node!)
 
       if body2.categoryBitMask & BorderCategory != 0 {
-        handleCollisionBetweenBall(body1.node, border:body2.node, contactPoint:contactPoint)
+        handleCollisionBetweenBall(body1.node!, border:body2.node!, contactPoint:contactPoint)
       } else if body2.categoryBitMask & BarrierCategory != 0 {
-        handleCollisionBetweenBall(body1.node, barrier:body2.node)
+        handleCollisionBetweenBall(body1.node!, barrier:body2.node!)
       }
     }
   }
@@ -421,11 +414,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if SCREEN_SHAKE {
-      screenShakeWithVelocity(node.physicsBody.velocity)
+      screenShakeWithVelocity(node.physicsBody!.velocity)
     }
 
     if SCREEN_ZOOM {
-      screenZoomWithVelocity(node.physicsBody.velocity)
+      screenZoomWithVelocity(node.physicsBody!.velocity)
     }
   }
 

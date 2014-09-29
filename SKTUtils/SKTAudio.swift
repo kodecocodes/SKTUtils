@@ -26,15 +26,15 @@ import AVFoundation
  * Audio player that uses AVFoundation to play looping background music and
  * short sound effects. For when using SKActions just isn't good enough.
  */
-class SKTAudio {
-  var backgroundMusicPlayer: AVAudioPlayer!
-  var soundEffectPlayer: AVAudioPlayer!
+public class SKTAudio {
+  public var backgroundMusicPlayer: AVAudioPlayer?
+  public var soundEffectPlayer: AVAudioPlayer?
 
-  class func sharedInstance() -> SKTAudio {
+  public class func sharedInstance() -> SKTAudio {
     return SKTAudioInstance
   }
 
-  func playBackgroundMusic(filename: String) {
+  public func playBackgroundMusic(filename: String) {
     let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
     if (url == nil) {
       println("Could not find file: \(filename)")
@@ -43,29 +43,32 @@ class SKTAudio {
 
     var error: NSError? = nil
     backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    if backgroundMusicPlayer == nil {
+    if let player = backgroundMusicPlayer {
+      player.numberOfLoops = -1
+      player.prepareToPlay()
+      player.play()
+    } else {
       println("Could not create audio player: \(error!)")
-      return
-    }
-
-    backgroundMusicPlayer.numberOfLoops = -1
-    backgroundMusicPlayer.prepareToPlay()
-    backgroundMusicPlayer.play()
-  }
-
-  func pauseBackgroundMusic() {
-    if backgroundMusicPlayer?.playing {
-      backgroundMusicPlayer.pause()
     }
   }
 
-  func resumeBackgroundMusic() {
-    if !backgroundMusicPlayer?.playing {
-      backgroundMusicPlayer.play()
+  public func pauseBackgroundMusic() {
+    if let player = backgroundMusicPlayer {
+      if player.playing {
+        player.pause()
+      }
     }
   }
 
-  func playSoundEffect(filename: String) {
+  public func resumeBackgroundMusic() {
+    if let player = backgroundMusicPlayer {
+      if !player.playing {
+        player.play()
+      }
+    }
+  }
+
+  public func playSoundEffect(filename: String) {
     let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
     if (url == nil) {
       println("Could not find file: \(filename)")
@@ -74,15 +77,14 @@ class SKTAudio {
 
     var error: NSError? = nil
     soundEffectPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    if soundEffectPlayer == nil {
+    if let player = soundEffectPlayer {
+      player.numberOfLoops = 0
+      player.prepareToPlay()
+      player.play()
+    } else {
       println("Could not create audio player: \(error!)")
-      return
     }
-
-    soundEffectPlayer.numberOfLoops = 0
-    soundEffectPlayer.prepareToPlay()
-    soundEffectPlayer.play()
   }
 }
 
-let SKTAudioInstance = SKTAudio()
+private let SKTAudioInstance = SKTAudio()

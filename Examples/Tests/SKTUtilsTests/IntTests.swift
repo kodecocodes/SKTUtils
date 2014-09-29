@@ -21,11 +21,6 @@ class IntTests: XCTestCase {
     XCTAssertEqual((-10).clamped(7 ..< 7), 7)
   }
 
-  func testClampedInverseHalfOpenRange() {
-    XCTAssertEqual(10.clamped(7 ..< -5), -6)    // !?
-    XCTAssertEqual((-10).clamped(7 ..< -5), 7)  // !?
-  }
-
   func testClampedOpenRange() {
     XCTAssertEqual(10.clamped(-5 ... 7), 7)
     XCTAssertEqual(8.clamped(-5 ... 7), 7)
@@ -42,11 +37,6 @@ class IntTests: XCTestCase {
   func testClampedEmptyOpenRange() {
     XCTAssertEqual(10.clamped(7 ... 7), 7)
     XCTAssertEqual((-10).clamped(7 ... 7), 7)
-  }
-
-  func testClampedInverseOpenRange() {
-    XCTAssertEqual(10.clamped(7 ... -5), -5)    // !?
-    XCTAssertEqual((-10).clamped(7 ... -5), 7)  // !?
   }
 
   func testClamped() {

@@ -22,23 +22,10 @@
 
 import SpriteKit
 
-extension SKColor {
-  /**
-   * Creates and returns a new SKColor object using RGB components specified as
-   * values from 0 to 255.
-   */
-  convenience init(red: Int, green: Int, blue: Int) {
-    return self.init(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: 1.0)
-  }
+public func SKColorWithRGB(r: Int, g: Int, b: Int) -> SKColor {
+  return SKColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
+}
 
-  /**
-   * Creates and returns a new SKColor object using RGB components specified as
-   * values from 0 to 255, and alpha between 0.0 and 1.0.
-   */
-  convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
-    return self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: a)
-  }
-
-  // NOTE: calling it init(red: Int, green: Int, blue: Int, alpha: Float)
-  // crashes Xcode! Reported as bug 17221567
+public func SKColorWithRGBA(r: Int, g: Int, b: Int, a: Int) -> SKColor {
+  return SKColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(a)/255.0)
 }

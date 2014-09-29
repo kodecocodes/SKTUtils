@@ -7,39 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3509C990195B2E7E00E8B081 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3509C98F195B2E7E00E8B081 /* Double+Extensions.swift */; };
 		7B0610101945ED26002D27B1 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */; };
-		7B0610111945ED26002D27B1 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */; };
 		7B0610121945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */; };
-		7B0610131945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */; };
 		7B0610141945ED26002D27B1 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */; };
-		7B0610151945ED26002D27B1 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */; };
 		7B0610161945ED26002D27B1 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100D1945ED26002D27B1 /* SKTEffects.swift */; };
-		7B0610171945ED26002D27B1 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100D1945ED26002D27B1 /* SKTEffects.swift */; };
 		7B0610181945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */; };
-		7B0610191945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */; };
 		7B06101A1945ED26002D27B1 /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100F1945ED26002D27B1 /* SKColor+Extensions.swift */; };
-		7B06101B1945ED26002D27B1 /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100F1945ED26002D27B1 /* SKColor+Extensions.swift */; };
-		7B0610231945ED5F002D27B1 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06101E1945ED5F002D27B1 /* CGPointTests.swift */; };
-		7B0610241945ED5F002D27B1 /* CGVectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06101F1945ED5F002D27B1 /* CGVectorTests.swift */; };
-		7B0610251945ED5F002D27B1 /* FloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0610201945ED5F002D27B1 /* FloatTests.swift */; };
-		7B0610261945ED5F002D27B1 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0610211945ED5F002D27B1 /* IntTests.swift */; };
 		7B2A707E1945FA2E00585C2D /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A707D1945FA2E00585C2D /* MyScene.swift */; };
-		7B3D972319485E7F00D0AB26 /* SKNode+DebugDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */; };
 		7B3D97251948634200D0AB26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D97241948634200D0AB26 /* ViewController.swift */; };
 		7B3D9727194864E600D0AB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D9726194864E600D0AB26 /* AppDelegate.swift */; };
-		7B3D972919486AB800D0AB26 /* SKEmitterNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972819486AB800D0AB26 /* SKEmitterNode+Extensions.swift */; };
 		7B3D972B19486C2A00D0AB26 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */; };
 		7B77E69219544FFA00DB0E4D /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E68D19544FFA00DB0E4D /* CGPoint+Extensions.swift */; };
-		7B77E69319544FFA00DB0E4D /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E68D19544FFA00DB0E4D /* CGPoint+Extensions.swift */; };
 		7B77E69419544FFA00DB0E4D /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E68E19544FFA00DB0E4D /* CGVector+Extensions.swift */; };
-		7B77E69519544FFA00DB0E4D /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E68E19544FFA00DB0E4D /* CGVector+Extensions.swift */; };
 		7B77E69619544FFA00DB0E4D /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E68F19544FFA00DB0E4D /* CGFloat+Extensions.swift */; };
-		7B77E69719544FFA00DB0E4D /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E68F19544FFA00DB0E4D /* CGFloat+Extensions.swift */; };
 		7B77E69819544FFA00DB0E4D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E69019544FFA00DB0E4D /* Int+Extensions.swift */; };
-		7B77E69919544FFA00DB0E4D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E69019544FFA00DB0E4D /* Int+Extensions.swift */; };
 		7B77E69A19544FFA00DB0E4D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E69119544FFA00DB0E4D /* Vector3.swift */; };
-		7B77E69B19544FFA00DB0E4D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77E69119544FFA00DB0E4D /* Vector3.swift */; };
 		7BAE7852182FBA95009B4DA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7851182FBA95009B4DA0 /* Foundation.framework */; };
 		7BAE7854182FBA95009B4DA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7853182FBA95009B4DA0 /* CoreGraphics.framework */; };
 		7BAE7856182FBA95009B4DA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7855182FBA95009B4DA0 /* UIKit.framework */; };
@@ -47,82 +29,20 @@
 		7BAE785E182FBA95009B4DA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE785C182FBA95009B4DA0 /* InfoPlist.strings */; };
 		7BAE7867182FBA95009B4DA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE7865182FBA95009B4DA0 /* Main.storyboard */; };
 		7BAE7871182FBA95009B4DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE7870182FBA95009B4DA0 /* Images.xcassets */; };
-		7BAE7878182FBA95009B4DA0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7877182FBA95009B4DA0 /* XCTest.framework */; };
-		7BAE7879182FBA95009B4DA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7851182FBA95009B4DA0 /* Foundation.framework */; };
-		7BAE787A182FBA95009B4DA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAE7855182FBA95009B4DA0 /* UIKit.framework */; };
 		7BAE7890182FBBB6009B4DA0 /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE788E182FBBB6009B4DA0 /* Ball.png */; };
 		7BAE7891182FBBB6009B4DA0 /* Ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAE788F182FBBB6009B4DA0 /* Ball@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7B0610281945EDC5002D27B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-		7B06102A1945EDC5002D27B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-		7B2A70751945EE6200585C2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-		7B2A70771945EE6300585C2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-		7B2A70791945EE6300585C2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-		7B5793D319475BB900A005C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-		7BAE787B182FBA95009B4DA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7BAE7846182FBA95009B4DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7BAE784D182FBA95009B4DA0;
-			remoteInfo = Demo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		3509C98F195B2E7E00E8B081 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
 		7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
 		7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		7B06100D1945ED26002D27B1 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		7B06100E1945ED26002D27B1 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		7B06100F1945ED26002D27B1 /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
-		7B06101E1945ED5F002D27B1 /* CGPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
-		7B06101F1945ED5F002D27B1 /* CGVectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGVectorTests.swift; sourceTree = "<group>"; };
-		7B0610201945ED5F002D27B1 /* FloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatTests.swift; sourceTree = "<group>"; };
-		7B0610211945ED5F002D27B1 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		7B2A707D1945FA2E00585C2D /* MyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
-		7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+DebugDraw.swift"; sourceTree = "<group>"; };
 		7B3D97241948634200D0AB26 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B3D9726194864E600D0AB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B3D972819486AB800D0AB26 /* SKEmitterNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+Extensions.swift"; sourceTree = "<group>"; };
 		7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		7B77E68D19544FFA00DB0E4D /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		7B77E68E19544FFA00DB0E4D /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
@@ -138,9 +58,7 @@
 		7BAE785D182FBA95009B4DA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7BAE7866182FBA95009B4DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BAE7870182FBA95009B4DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7BAE7876182FBA95009B4DA0 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAE7877182FBA95009B4DA0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7BAE787F182FBA95009B4DA0 /* DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoTests-Info.plist"; sourceTree = "<group>"; };
 		7BAE788E182FBBB6009B4DA0 /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball.png; sourceTree = "<group>"; };
 		7BAE788F182FBBB6009B4DA0 /* Ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,16 +75,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7BAE7873182FBA95009B4DA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7BAE7878182FBA95009B4DA0 /* XCTest.framework in Frameworks */,
-				7BAE787A182FBA95009B4DA0 /* UIKit.framework in Frameworks */,
-				7BAE7879182FBA95009B4DA0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -176,7 +84,6 @@
 				7BAE7859182FBA95009B4DA0 /* Demo */,
 				7BCC2E14183266B300E5DA2D /* SKTUtils */,
 				7BAE788D182FBBB6009B4DA0 /* Sprites */,
-				7BAE787D182FBA95009B4DA0 /* DemoTests */,
 				7BAE7850182FBA95009B4DA0 /* Frameworks */,
 				7BAE784F182FBA95009B4DA0 /* Products */,
 			);
@@ -186,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				7BAE784E182FBA95009B4DA0 /* Demo.app */,
-				7BAE7876182FBA95009B4DA0 /* DemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,26 +131,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7BAE787D182FBA95009B4DA0 /* DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B06101E1945ED5F002D27B1 /* CGPointTests.swift */,
-				7B06101F1945ED5F002D27B1 /* CGVectorTests.swift */,
-				7B0610201945ED5F002D27B1 /* FloatTests.swift */,
-				7B0610211945ED5F002D27B1 /* IntTests.swift */,
-				7BAE787E182FBA95009B4DA0 /* Supporting Files */,
-			);
-			path = DemoTests;
-			sourceTree = "<group>";
-		};
-		7BAE787E182FBA95009B4DA0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7BAE787F182FBA95009B4DA0 /* DemoTests-Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		7BAE788D182FBBB6009B4DA0 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,13 +146,10 @@
 				7B77E68F19544FFA00DB0E4D /* CGFloat+Extensions.swift */,
 				7B77E68D19544FFA00DB0E4D /* CGPoint+Extensions.swift */,
 				7B77E68E19544FFA00DB0E4D /* CGVector+Extensions.swift */,
-				3509C98F195B2E7E00E8B081 /* Double+Extensions.swift */,
 				7B77E69019544FFA00DB0E4D /* Int+Extensions.swift */,
 				7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */,
 				7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */,
 				7B06100F1945ED26002D27B1 /* SKColor+Extensions.swift */,
-				7B3D972819486AB800D0AB26 /* SKEmitterNode+Extensions.swift */,
-				7B3D972219485E7F00D0AB26 /* SKNode+DebugDraw.swift */,
 				7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */,
 				7B3D972A19486C2A00D0AB26 /* SKTAudio.swift */,
 				7B06100D1945ED26002D27B1 /* SKTEffects.swift */,
@@ -297,30 +180,6 @@
 			productReference = 7BAE784E182FBA95009B4DA0 /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7BAE7875182FBA95009B4DA0 /* DemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7BAE788A182FBA95009B4DA0 /* Build configuration list for PBXNativeTarget "DemoTests" */;
-			buildPhases = (
-				7BAE7872182FBA95009B4DA0 /* Sources */,
-				7BAE7873182FBA95009B4DA0 /* Frameworks */,
-				7BAE7874182FBA95009B4DA0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7BAE787C182FBA95009B4DA0 /* PBXTargetDependency */,
-				7B0610291945EDC5002D27B1 /* PBXTargetDependency */,
-				7B06102B1945EDC5002D27B1 /* PBXTargetDependency */,
-				7B2A70761945EE6200585C2D /* PBXTargetDependency */,
-				7B2A70781945EE6300585C2D /* PBXTargetDependency */,
-				7B2A707A1945EE6300585C2D /* PBXTargetDependency */,
-				7B5793D419475BB900A005C6 /* PBXTargetDependency */,
-			);
-			name = DemoTests;
-			productName = DemoTests;
-			productReference = 7BAE7876182FBA95009B4DA0 /* DemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -330,8 +189,8 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
-					7BAE7875182FBA95009B4DA0 = {
-						TestTargetID = 7BAE784D182FBA95009B4DA0;
+					7BAE784D182FBA95009B4DA0 = {
+						DevelopmentTeam = MGCEKGP4Y4;
 					};
 				};
 			};
@@ -349,7 +208,6 @@
 			projectRoot = "";
 			targets = (
 				7BAE784D182FBA95009B4DA0 /* Demo */,
-				7BAE7875182FBA95009B4DA0 /* DemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -367,13 +225,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7BAE7874182FBA95009B4DA0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -382,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B3D9727194864E600D0AB26 /* AppDelegate.swift in Sources */,
-				7B3D972319485E7F00D0AB26 /* SKNode+DebugDraw.swift in Sources */,
 				7B0610101945ED26002D27B1 /* SKAction+Extensions.swift in Sources */,
 				7B0610141945ED26002D27B1 /* SKNode+Extensions.swift in Sources */,
 				7B77E69219544FFA00DB0E4D /* CGPoint+Extensions.swift in Sources */,
@@ -393,76 +243,14 @@
 				7B77E69A19544FFA00DB0E4D /* Vector3.swift in Sources */,
 				7B77E69419544FFA00DB0E4D /* CGVector+Extensions.swift in Sources */,
 				7B0610181945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */,
-				3509C990195B2E7E00E8B081 /* Double+Extensions.swift in Sources */,
 				7B77E69619544FFA00DB0E4D /* CGFloat+Extensions.swift in Sources */,
 				7B2A707E1945FA2E00585C2D /* MyScene.swift in Sources */,
 				7B3D972B19486C2A00D0AB26 /* SKTAudio.swift in Sources */,
 				7B0610161945ED26002D27B1 /* SKTEffects.swift in Sources */,
-				7B3D972919486AB800D0AB26 /* SKEmitterNode+Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7BAE7872182FBA95009B4DA0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B0610151945ED26002D27B1 /* SKNode+Extensions.swift in Sources */,
-				7B77E69719544FFA00DB0E4D /* CGFloat+Extensions.swift in Sources */,
-				7B0610231945ED5F002D27B1 /* CGPointTests.swift in Sources */,
-				7B0610171945ED26002D27B1 /* SKTEffects.swift in Sources */,
-				7B0610261945ED5F002D27B1 /* IntTests.swift in Sources */,
-				7B0610111945ED26002D27B1 /* SKAction+Extensions.swift in Sources */,
-				7B0610241945ED5F002D27B1 /* CGVectorTests.swift in Sources */,
-				7B0610191945ED26002D27B1 /* SKTTimingFunctions.swift in Sources */,
-				7B77E69319544FFA00DB0E4D /* CGPoint+Extensions.swift in Sources */,
-				7B77E69519544FFA00DB0E4D /* CGVector+Extensions.swift in Sources */,
-				7B06101B1945ED26002D27B1 /* SKColor+Extensions.swift in Sources */,
-				7B77E69919544FFA00DB0E4D /* Int+Extensions.swift in Sources */,
-				7B0610131945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */,
-				7B77E69B19544FFA00DB0E4D /* Vector3.swift in Sources */,
-				7B0610251945ED5F002D27B1 /* FloatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7B0610291945EDC5002D27B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7B0610281945EDC5002D27B1 /* PBXContainerItemProxy */;
-		};
-		7B06102B1945EDC5002D27B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7B06102A1945EDC5002D27B1 /* PBXContainerItemProxy */;
-		};
-		7B2A70761945EE6200585C2D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7B2A70751945EE6200585C2D /* PBXContainerItemProxy */;
-		};
-		7B2A70781945EE6300585C2D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7B2A70771945EE6300585C2D /* PBXContainerItemProxy */;
-		};
-		7B2A707A1945EE6300585C2D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7B2A70791945EE6300585C2D /* PBXContainerItemProxy */;
-		};
-		7B5793D419475BB900A005C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7B5793D319475BB900A005C6 /* PBXContainerItemProxy */;
-		};
-		7BAE787C182FBA95009B4DA0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7BAE784D182FBA95009B4DA0 /* Demo */;
-			targetProxy = 7BAE787B182FBA95009B4DA0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7BAE785C182FBA95009B4DA0 /* InfoPlist.strings */ = {
@@ -601,62 +389,6 @@
 			};
 			name = Release;
 		};
-		7BAE788B182FBA95009B4DA0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
-				CLANG_STATIC_ANALYZER_MODE = deep;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DemoTests/DemoTests-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		7BAE788C182FBA95009B4DA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
-				CLANG_STATIC_ANALYZER_MODE = deep;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
-				INFOPLIST_FILE = "DemoTests/DemoTests-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,15 +406,6 @@
 			buildConfigurations = (
 				7BAE7888182FBA95009B4DA0 /* Debug */,
 				7BAE7889182FBA95009B4DA0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7BAE788A182FBA95009B4DA0 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7BAE788B182FBA95009B4DA0 /* Debug */,
-				7BAE788C182FBA95009B4DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

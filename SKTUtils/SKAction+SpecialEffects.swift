@@ -22,7 +22,7 @@
 
 import SpriteKit
 
-extension SKAction {
+public extension SKAction {
   /**
    * Creates a screen shake animation.
    *
@@ -31,7 +31,7 @@ extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  class func screenShakeWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
+  public class func screenShakeWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction {
     let oldPosition = node.position
     let newPosition = oldPosition + amount
     
@@ -50,7 +50,7 @@ extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  class func screenRotateWithNode(node: SKNode, angle: CGFloat, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
+  public class func screenRotateWithNode(node: SKNode, angle: CGFloat, oscillations: Int, duration: NSTimeInterval) -> SKAction {
     let oldAngle = node.zRotation
     let newAngle = oldAngle + angle
     
@@ -69,7 +69,7 @@ extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  class func screenZoomWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
+  public class func screenZoomWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction {
     let oldScale = CGPoint(x: node.xScale, y: node.yScale)
     let newScale = oldScale * amount
     
@@ -82,10 +82,10 @@ extension SKAction {
   /**
    * Causes the scene background to flash for duration seconds.
    */
-  class func colorGlitchWithScene(scene: SKScene, originalColor: SKColor, duration: NSTimeInterval) -> SKAction! {
+  public class func colorGlitchWithScene(scene: SKScene, originalColor: SKColor, duration: NSTimeInterval) -> SKAction {
     return SKAction.customActionWithDuration(duration) {(node, elapsedTime) in
       if elapsedTime < CGFloat(duration) {
-        scene.backgroundColor = SKColor(red: Int.random(0...255), green: Int.random(0...255), blue: Int.random(0...255))
+        scene.backgroundColor = SKColorWithRGB(Int.random(0...255), Int.random(0...255), Int.random(0...255))
       } else {
         scene.backgroundColor = originalColor
       }

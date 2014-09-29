@@ -2,7 +2,7 @@
 import SpriteKit
 
 class ViewController: UIViewController {
-  @IBOutlet var skView: SKView
+  @IBOutlet weak var skView: SKView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
