@@ -36,7 +36,7 @@ public extension CGPoint {
    * result as a new CGPoint. An angle of 0 is assumed to point to the right.
    */
   public init(angle: CGFloat) {
-    return self.init(x: cos(angle), y: sin(angle))
+    self.init(x: cos(angle), y: sin(angle))
   }
 
   /**
