@@ -36,7 +36,7 @@ public extension CGVector {
    * result as a new CGVector. An angle of 0 is assumed to point to the right.
    */
   public init(angle: CGFloat) {
-    return self.init(dx: cos(angle), dy: sin(angle))
+    self.init(dx: cos(angle), dy: sin(angle))
   }
 
   /**
