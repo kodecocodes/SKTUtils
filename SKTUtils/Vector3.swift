@@ -103,7 +103,21 @@ extension Vector3 {
     y *= scale
     z *= scale
   }
-  
+
+  /**
+  * Calculates the dot product with another vector
+  */
+  public func dot(vector:Vector3) -> CGFloat {
+    return Vector3.dotProduct(self, right: vector)
+  }
+
+  /**
+  * Calculates the cross product with another vector.
+  */
+  public func cross(vector:Vector3) -> Vector3 {
+    return Vector3.crossProduct(self, right: vector)
+  }
+    
   /**
    * Calculates the dot product of two vectors.
    */
@@ -121,3 +135,4 @@ extension Vector3 {
     return crossProduct
   }
 }
+
