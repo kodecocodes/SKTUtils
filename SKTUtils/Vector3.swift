@@ -26,12 +26,45 @@ public struct Vector3: Equatable {
   public var x: CGFloat
   public var y: CGFloat
   public var z: CGFloat
-    
+
+  /**
+  * Creates a new Vector3 and initializes xyz with the scalar.
+  */
+  public init(scalar: CGFloat) {
+    self.x = scalar
+    self.y = scalar
+    self.z = scalar
+  }
+
+  /**
+  * Creates a new Vector3 and initializes xyz values.
+  */
   public init(x: CGFloat, y: CGFloat, z: CGFloat) {
     self.x = x
     self.y = y
     self.z = z
   }
+
+  /**
+  * Creates a new Vector3 and initializes xy with the value of the CGVector.
+  * Z value is set to zero.
+  */
+  public init(vector: CGVector) {
+    self.x = vector.dx
+    self.y = vector.dy
+    self.z = 0.0
+  }
+
+  /**
+  * Creates a new Vector3 and initializes xy with the value of the CGPoint.
+  * Z value is set to zero.
+  */
+  public init(point: CGPoint) {
+    self.x = point.x
+    self.y = point.y
+    self.z = 0.0
+  }
+    
 }
 
 public func == (lhs: Vector3, rhs: Vector3) -> Bool {
