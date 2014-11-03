@@ -23,9 +23,9 @@
 import CoreGraphics
 
 public struct Vector3: Equatable {
-  var x: CGFloat
-  var y: CGFloat
-  var z: CGFloat
+  public var x: CGFloat
+  public var y: CGFloat
+  public var z: CGFloat
     
   public init(x: CGFloat, y: CGFloat, z: CGFloat) {
     self.x = x
