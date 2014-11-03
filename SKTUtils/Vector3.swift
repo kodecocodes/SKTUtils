@@ -136,3 +136,124 @@ extension Vector3 {
   }
 }
 
+/**
+* Adds two Vector3 values and returns the result as a new Vector3.
+*/
+public func + (left: Vector3, right: Vector3) -> Vector3 {
+  return Vector3(x: left.x + right.x, y: left.y + right.y, z: left.z + right.z)
+}
+
+/**
+* Increments a Vector3 with the value of another.
+*/
+public func += (inout left: Vector3, right: Vector3) {
+  left = left + right
+}
+
+/**
+* Adds a scalar to the the xyz fields of a Vector3 and returns the result as a new Vector3.
+*/
+public func + (left: Vector3, right: CGFloat) -> Vector3 {
+  return Vector3(x: left.x + right, y: left.y + right, z: left.z + right)
+}
+
+/**
+* Adds a scalar value to the xyz fields of a Vector3.
+*/
+public func += (inout left: Vector3, right: CGFloat) {
+  left = left + right
+}
+
+/**
+* Subtracts two Vector3 values and returns the result as a new Vector3.
+*/
+public func - (left: Vector3, right: Vector3) -> Vector3 {
+  return Vector3(x: left.x - right.x, y: left.y - right.y, z: left.z - right.z)
+}
+
+/**
+* Decrements a Vector3 with the value of another.
+*/
+public func -= (inout left: Vector3, right: Vector3) {
+  left = left - right
+}
+
+/**
+* Subtracts a scalar from the xyz fields of a Vector3 and returns the result as a new Vector3.
+*/
+public func - (left: Vector3, right: CGFloat) -> Vector3 {
+  return Vector3(x: left.x - right, y: left.y - right, z: left.z - right)
+}
+
+/**
+* Subtracts a scalar from the xyz fields of a Vector3.
+*/
+public func -= (inout left: Vector3, right: CGFloat) {
+  left = left - right
+}
+
+/**
+* Multiplies two Vector3 values and returns the result as a new Vector3.
+*/
+public func * (left: Vector3, right: Vector3) -> Vector3 {
+  return Vector3(x: left.x * right.x, y: left.y * right.y, z: left.z * right.z)
+}
+
+/**
+* Multiplies a Vector3 with another.
+*/
+public func *= (inout left: Vector3, right: Vector3) {
+  left = left * right
+}
+
+/**
+* Multiplies the xyz fields of a Vector3 with the same scalar value and
+* returns the result as a new Vector3.
+*/
+public func * (vector: Vector3, scalar: CGFloat) -> Vector3 {
+  return Vector3(x: vector.x * scalar, y: vector.y * scalar, z: vector.z * scalar)
+}
+
+/**
+* Multiplies the xyz fields of a Vector3 with the same scalar value.
+*/
+public func *= (inout vector: Vector3, scalar: CGFloat) {
+  vector = vector * scalar
+}
+
+/**
+* Divides two Vector3 values and returns the result as a new Vector3.
+*/
+public func / (left: Vector3, right: Vector3) -> Vector3 {
+  return Vector3(x: left.x / right.x, y: left.y / right.y, z: left.z / right.z)
+}
+
+/**
+* Divides a Vector3 by another.
+*/
+public func /= (inout left: Vector3, right: Vector3) {
+  left = left / right
+}
+
+/**
+* Divides the xyz fields of a Vector3 by the same scalar value and
+* returns the result as a new Vector3.
+*/
+public func / (vector: Vector3, scalar: CGFloat) -> Vector3 {
+  return Vector3(x: vector.x / scalar, y: vector.y / scalar, z: vector.z / scalar)
+}
+
+/**
+* Divides the xyz fields of a Vector3 by the same scalar value.
+*/
+public func /= (inout vector: Vector3, scalar: CGFloat) {
+  vector = vector / scalar
+}
+
+/**
+* Performs a linear interpolation between two Vector3 values.
+*/
+public func lerp(#start: Vector3, #end: Vector3, #t: CGFloat) -> Vector3 {
+  return start + (end - start) * t
+}
+
