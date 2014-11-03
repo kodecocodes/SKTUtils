@@ -192,5 +192,5 @@ public func /= (inout vector: CGVector, scalar: CGFloat) {
  * Performs a linear interpolation between two CGVector values.
  */
 public func lerp(#start: CGVector, #end: CGVector, #t: CGFloat) -> CGVector {
-  return CGVector(dx: start.dx + (end.dx - start.dx)*t, dy: start.dy + (end.dy - start.dy)*t)
+  return start + (end - start) * t
 }
