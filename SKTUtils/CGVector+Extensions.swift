@@ -25,6 +25,13 @@ import SpriteKit
 
 public extension CGVector {
   /**
+  * Creates a new CGVector and initializes xy with the scalar.
+  */
+  public init(scalar: CGFloat) {
+    self.init(dx: scalar, dy: scalar)
+  }
+    
+  /**
    * Creates a new CGVector given a CGPoint.
    */
   public init(point: CGPoint) {
