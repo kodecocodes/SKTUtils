@@ -16,6 +16,15 @@ class CGVectorTests: XCTestCase {
     XCTAssertEqual(v1, CGVector(dx: 110, dy: 55))
   }
 
+  func testAddingVectorAndFloat() {
+    XCTAssertEqual(v1 + 2.5, CGVector(dx: 102.5, dy: 52.5))
+  }
+    
+  func testAddingFloatToVector() {
+    v1 += 2.5
+    XCTAssertEqual(v1, CGVector(dx: 102.5, dy: 52.5))
+  }
+
   func testSubtractingTwoVectors() {
     XCTAssertEqual(v1 - v2, CGVector(dx: 90, dy: 45))
   }
@@ -23,6 +32,15 @@ class CGVectorTests: XCTestCase {
   func testSubtractingVectorFromVector() {
     v1 -= v2
     XCTAssertEqual(v1, CGVector(dx: 90, dy: 45))
+  }
+
+  func testSubtractingVectorAndFloat() {
+      XCTAssertEqual(v1 - 2.5, CGVector(dx: 97.5, dy: 47.5))
+  }
+    
+  func testSubtractingFloatFromVector() {
+      v1 -= 2.5
+      XCTAssertEqual(v1, CGVector(dx: 97.5, dy: 47.5))
   }
 
   func testMultiplyingTwoVectors() {
@@ -70,6 +88,13 @@ class CGVectorTests: XCTestCase {
     XCTAssertEqual(v1.offset(dx: 10, dy: 5), v1)
   }
 
+  func testInitWithScalar() {
+    let f = CGFloat(10)
+    let v = CGVector(scalar: f)
+    XCTAssertEqual(v.dx, f)
+    XCTAssertEqual(v.dy, f)
+  }
+    
   func testInitWithPoint() {
     let pt = CGPoint(x: -10, y: -20)
     let v = CGVector(point: pt)
