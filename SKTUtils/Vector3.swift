@@ -67,18 +67,7 @@ public struct Vector3: Equatable {
     
 }
 
-public func == (lhs: Vector3, rhs: Vector3) -> Bool {
-  return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
-}
-
 extension Vector3 {
-  /**
-   * Returns true if all the vector elements are equal to the provided value.
-   */
-  public func equalToScalar(value: CGFloat) -> Bool {
-    return x == value && y == value && z == value
-  }
-  
   /**
    * Returns the magnitude of the vector.
    **/
@@ -108,32 +97,40 @@ extension Vector3 {
   * Calculates the dot product with another vector
   */
   public func dot(vector:Vector3) -> CGFloat {
-    return Vector3.dotProduct(self, right: vector)
+    return Vector3.dotProduct(self, vector)
   }
 
   /**
   * Calculates the cross product with another vector.
   */
   public func cross(vector:Vector3) -> Vector3 {
-    return Vector3.crossProduct(self, right: vector)
+    return Vector3.crossProduct(self, vector)
   }
     
   /**
    * Calculates the dot product of two vectors.
    */
-  public static func dotProduct(left: Vector3, right: Vector3) -> CGFloat {
+    public static func dotProduct(left: Vector3, _ right: Vector3) -> CGFloat {
     return left.x * right.x + left.y * right.y + left.z * right.z
   }
   
   /**
    * Calculates the cross product of two vectors.
    */
-  public static func crossProduct(left: Vector3, right: Vector3) -> Vector3 {
+  public static func crossProduct(left: Vector3, _ right: Vector3) -> Vector3 {
     let crossProduct = Vector3(x: left.y * right.z - left.z * right.y,
                                y: left.z * right.x - left.x * right.z,
                                z: left.x * right.y - left.y * right.x)
     return crossProduct
   }
+}
+
+public func == (lhs: Vector3, rhs: Vector3) -> Bool {
+    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
+}
+
+public func == (lhs: Vector3, rhs: CGFloat) -> Bool {
+    return lhs.x == rhs && lhs.y == rhs && lhs.z == rhs
 }
 
 /**
