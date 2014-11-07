@@ -150,15 +150,15 @@ public func += (inout left: Vector3, right: Vector3) {
 /**
 * Adds a scalar to the the xyz fields of a Vector3 and returns the result as a new Vector3.
 */
-public func + (left: Vector3, right: CGFloat) -> Vector3 {
-  return Vector3(x: left.x + right, y: left.y + right, z: left.z + right)
+public func + (vector: Vector3, scalar: CGFloat) -> Vector3 {
+  return Vector3(x: vector.x + scalar, y: vector.y + scalar, z: vector.z + scalar)
 }
 
 /**
 * Adds a scalar value to the xyz fields of a Vector3.
 */
-public func += (inout left: Vector3, right: CGFloat) {
-  left = left + right
+public func += (inout vector: Vector3, scalar: CGFloat) {
+  vector = vector + scalar
 }
 
 /**
@@ -178,15 +178,15 @@ public func -= (inout left: Vector3, right: Vector3) {
 /**
 * Subtracts a scalar from the xyz fields of a Vector3 and returns the result as a new Vector3.
 */
-public func - (left: Vector3, right: CGFloat) -> Vector3 {
-  return Vector3(x: left.x - right, y: left.y - right, z: left.z - right)
+public func - (vector: Vector3, scalar: CGFloat) -> Vector3 {
+  return Vector3(x: vector.x - scalar, y: vector.y - scalar, z: vector.z - scalar)
 }
 
 /**
 * Subtracts a scalar from the xyz fields of a Vector3.
 */
-public func -= (inout left: Vector3, right: CGFloat) {
-  left = left - right
+public func -= (inout vector: Vector3, scalar: CGFloat) {
+  vector = vector - scalar
 }
 
 /**

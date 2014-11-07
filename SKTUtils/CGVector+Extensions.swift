@@ -120,15 +120,15 @@ public func += (inout left: CGVector, right: CGVector) {
 * Adds a scalar to the the dx and dy fields of a CGVector and 
 * returns the result as a new CGVector.
 */
-public func + (left: CGVector, right: CGFloat) -> CGVector {
-  return CGVector(dx: left.dx + right, dy: left.dy + right)
+public func + (vector: CGVector, scalar: CGFloat) -> CGVector {
+  return CGVector(dx: vector.dx + scalar, dy: vector.dy + scalar)
 }
 
 /**
 * Adds a scalar value to the dx and dy fields of a CGVector.
 */
-public func += (inout left: CGVector, right: CGFloat) {
-  left = left + right
+public func += (inout vector: CGVector, scalar: CGFloat) {
+  vector = vector + scalar
 }
 
 /**
@@ -149,15 +149,15 @@ public func -= (inout left: CGVector, right: CGVector) {
 * Subtracts a scalar from the dx and dy fields of a CGVector and 
 * returns the result as a new CGVector.
 */
-public func - (left: CGVector, right: CGFloat) -> CGVector {
-  return CGVector(dx: left.dx - right, dy: left.dy - right)
+public func - (vector: CGVector, scalar: CGFloat) -> CGVector {
+  return CGVector(dx: vector.dx - scalar, dy: vector.dy - scalar)
 }
 
 /**
 * Subtracts a scalar from the dx and dy fields of a CGVector.
 */
-public func -= (inout left: CGVector, right: CGFloat) {
-  left = left - right
+public func -= (inout vector: CGVector, scalar: CGFloat) {
+  vector = vector - scalar
 }
 
 /**
