@@ -68,6 +68,8 @@ public struct Vector3: Equatable {
 }
 
 extension Vector3 {
+  static var zeroVector:Vector3 { return Vector3(0.0) }
+    
   /**
    * Returns the magnitude of the vector.
    **/
