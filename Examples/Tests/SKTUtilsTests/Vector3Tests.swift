@@ -92,7 +92,7 @@ class Vector3Tests: XCTestCase {
     }
     
     func testEqualityScalar() {
-        let v3 = Vector3(scalar: 3.0)
+        let v3 = Vector3(3.0)
         XCTAssertFalse(v1 == 3.0)
         XCTAssert(v3 == 3.0)
     }
@@ -106,7 +106,7 @@ class Vector3Tests: XCTestCase {
     
     func testInitWithScalar() {
         let f = CGFloat(10)
-        let v = Vector3(scalar: f)
+        let v = Vector3(f)
         XCTAssertEqual(v.x, f)
         XCTAssertEqual(v.y, f)
         XCTAssertEqual(v.z, f)

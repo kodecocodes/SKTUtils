@@ -30,7 +30,7 @@ public struct Vector3: Equatable {
   /**
   * Creates a new Vector3 and initializes xyz with the scalar.
   */
-  public init(scalar: CGFloat) {
+  public init(_ scalar: CGFloat) {
     self.x = scalar
     self.y = scalar
     self.z = scalar

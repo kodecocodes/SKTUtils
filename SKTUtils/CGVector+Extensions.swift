@@ -27,7 +27,7 @@ public extension CGVector {
   /**
   * Creates a new CGVector and initializes xy with the scalar.
   */
-  public init(scalar: CGFloat) {
+  public init(_ scalar: CGFloat) {
     self.init(dx: scalar, dy: scalar)
   }
     

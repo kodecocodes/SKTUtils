@@ -90,7 +90,7 @@ class CGVectorTests: XCTestCase {
 
   func testInitWithScalar() {
     let f = CGFloat(10)
-    let v = CGVector(scalar: f)
+    let v = CGVector(f)
     XCTAssertEqual(v.dx, f)
     XCTAssertEqual(v.dy, f)
   }
