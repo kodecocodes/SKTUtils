@@ -49,7 +49,7 @@ public struct Vector3: Equatable {
   * Creates a new Vector3 and initializes xy with the value of the CGVector.
   * Z value is set to zero.
   */
-  public init(vector: CGVector) {
+  public init(_ vector: CGVector) {
     self.x = vector.dx
     self.y = vector.dy
     self.z = 0.0
@@ -59,7 +59,7 @@ public struct Vector3: Equatable {
   * Creates a new Vector3 and initializes xy with the value of the CGPoint.
   * Z value is set to zero.
   */
-  public init(point: CGPoint) {
+  public init(_ point: CGPoint) {
     self.x = point.x
     self.y = point.y
     self.z = 0.0

@@ -97,7 +97,7 @@ class CGVectorTests: XCTestCase {
     
   func testInitWithPoint() {
     let pt = CGPoint(x: -10, y: -20)
-    let v = CGVector(point: pt)
+    let v = CGVector(pt)
     XCTAssertEqual(v.dx, pt.x)
     XCTAssertEqual(v.dy, pt.y)
   }

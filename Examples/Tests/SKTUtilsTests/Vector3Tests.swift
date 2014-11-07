@@ -114,7 +114,7 @@ class Vector3Tests: XCTestCase {
     
     func testInitWithPoint() {
         let pt = CGPoint(x: -10, y: -20)
-        let v = Vector3(point: pt)
+        let v = Vector3(pt)
         XCTAssertEqual(v.x, pt.x)
         XCTAssertEqual(v.y, pt.y)
         XCTAssertEqual(v.z, CGFloat(0.0))
@@ -123,7 +123,7 @@ class Vector3Tests: XCTestCase {
     
     func testInitWithCGVector() {
         let vec = CGVector(dx: -10, dy: -20)
-        let v = Vector3(vector: vec)
+        let v = Vector3(vec)
         XCTAssertEqual(v.x, vec.dx)
         XCTAssertEqual(v.y, vec.dy)
         XCTAssertEqual(v.z, CGFloat(0.0))

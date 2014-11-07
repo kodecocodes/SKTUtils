@@ -34,7 +34,7 @@ public extension CGVector {
   /**
    * Creates a new CGVector given a CGPoint.
    */
-  public init(point: CGPoint) {
+  public init(_ point: CGPoint) {
     self.init(dx: point.x, dy: point.y)
   }
   
