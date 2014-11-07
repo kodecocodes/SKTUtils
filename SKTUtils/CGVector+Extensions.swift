@@ -25,9 +25,16 @@ import SpriteKit
 
 public extension CGVector {
   /**
+  * Creates a new CGVector and initializes xy with the scalar.
+  */
+  public init(_ scalar: CGFloat) {
+    self.init(dx: scalar, dy: scalar)
+  }
+    
+  /**
    * Creates a new CGVector given a CGPoint.
    */
-  public init(point: CGPoint) {
+  public init(_ point: CGPoint) {
     self.init(dx: point.x, dy: point.y)
   }
   
@@ -110,6 +117,21 @@ public func += (inout left: CGVector, right: CGVector) {
 }
 
 /**
+* Adds a scalar to the the dx and dy fields of a CGVector and 
+* returns the result as a new CGVector.
+*/
+public func + (vector: CGVector, scalar: CGFloat) -> CGVector {
+  return CGVector(dx: vector.dx + scalar, dy: vector.dy + scalar)
+}
+
+/**
+* Adds a scalar value to the dx and dy fields of a CGVector.
+*/
+public func += (inout vector: CGVector, scalar: CGFloat) {
+  vector = vector + scalar
+}
+
+/**
  * Subtracts two CGVector values and returns the result as a new CGVector.
  */
 public func - (left: CGVector, right: CGVector) -> CGVector {
@@ -121,6 +143,21 @@ public func - (left: CGVector, right: CGVector) -> CGVector {
  */
 public func -= (inout left: CGVector, right: CGVector) {
   left = left - right
+}
+
+/**
+* Subtracts a scalar from the dx and dy fields of a CGVector and 
+* returns the result as a new CGVector.
+*/
+public func - (vector: CGVector, scalar: CGFloat) -> CGVector {
+  return CGVector(dx: vector.dx - scalar, dy: vector.dy - scalar)
+}
+
+/**
+* Subtracts a scalar from the dx and dy fields of a CGVector.
+*/
+public func -= (inout vector: CGVector, scalar: CGFloat) {
+  vector = vector - scalar
 }
 
 /**
@@ -185,5 +222,5 @@ public func /= (inout vector: CGVector, scalar: CGFloat) {
  * Performs a linear interpolation between two CGVector values.
  */
 public func lerp(#start: CGVector, #end: CGVector, #t: CGFloat) -> CGVector {
-  return CGVector(dx: start.dx + (end.dx - start.dx)*t, dy: start.dy + (end.dy - start.dy)*t)
+  return start + (end - start) * t
 }
