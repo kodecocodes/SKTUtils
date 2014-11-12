@@ -241,5 +241,5 @@ public func /= (inout left: CGPoint, right: CGVector) {
  * Performs a linear interpolation between two CGPoint values.
  */
 public func lerp(#start: CGPoint, #end: CGPoint, #t: CGFloat) -> CGPoint {
-  return CGPoint(x: start.x + (end.x - start.x)*t, y: start.y + (end.y - start.y)*t)
+  return start + (end - start) * t
 }
