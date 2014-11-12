@@ -39,6 +39,7 @@
 		7B0FA00D19C4496E00538BC0 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F9FF619C4496E00538BC0 /* SKTTimingFunctions.swift */; };
 		7B0FA00E19C4496E00538BC0 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F9FF719C4496E00538BC0 /* Vector3.swift */; };
 		7B0FA00F19C4496E00538BC0 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F9FF719C4496E00538BC0 /* Vector3.swift */; };
+		7BDFA8421A13B2C900AC68C9 /* Vector3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFA8411A13B2C900AC68C9 /* Vector3Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		7B0F9FF519C4496E00538BC0 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		7B0F9FF619C4496E00538BC0 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		7B0F9FF719C4496E00538BC0 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		7BDFA8411A13B2C900AC68C9 /* Vector3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				7B0F9FE419C4490500538BC0 /* CGVectorTests.swift */,
 				7B0F9FE519C4490500538BC0 /* FloatTests.swift */,
 				7B0F9FE619C4490500538BC0 /* IntTests.swift */,
+				7BDFA8411A13B2C900AC68C9 /* Vector3Tests.swift */,
 				7B0F9FD719C448D500538BC0 /* Supporting Files */,
 			);
 			path = SKTUtilsTests;
@@ -312,6 +315,7 @@
 				7B0FA00319C4496E00538BC0 /* SKAction+SpecialEffects.swift in Sources */,
 				7B0FA00F19C4496E00538BC0 /* Vector3.swift in Sources */,
 				7B0F9FE819C4490500538BC0 /* CGVectorTests.swift in Sources */,
+				7BDFA8421A13B2C900AC68C9 /* Vector3Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
