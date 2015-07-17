@@ -74,7 +74,7 @@ public extension CGFloat {
   /**
    * Returns a random floating point number in the range min...max, inclusive.
    */
-  public static func random(#min: CGFloat, max: CGFloat) -> CGFloat {
+  public static func random(min min: CGFloat, max: CGFloat) -> CGFloat {
     assert(min < max)
     return CGFloat.random() * (max - min) + min
   }

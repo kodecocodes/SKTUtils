@@ -215,6 +215,6 @@ public func /= (inout vector: Vector3, scalar: CGFloat) {
 /**
  * Performs a linear interpolation between two Vector3 values.
  */
-public func lerp(#start: Vector3, #end: Vector3, #t: CGFloat) -> Vector3 {
+public func lerp(start start: Vector3, end: Vector3, t: CGFloat) -> Vector3 {
   return start + (end - start) * t
 }

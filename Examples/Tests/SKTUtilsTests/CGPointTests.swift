@@ -116,14 +116,14 @@ class CGPointTests: XCTestCase {
   func testInitWith45DegreeAngle() {
     let a = π/4.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, 1.0/sqrt(2.0), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(pt.y, 1.0/sqrt(2.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.x, 1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.y, 1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testInitWith90DegreeAngle() {
     let a = π/2.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, CGFloat(0.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.x, CGFloat(0.0), accuracy: CGFloat(FLT_EPSILON))
     XCTAssertEqual(pt.y, CGFloat(1.0))
   }
 
@@ -131,14 +131,14 @@ class CGPointTests: XCTestCase {
     let a = π
     let pt = CGPoint(angle: a)
     XCTAssertEqual(pt.x, -1.0)
-    XCTAssertEqualWithAccuracy(pt.y, CGFloat(0.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.y, CGFloat(0.0), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testInitWithMinus135DegreeAngle() {
     let a = -3.0*π/4.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, -1.0/sqrt(2.0), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(pt.y, -1.0/sqrt(2.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.x, -1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.y, -1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testZeroDegreeAngle() {
@@ -158,12 +158,12 @@ class CGPointTests: XCTestCase {
 
   func test180DegreeAngle() {
     let pt = CGPoint(x: -1.0, y: 0.0)
-    XCTAssertEqualWithAccuracy(pt.angle, π, 1.0e-6)
+    XCTAssertEqualWithAccuracy(pt.angle, π, accuracy: 1.0e-6)
   }
 
   func testMinus135DegreeAngle() {
     let pt = CGPoint(x: -1.0/sqrt(2.0), y: -1.0/sqrt(2.0))
-    XCTAssertEqualWithAccuracy(pt.angle, -3.0*π/4.0, CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.angle, -3.0*π/4.0, accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testLengthHorizontalUnitVector() {
@@ -192,17 +192,17 @@ class CGPointTests: XCTestCase {
   }
 
   func testDistance() {
-    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), CGFloat(100.6230589874), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), CGFloat(100.6230589874), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testThatLengthEqualsDistance() {
-    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), (pt1 - pt2).length(), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), (pt1 - pt2).length(), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testNormalized() {
     let normalized = pt1.normalized()
-    XCTAssertEqualWithAccuracy(normalized.x, 2.0/sqrt(5.0), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(normalized.y, 1.0/sqrt(5.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(normalized.x, 2.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(normalized.y, 1.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testThatNormalizedDoesNotChangeOriginalValue() {
@@ -214,8 +214,8 @@ class CGPointTests: XCTestCase {
 
   func testThatNormalizeReturnsNewValue() {
     pt1.normalize()
-    XCTAssertEqualWithAccuracy(pt1.x, 2.0/sqrt(5.0), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(pt1.y, 1.0/sqrt(5.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.x, 2.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.y, 1.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
   }
   
   func testThatNormalizingKeepsSameAngle() {
@@ -244,8 +244,8 @@ class CGPointTests: XCTestCase {
     var i = 0
     for var t = 0.0; t <= 1.0; t += 0.1, ++i {
       let lerped = lerp(start: start, end: end, t: CGFloat(t))
-      XCTAssertEqualWithAccuracy(lerped.x, expected[i].x, 1.0e6)
-      XCTAssertEqualWithAccuracy(lerped.y, expected[i].y, 1.0e6)
+      XCTAssertEqualWithAccuracy(lerped.x, expected[i].x, accuracy: 1.0e6)
+      XCTAssertEqualWithAccuracy(lerped.y, expected[i].y, accuracy: 1.0e6)
     }
   }
 }
