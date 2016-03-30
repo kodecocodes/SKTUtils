@@ -144,7 +144,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     node.name = horizontal ? "horizontalBorder" : "verticalBorder"
     node.position = CGPointMake(-BorderThickness/2, -length/2)
   
-    rect.offset(dx: -BorderThickness/2, dy: -length/2)
+    rect.offsetInPlace(dx: -BorderThickness/2, dy: -length/2)
 
     let body = SKPhysicsBody(polygonFromPath: UIBezierPath(rect: rect).CGPath)
     body.dynamic = false

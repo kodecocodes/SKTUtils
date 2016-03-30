@@ -32,7 +32,7 @@ class FloatTests: XCTestCase {
 
   func testThatClampedDoesNotChangeOriginalValue() {
     let original: CGFloat = 50
-    let clamped = original.clamped(100, 200)
+    _ = original.clamped(100, 200)
     XCTAssertEqual(original, CGFloat(50))
   }
 
@@ -43,21 +43,21 @@ class FloatTests: XCTestCase {
   }
 
   func testThatRandomStaysBetweenOneAndZero() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let value = CGFloat.random()
       XCTAssert(value >= 0 && value <= 1)
     }
   }
 
   func testThatRandomStaysInRange() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let value = CGFloat.random(min: -10, max: 10)
       XCTAssert(value >= -10 && value <= 10)
     }
   }
 
   func testThatRandomSignIsMinusOrPlusOne() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let value = CGFloat.randomSign()
       XCTAssert(value == -1.0 || value == 1.0)
     }
@@ -92,7 +92,9 @@ class FloatTests: XCTestCase {
   }
 
   func testAllAngles() {
-    for var angle: CGFloat = -360; angle <= 360; angle += 0.5 {
+    let startAngle = CGFloat(-360)
+    let endAngle = CGFloat(360)
+    for angle in startAngle.stride(through: endAngle, by: 0.5) {
       let radians = angle.degreesToRadians()
       XCTAssertEqualWithAccuracy(radians.radiansToDegrees(), angle, accuracy: 1.0e6)
     }

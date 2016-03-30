@@ -207,7 +207,7 @@ class CGPointTests: XCTestCase {
 
   func testThatNormalizedDoesNotChangeOriginalValue() {
     let old = pt1
-    let normalized = pt1.normalized()
+    _ = pt1.normalized()
     XCTAssertEqual(pt1.x, old.x)
     XCTAssertEqual(pt1.y, old.y)
   }
@@ -242,10 +242,12 @@ class CGPointTests: XCTestCase {
       ]
 
     var i = 0
-    for var t = 0.0; t <= 1.0; t += 0.1, ++i {
+    for t in 0.0.stride(through: 1.0, by: 0.1) {
       let lerped = lerp(start: start, end: end, t: CGFloat(t))
+      print("\(i), \(t)")
       XCTAssertEqualWithAccuracy(lerped.x, expected[i].x, accuracy: 1.0e6)
       XCTAssertEqualWithAccuracy(lerped.y, expected[i].y, accuracy: 1.0e6)
+      i += 1
     }
   }
 }

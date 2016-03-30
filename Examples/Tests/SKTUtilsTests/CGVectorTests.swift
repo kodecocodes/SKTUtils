@@ -178,7 +178,7 @@ class CGVectorTests: XCTestCase {
 
   func testThatNormalizedDoesNotChangeOriginalValue() {
     let old = v1
-    let normalized = v1.normalized()
+    _ = v1.normalized()
     XCTAssertEqual(v1.dx, old.dx)
     XCTAssertEqual(v1.dy, old.dy)
   }
@@ -213,10 +213,11 @@ class CGVectorTests: XCTestCase {
       ]
 
     var i = 0
-    for var t = 0.0; t <= 1.0; t += 0.1, ++i {
+    for t in 0.0.stride(through: 1.0, by: 0.1) {
       let lerped = lerp(start: start, end: end, t: CGFloat(t))
       XCTAssertEqualWithAccuracy(lerped.dx, expected[i].dx, accuracy: 1.0e6)
       XCTAssertEqualWithAccuracy(lerped.dy, expected[i].dy, accuracy: 1.0e6)
+      i += 1
     }
   }
 }
