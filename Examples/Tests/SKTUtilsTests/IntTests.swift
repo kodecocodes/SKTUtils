@@ -67,7 +67,7 @@ class IntTests: XCTestCase {
 
   func testThatClampedDoesNotChangeOriginalValue() {
     let original = 50
-    let clamped = original.clamped(100 ... 200)
+    _ = original.clamped(100 ... 200)
     XCTAssertEqual(original, 50)
   }
 
@@ -78,7 +78,7 @@ class IntTests: XCTestCase {
   }
 
   func testThatRandomStaysInHalfOpenRange() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let v = Int.random(-10 ..< 10)
       XCTAssert(v >= -10 && v < 10)
 
@@ -88,7 +88,7 @@ class IntTests: XCTestCase {
   }
 
   func testThatRandomStaysInOpenRange() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let v = Int.random(-10 ... 10)
       XCTAssert(v >= -10 && v <= 10)
 

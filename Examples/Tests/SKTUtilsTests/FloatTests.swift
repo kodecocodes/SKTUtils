@@ -32,7 +32,7 @@ class FloatTests: XCTestCase {
 
   func testThatClampedDoesNotChangeOriginalValue() {
     let original: CGFloat = 50
-    let clamped = original.clamped(100, 200)
+    _ = original.clamped(100, 200)
     XCTAssertEqual(original, CGFloat(50))
   }
 
@@ -43,21 +43,21 @@ class FloatTests: XCTestCase {
   }
 
   func testThatRandomStaysBetweenOneAndZero() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let value = CGFloat.random()
       XCTAssert(value >= 0 && value <= 1)
     }
   }
 
   func testThatRandomStaysInRange() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let value = CGFloat.random(min: -10, max: 10)
       XCTAssert(value >= -10 && value <= 10)
     }
   }
 
   func testThatRandomSignIsMinusOrPlusOne() {
-    for i in 0..<1000 {
+    for _ in 0..<1000 {
       let value = CGFloat.randomSign()
       XCTAssert(value == -1.0 || value == 1.0)
     }
@@ -70,31 +70,33 @@ class FloatTests: XCTestCase {
   }
 
   func testDegreesToRadians() {
-    XCTAssertEqualWithAccuracy(CGFloat(0).degreesToRadians(), CGFloat(0), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(45).degreesToRadians(), π/4, CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(90).degreesToRadians(), π/2, CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(135).degreesToRadians(), 3*π/4, CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(180).degreesToRadians(), π, CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(-135).degreesToRadians(), -3*π/4, CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(-90).degreesToRadians(), -π/2, CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(CGFloat(-45).degreesToRadians(), -π/4, CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(0).degreesToRadians(), CGFloat(0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(45).degreesToRadians(), π/4, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(90).degreesToRadians(), π/2, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(135).degreesToRadians(), 3*π/4, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(180).degreesToRadians(), π, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(-135).degreesToRadians(), -3*π/4, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(-90).degreesToRadians(), -π/2, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(-45).degreesToRadians(), -π/4, accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testRadiansToDegrees() {
-    XCTAssertEqualWithAccuracy(CGFloat(0).radiansToDegrees(), CGFloat(0), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy((π/4).radiansToDegrees(), CGFloat(45), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy((π/2).radiansToDegrees(), CGFloat(90), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy((3*π/4).radiansToDegrees(), CGFloat(135), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(π.radiansToDegrees(), CGFloat(180), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy((-3*π/4).radiansToDegrees(), CGFloat(-135), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy((-π/2).radiansToDegrees(), CGFloat(-90), CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy((-π/4).radiansToDegrees(), CGFloat(-45), CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(CGFloat(0).radiansToDegrees(), CGFloat(0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy((π/4).radiansToDegrees(), CGFloat(45), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy((π/2).radiansToDegrees(), CGFloat(90), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy((3*π/4).radiansToDegrees(), CGFloat(135), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(π.radiansToDegrees(), CGFloat(180), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy((-3*π/4).radiansToDegrees(), CGFloat(-135), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy((-π/2).radiansToDegrees(), CGFloat(-90), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy((-π/4).radiansToDegrees(), CGFloat(-45), accuracy: CGFloat(FLT_EPSILON))
   }
 
   func testAllAngles() {
-    for var angle: CGFloat = -360; angle <= 360; angle += 0.5 {
+    let startAngle = CGFloat(-360)
+    let endAngle = CGFloat(360)
+    for angle in startAngle.stride(through: endAngle, by: 0.5) {
       let radians = angle.degreesToRadians()
-      XCTAssertEqualWithAccuracy(radians.radiansToDegrees(), angle, 1.0e6)
+      XCTAssertEqualWithAccuracy(radians.radiansToDegrees(), angle, accuracy: 1.0e6)
     }
   }
 

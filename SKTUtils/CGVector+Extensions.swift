@@ -42,7 +42,7 @@ public extension CGVector {
   /**
    * Adds (dx, dy) to the vector.
    */
-  public mutating func offset(#dx: CGFloat, dy: CGFloat) -> CGVector {
+  public mutating func offset(dx dx: CGFloat, dy: CGFloat) -> CGVector {
     self.dx += dx
     self.dy += dy
     return self
@@ -68,7 +68,7 @@ public extension CGVector {
   public  */
   func normalized() -> CGVector {
     let len = length()
-    return len>0 ? self / len : CGVector.zeroVector
+    return len>0 ? self / len : CGVector.zero
   }
 
   /**
@@ -184,6 +184,6 @@ public func /= (inout vector: CGVector, scalar: CGFloat) {
 /**
  * Performs a linear interpolation between two CGVector values.
  */
-public func lerp(#start: CGVector, #end: CGVector, #t: CGFloat) -> CGVector {
+public func lerp(start start: CGVector, end: CGVector, t: CGFloat) -> CGVector {
   return start + (end - start) * t
 }

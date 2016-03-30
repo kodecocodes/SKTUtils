@@ -37,10 +37,10 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   // node that centers the world on the screen.
   let worldPivot = SKNode()
 
-  let sceneBackgroundColor = SKColorWithRGB(8, 57, 71)
-  let borderColor = SKColorWithRGB(160, 160, 160)
+  let sceneBackgroundColor = SKColorWithRGB(8, g: 57, b: 71)
+  let borderColor = SKColorWithRGB(160, g: 160, b: 160)
   let borderFlashColor = SKColor.whiteColor()
-  let barrierColor = SKColorWithRGB(212, 212, 212)
+  let barrierColor = SKColorWithRGB(212, g: 212, b: 212)
   let barrierFlashColor = SKColor.whiteColor()
   let ballFlashColor  = SKColor.redColor()
 
@@ -55,7 +55,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
     // Preload the font, otherwise there is a small delay when creating the
     // first text label.
-    let tempLabel = SKLabelNode(fontNamed: "HelveticaNeue-Light")
+    _ = SKLabelNode(fontNamed: "HelveticaNeue-Light")
 
     scaleMode = .ResizeFill
     backgroundColor = sceneBackgroundColor
@@ -144,7 +144,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     node.name = horizontal ? "horizontalBorder" : "verticalBorder"
     node.position = CGPointMake(-BorderThickness/2, -length/2)
   
-    rect.offset(dx: -BorderThickness/2, dy: -length/2)
+    rect.offsetInPlace(dx: -BorderThickness/2, dy: -length/2)
 
     let body = SKPhysicsBody(polygonFromPath: UIBezierPath(rect: rect).CGPath)
     body.dynamic = false
@@ -353,14 +353,14 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   /**
    * Adds a random impulse to the balls whenever the user taps the screen.
    */
-  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     worldLayer.enumerateChildNodesWithName("ball") {(node, stop) in
       let speed: CGFloat = 50
       let impulse = CGVectorMake(CGFloat.random(min: -speed, max: speed), CGFloat.random(min: -speed, max: speed))
       node.physicsBody!.applyImpulse(impulse)
 
       if STRETCH_BALL {
-        self.stretchBall(node.children[0] as! SKNode)
+        self.stretchBall(node.children[0] as SKNode)
       }
     }
   }
@@ -451,7 +451,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if FLASH_BARRIER {
-      let containerNode = barrier.children[0] as! SKNode
+      let containerNode = barrier.children[0] as SKNode
       let shapeNode = containerNode.children[0] as! SKShapeNode
       flashShapeNode(shapeNode, fromColor: barrierFlashColor, toColor: barrierColor)
     }
@@ -557,7 +557,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     // This is the SKnode that holds the SKShapeNode. We need to scale this
     // container node and not the shape node directly, so that the barrier
     // shape appears to scale from the center instead of one of its corners.
-    let containerNode = node.children[0] as! SKNode
+    let containerNode = node.children[0] as SKNode
   
     let currentScale = CGPointMake(containerNode.xScale, containerNode.yScale)
     let newScale = currentScale * 0.5
@@ -613,7 +613,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    * timing, making it wobble like jelly.
    */
   func jelly(node: SKNode) {
-    let containerNode = node.children[0] as! SKNode
+    let containerNode = node.children[0] as SKNode
   
     let scaleEffect = SKTScaleEffect(node: containerNode, duration: 0.25, startScale: CGPointMake(1.25, 1.25), endScale: CGPointMake(containerNode.xScale, containerNode.yScale))
 
