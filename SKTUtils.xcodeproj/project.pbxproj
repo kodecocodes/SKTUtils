@@ -7,39 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A4D1BF3B1CB77621001B455A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF2F1CB77621001B455A /* CGFloat+Extensions.swift */; };
-		A4D1BF3C1CB77621001B455A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF301CB77621001B455A /* CGPoint+Extensions.swift */; };
-		A4D1BF3D1CB77621001B455A /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF311CB77621001B455A /* CGVector+Extensions.swift */; };
-		A4D1BF3E1CB77621001B455A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF321CB77621001B455A /* Int+Extensions.swift */; };
-		A4D1BF3F1CB77621001B455A /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF331CB77621001B455A /* SKAction+Extensions.swift */; };
-		A4D1BF401CB77621001B455A /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF341CB77621001B455A /* SKAction+SpecialEffects.swift */; };
-		A4D1BF411CB77621001B455A /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF351CB77621001B455A /* SKColor+Extensions.swift */; };
-		A4D1BF421CB77621001B455A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF361CB77621001B455A /* SKNode+Extensions.swift */; };
-		A4D1BF431CB77621001B455A /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF371CB77621001B455A /* SKTAudio.swift */; };
-		A4D1BF441CB77621001B455A /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF381CB77621001B455A /* SKTEffects.swift */; };
-		A4D1BF451CB77621001B455A /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF391CB77621001B455A /* SKTTimingFunctions.swift */; };
-		A4D1BF461CB77621001B455A /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF3A1CB77621001B455A /* Vector3.swift */; };
+		A4D1BF841CB77EB4001B455A /* SKTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D1BF831CB77EB4001B455A /* SKTUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4D1BF971CB77EE6001B455A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */; };
+		A4D1BF981CB77EE6001B455A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */; };
+		A4D1BF991CB77EE6001B455A /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */; };
+		A4D1BF9A1CB77EE6001B455A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */; };
+		A4D1BF9B1CB77EE6001B455A /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */; };
+		A4D1BF9C1CB77EE6001B455A /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */; };
+		A4D1BF9D1CB77EE6001B455A /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */; };
+		A4D1BF9E1CB77EE6001B455A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */; };
+		A4D1BF9F1CB77EE6001B455A /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF931CB77EE6001B455A /* SKTAudio.swift */; };
+		A4D1BFA01CB77EE6001B455A /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF941CB77EE6001B455A /* SKTEffects.swift */; };
+		A4D1BFA11CB77EE6001B455A /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */; };
+		A4D1BFA21CB77EE6001B455A /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF961CB77EE6001B455A /* Vector3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A4D1BF241CB775E3001B455A /* SKTUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKTUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4D1BF291CB775E3001B455A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4D1BF2F1CB77621001B455A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF301CB77621001B455A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF311CB77621001B455A /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF321CB77621001B455A /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF331CB77621001B455A /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF341CB77621001B455A /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
-		A4D1BF351CB77621001B455A /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF361CB77621001B455A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
-		A4D1BF371CB77621001B455A /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
-		A4D1BF381CB77621001B455A /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
-		A4D1BF391CB77621001B455A /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
-		A4D1BF3A1CB77621001B455A /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		A4D1BF801CB77EB4001B455A /* SKTUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKTUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D1BF831CB77EB4001B455A /* SKTUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
+		A4D1BF851CB77EB4001B455A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF931CB77EE6001B455A /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
+		A4D1BF941CB77EE6001B455A /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		A4D1BF961CB77EE6001B455A /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A4D1BF201CB775E3001B455A /* Frameworks */ = {
+		A4D1BF7C1CB77EB4001B455A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,38 +51,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A4D1BF1A1CB775E3001B455A = {
+		A4D1BF761CB77EB4001B455A = {
 			isa = PBXGroup;
 			children = (
-				A4D1BF261CB775E3001B455A /* SKTUtils */,
-				A4D1BF251CB775E3001B455A /* Products */,
+				A4D1BF821CB77EB4001B455A /* SKTUtils */,
+				A4D1BF811CB77EB4001B455A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A4D1BF251CB775E3001B455A /* Products */ = {
+		A4D1BF811CB77EB4001B455A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4D1BF241CB775E3001B455A /* SKTUtils.framework */,
+				A4D1BF801CB77EB4001B455A /* SKTUtils.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A4D1BF261CB775E3001B455A /* SKTUtils */ = {
+		A4D1BF821CB77EB4001B455A /* SKTUtils */ = {
 			isa = PBXGroup;
 			children = (
-				A4D1BF2F1CB77621001B455A /* CGFloat+Extensions.swift */,
-				A4D1BF301CB77621001B455A /* CGPoint+Extensions.swift */,
-				A4D1BF311CB77621001B455A /* CGVector+Extensions.swift */,
-				A4D1BF321CB77621001B455A /* Int+Extensions.swift */,
-				A4D1BF331CB77621001B455A /* SKAction+Extensions.swift */,
-				A4D1BF341CB77621001B455A /* SKAction+SpecialEffects.swift */,
-				A4D1BF351CB77621001B455A /* SKColor+Extensions.swift */,
-				A4D1BF361CB77621001B455A /* SKNode+Extensions.swift */,
-				A4D1BF371CB77621001B455A /* SKTAudio.swift */,
-				A4D1BF381CB77621001B455A /* SKTEffects.swift */,
-				A4D1BF391CB77621001B455A /* SKTTimingFunctions.swift */,
-				A4D1BF3A1CB77621001B455A /* Vector3.swift */,
-				A4D1BF291CB775E3001B455A /* Info.plist */,
+				A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */,
+				A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */,
+				A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */,
+				A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */,
+				A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */,
+				A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */,
+				A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */,
+				A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */,
+				A4D1BF931CB77EE6001B455A /* SKTAudio.swift */,
+				A4D1BF941CB77EE6001B455A /* SKTEffects.swift */,
+				A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */,
+				A4D1BF961CB77EE6001B455A /* Vector3.swift */,
+				A4D1BF831CB77EB4001B455A /* SKTUtils.h */,
+				A4D1BF851CB77EB4001B455A /* Info.plist */,
 			);
 			path = SKTUtils;
 			sourceTree = "<group>";
@@ -88,24 +91,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A4D1BF211CB775E3001B455A /* Headers */ = {
+		A4D1BF7D1CB77EB4001B455A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D1BF841CB77EB4001B455A /* SKTUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A4D1BF231CB775E3001B455A /* SKTUtils */ = {
+		A4D1BF7F1CB77EB4001B455A /* SKTUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4D1BF2C1CB775E3001B455A /* Build configuration list for PBXNativeTarget "SKTUtils" */;
+			buildConfigurationList = A4D1BF881CB77EB4001B455A /* Build configuration list for PBXNativeTarget "SKTUtils" */;
 			buildPhases = (
-				A4D1BF1F1CB775E3001B455A /* Sources */,
-				A4D1BF201CB775E3001B455A /* Frameworks */,
-				A4D1BF211CB775E3001B455A /* Headers */,
-				A4D1BF221CB775E3001B455A /* Resources */,
+				A4D1BF7B1CB77EB4001B455A /* Sources */,
+				A4D1BF7C1CB77EB4001B455A /* Frameworks */,
+				A4D1BF7D1CB77EB4001B455A /* Headers */,
+				A4D1BF7E1CB77EB4001B455A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -113,42 +117,42 @@
 			);
 			name = SKTUtils;
 			productName = SKTUtils;
-			productReference = A4D1BF241CB775E3001B455A /* SKTUtils.framework */;
+			productReference = A4D1BF801CB77EB4001B455A /* SKTUtils.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A4D1BF1B1CB775E3001B455A /* Project object */ = {
+		A4D1BF771CB77EB4001B455A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = raywenderlich;
 				TargetAttributes = {
-					A4D1BF231CB775E3001B455A = {
+					A4D1BF7F1CB77EB4001B455A = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
-			buildConfigurationList = A4D1BF1E1CB775E3001B455A /* Build configuration list for PBXProject "SKTUtils" */;
+			buildConfigurationList = A4D1BF7A1CB77EB4001B455A /* Build configuration list for PBXProject "SKTUtils" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A4D1BF1A1CB775E3001B455A;
-			productRefGroup = A4D1BF251CB775E3001B455A /* Products */;
+			mainGroup = A4D1BF761CB77EB4001B455A;
+			productRefGroup = A4D1BF811CB77EB4001B455A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4D1BF231CB775E3001B455A /* SKTUtils */,
+				A4D1BF7F1CB77EB4001B455A /* SKTUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A4D1BF221CB775E3001B455A /* Resources */ = {
+		A4D1BF7E1CB77EB4001B455A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,29 +162,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A4D1BF1F1CB775E3001B455A /* Sources */ = {
+		A4D1BF7B1CB77EB4001B455A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D1BF3C1CB77621001B455A /* CGPoint+Extensions.swift in Sources */,
-				A4D1BF441CB77621001B455A /* SKTEffects.swift in Sources */,
-				A4D1BF451CB77621001B455A /* SKTTimingFunctions.swift in Sources */,
-				A4D1BF421CB77621001B455A /* SKNode+Extensions.swift in Sources */,
-				A4D1BF3F1CB77621001B455A /* SKAction+Extensions.swift in Sources */,
-				A4D1BF431CB77621001B455A /* SKTAudio.swift in Sources */,
-				A4D1BF411CB77621001B455A /* SKColor+Extensions.swift in Sources */,
-				A4D1BF401CB77621001B455A /* SKAction+SpecialEffects.swift in Sources */,
-				A4D1BF3E1CB77621001B455A /* Int+Extensions.swift in Sources */,
-				A4D1BF3B1CB77621001B455A /* CGFloat+Extensions.swift in Sources */,
-				A4D1BF461CB77621001B455A /* Vector3.swift in Sources */,
-				A4D1BF3D1CB77621001B455A /* CGVector+Extensions.swift in Sources */,
+				A4D1BF981CB77EE6001B455A /* CGPoint+Extensions.swift in Sources */,
+				A4D1BFA01CB77EE6001B455A /* SKTEffects.swift in Sources */,
+				A4D1BFA11CB77EE6001B455A /* SKTTimingFunctions.swift in Sources */,
+				A4D1BF9E1CB77EE6001B455A /* SKNode+Extensions.swift in Sources */,
+				A4D1BF9B1CB77EE6001B455A /* SKAction+Extensions.swift in Sources */,
+				A4D1BF9F1CB77EE6001B455A /* SKTAudio.swift in Sources */,
+				A4D1BF9D1CB77EE6001B455A /* SKColor+Extensions.swift in Sources */,
+				A4D1BF9C1CB77EE6001B455A /* SKAction+SpecialEffects.swift in Sources */,
+				A4D1BF9A1CB77EE6001B455A /* Int+Extensions.swift in Sources */,
+				A4D1BF971CB77EE6001B455A /* CGFloat+Extensions.swift in Sources */,
+				A4D1BFA21CB77EE6001B455A /* Vector3.swift in Sources */,
+				A4D1BF991CB77EE6001B455A /* CGVector+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A4D1BF2A1CB775E3001B455A /* Debug */ = {
+		A4D1BF861CB77EB4001B455A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +233,7 @@
 			};
 			name = Debug;
 		};
-		A4D1BF2B1CB775E3001B455A /* Release */ = {
+		A4D1BF871CB77EB4001B455A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -271,7 +275,7 @@
 			};
 			name = Release;
 		};
-		A4D1BF2D1CB775E3001B455A /* Debug */ = {
+		A4D1BF891CB77EB4001B455A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -289,7 +293,7 @@
 			};
 			name = Debug;
 		};
-		A4D1BF2E1CB775E3001B455A /* Release */ = {
+		A4D1BF8A1CB77EB4001B455A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -309,25 +313,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A4D1BF1E1CB775E3001B455A /* Build configuration list for PBXProject "SKTUtils" */ = {
+		A4D1BF7A1CB77EB4001B455A /* Build configuration list for PBXProject "SKTUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4D1BF2A1CB775E3001B455A /* Debug */,
-				A4D1BF2B1CB775E3001B455A /* Release */,
+				A4D1BF861CB77EB4001B455A /* Debug */,
+				A4D1BF871CB77EB4001B455A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4D1BF2C1CB775E3001B455A /* Build configuration list for PBXNativeTarget "SKTUtils" */ = {
+		A4D1BF881CB77EB4001B455A /* Build configuration list for PBXNativeTarget "SKTUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4D1BF2D1CB775E3001B455A /* Debug */,
-				A4D1BF2E1CB775E3001B455A /* Release */,
+				A4D1BF891CB77EB4001B455A /* Debug */,
+				A4D1BF8A1CB77EB4001B455A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A4D1BF1B1CB775E3001B455A /* Project object */;
+	rootObject = A4D1BF771CB77EB4001B455A /* Project object */;
 }

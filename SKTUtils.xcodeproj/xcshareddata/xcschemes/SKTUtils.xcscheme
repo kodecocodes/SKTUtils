@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A4D1BF231CB775E3001B455A"
+               BlueprintIdentifier = "A4D1BF7F1CB77EB4001B455A"
                BuildableName = "SKTUtils.framework"
                BlueprintName = "SKTUtils"
                ReferencedContainer = "container:SKTUtils.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4D1BF231CB775E3001B455A"
+            BlueprintIdentifier = "A4D1BF7F1CB77EB4001B455A"
             BuildableName = "SKTUtils.framework"
             BlueprintName = "SKTUtils"
             ReferencedContainer = "container:SKTUtils.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4D1BF231CB775E3001B455A"
+            BlueprintIdentifier = "A4D1BF7F1CB77EB4001B455A"
             BuildableName = "SKTUtils.framework"
             BlueprintName = "SKTUtils"
             ReferencedContainer = "container:SKTUtils.xcodeproj">
