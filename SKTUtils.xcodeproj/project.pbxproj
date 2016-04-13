@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A48DA0331CBE2446000DCCED /* SKTUtilsTv.h in Headers */ = {isa = PBXBuildFile; fileRef = A48DA0321CBE2446000DCCED /* SKTUtilsTv.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A48DA0391CBE2483000DCCED /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */; };
+		A48DA03A1CBE2483000DCCED /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */; };
+		A48DA03B1CBE2483000DCCED /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */; };
+		A48DA03C1CBE2483000DCCED /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */; };
+		A48DA03D1CBE2483000DCCED /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */; };
+		A48DA03E1CBE2483000DCCED /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */; };
+		A48DA03F1CBE2483000DCCED /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */; };
+		A48DA0401CBE2483000DCCED /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */; };
+		A48DA0411CBE2483000DCCED /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF931CB77EE6001B455A /* SKTAudio.swift */; };
+		A48DA0421CBE2483000DCCED /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF941CB77EE6001B455A /* SKTEffects.swift */; };
+		A48DA0431CBE2483000DCCED /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */; };
+		A48DA0441CBE2483000DCCED /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF961CB77EE6001B455A /* Vector3.swift */; };
+		A4D1BF841CB77EB4001B455A /* SKTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D1BF831CB77EB4001B455A /* SKTUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4D1BF971CB77EE6001B455A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */; };
+		A4D1BF981CB77EE6001B455A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */; };
+		A4D1BF991CB77EE6001B455A /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */; };
+		A4D1BF9A1CB77EE6001B455A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */; };
+		A4D1BF9B1CB77EE6001B455A /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */; };
+		A4D1BF9C1CB77EE6001B455A /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */; };
+		A4D1BF9D1CB77EE6001B455A /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */; };
+		A4D1BF9E1CB77EE6001B455A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */; };
+		A4D1BF9F1CB77EE6001B455A /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF931CB77EE6001B455A /* SKTAudio.swift */; };
+		A4D1BFA01CB77EE6001B455A /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF941CB77EE6001B455A /* SKTEffects.swift */; };
+		A4D1BFA11CB77EE6001B455A /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */; };
+		A4D1BFA21CB77EE6001B455A /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1BF961CB77EE6001B455A /* Vector3.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A48DA0301CBE2446000DCCED /* SKTUtilsTv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKTUtilsTv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A48DA0321CBE2446000DCCED /* SKTUtilsTv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTUtilsTv.h; sourceTree = "<group>"; };
+		A48DA0341CBE2446000DCCED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D1BF801CB77EB4001B455A /* SKTUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKTUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D1BF831CB77EB4001B455A /* SKTUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
+		A4D1BF851CB77EB4001B455A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGFloat+Extensions.swift"; path = "SKTUtils/CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extensions.swift"; path = "SKTUtils/CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGVector+Extensions.swift"; path = "SKTUtils/CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Extensions.swift"; path = "SKTUtils/Int+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKAction+Extensions.swift"; path = "SKTUtils/SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKAction+SpecialEffects.swift"; path = "SKTUtils/SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKColor+Extensions.swift"; path = "SKTUtils/SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKNode+Extensions.swift"; path = "SKTUtils/SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		A4D1BF931CB77EE6001B455A /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKTAudio.swift; path = SKTUtils/SKTAudio.swift; sourceTree = "<group>"; };
+		A4D1BF941CB77EE6001B455A /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKTEffects.swift; path = SKTUtils/SKTEffects.swift; sourceTree = "<group>"; };
+		A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKTTimingFunctions.swift; path = SKTUtils/SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		A4D1BF961CB77EE6001B455A /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector3.swift; path = SKTUtils/Vector3.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A48DA02C1CBE2446000DCCED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D1BF7C1CB77EB4001B455A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A48DA0311CBE2446000DCCED /* SKTUtilsTv */ = {
+			isa = PBXGroup;
+			children = (
+				A48DA0321CBE2446000DCCED /* SKTUtilsTv.h */,
+				A48DA0341CBE2446000DCCED /* Info.plist */,
+			);
+			path = SKTUtilsTv;
+			sourceTree = "<group>";
+		};
+		A48DA0381CBE2470000DCCED /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1BF8B1CB77EE6001B455A /* CGFloat+Extensions.swift */,
+				A4D1BF8C1CB77EE6001B455A /* CGPoint+Extensions.swift */,
+				A4D1BF8D1CB77EE6001B455A /* CGVector+Extensions.swift */,
+				A4D1BF8E1CB77EE6001B455A /* Int+Extensions.swift */,
+				A4D1BF8F1CB77EE6001B455A /* SKAction+Extensions.swift */,
+				A4D1BF901CB77EE6001B455A /* SKAction+SpecialEffects.swift */,
+				A4D1BF911CB77EE6001B455A /* SKColor+Extensions.swift */,
+				A4D1BF921CB77EE6001B455A /* SKNode+Extensions.swift */,
+				A4D1BF931CB77EE6001B455A /* SKTAudio.swift */,
+				A4D1BF941CB77EE6001B455A /* SKTEffects.swift */,
+				A4D1BF951CB77EE6001B455A /* SKTTimingFunctions.swift */,
+				A4D1BF961CB77EE6001B455A /* Vector3.swift */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
+		A4D1BF761CB77EB4001B455A = {
+			isa = PBXGroup;
+			children = (
+				A48DA0381CBE2470000DCCED /* Share */,
+				A4D1BF821CB77EB4001B455A /* SKTUtils */,
+				A48DA0311CBE2446000DCCED /* SKTUtilsTv */,
+				A4D1BF811CB77EB4001B455A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4D1BF811CB77EB4001B455A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1BF801CB77EB4001B455A /* SKTUtils.framework */,
+				A48DA0301CBE2446000DCCED /* SKTUtilsTv.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4D1BF821CB77EB4001B455A /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1BF831CB77EB4001B455A /* SKTUtils.h */,
+				A4D1BF851CB77EB4001B455A /* Info.plist */,
+			);
+			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A48DA02D1CBE2446000DCCED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48DA0331CBE2446000DCCED /* SKTUtilsTv.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D1BF7D1CB77EB4001B455A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D1BF841CB77EB4001B455A /* SKTUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A48DA02F1CBE2446000DCCED /* SKTUtilsTv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A48DA0371CBE2446000DCCED /* Build configuration list for PBXNativeTarget "SKTUtilsTv" */;
+			buildPhases = (
+				A48DA02B1CBE2446000DCCED /* Sources */,
+				A48DA02C1CBE2446000DCCED /* Frameworks */,
+				A48DA02D1CBE2446000DCCED /* Headers */,
+				A48DA02E1CBE2446000DCCED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKTUtilsTv;
+			productName = SKTUtilsTv;
+			productReference = A48DA0301CBE2446000DCCED /* SKTUtilsTv.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A4D1BF7F1CB77EB4001B455A /* SKTUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4D1BF881CB77EB4001B455A /* Build configuration list for PBXNativeTarget "SKTUtils" */;
+			buildPhases = (
+				A4D1BF7B1CB77EB4001B455A /* Sources */,
+				A4D1BF7C1CB77EB4001B455A /* Frameworks */,
+				A4D1BF7D1CB77EB4001B455A /* Headers */,
+				A4D1BF7E1CB77EB4001B455A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKTUtils;
+			productName = SKTUtils;
+			productReference = A4D1BF801CB77EB4001B455A /* SKTUtils.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4D1BF771CB77EB4001B455A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = raywenderlich;
+				TargetAttributes = {
+					A48DA02F1CBE2446000DCCED = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A4D1BF7F1CB77EB4001B455A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = A4D1BF7A1CB77EB4001B455A /* Build configuration list for PBXProject "SKTUtils" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A4D1BF761CB77EB4001B455A;
+			productRefGroup = A4D1BF811CB77EB4001B455A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4D1BF7F1CB77EB4001B455A /* SKTUtils */,
+				A48DA02F1CBE2446000DCCED /* SKTUtilsTv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A48DA02E1CBE2446000DCCED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D1BF7E1CB77EB4001B455A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A48DA02B1CBE2446000DCCED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48DA03A1CBE2483000DCCED /* CGPoint+Extensions.swift in Sources */,
+				A48DA0421CBE2483000DCCED /* SKTEffects.swift in Sources */,
+				A48DA0431CBE2483000DCCED /* SKTTimingFunctions.swift in Sources */,
+				A48DA0401CBE2483000DCCED /* SKNode+Extensions.swift in Sources */,
+				A48DA03D1CBE2483000DCCED /* SKAction+Extensions.swift in Sources */,
+				A48DA0411CBE2483000DCCED /* SKTAudio.swift in Sources */,
+				A48DA03F1CBE2483000DCCED /* SKColor+Extensions.swift in Sources */,
+				A48DA03E1CBE2483000DCCED /* SKAction+SpecialEffects.swift in Sources */,
+				A48DA03C1CBE2483000DCCED /* Int+Extensions.swift in Sources */,
+				A48DA0391CBE2483000DCCED /* CGFloat+Extensions.swift in Sources */,
+				A48DA0441CBE2483000DCCED /* Vector3.swift in Sources */,
+				A48DA03B1CBE2483000DCCED /* CGVector+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D1BF7B1CB77EB4001B455A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D1BF981CB77EE6001B455A /* CGPoint+Extensions.swift in Sources */,
+				A4D1BFA01CB77EE6001B455A /* SKTEffects.swift in Sources */,
+				A4D1BFA11CB77EE6001B455A /* SKTTimingFunctions.swift in Sources */,
+				A4D1BF9E1CB77EE6001B455A /* SKNode+Extensions.swift in Sources */,
+				A4D1BF9B1CB77EE6001B455A /* SKAction+Extensions.swift in Sources */,
+				A4D1BF9F1CB77EE6001B455A /* SKTAudio.swift in Sources */,
+				A4D1BF9D1CB77EE6001B455A /* SKColor+Extensions.swift in Sources */,
+				A4D1BF9C1CB77EE6001B455A /* SKAction+SpecialEffects.swift in Sources */,
+				A4D1BF9A1CB77EE6001B455A /* Int+Extensions.swift in Sources */,
+				A4D1BF971CB77EE6001B455A /* CGFloat+Extensions.swift in Sources */,
+				A4D1BFA21CB77EE6001B455A /* Vector3.swift in Sources */,
+				A4D1BF991CB77EE6001B455A /* CGVector+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A48DA0351CBE2446000DCCED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SKTUtilsTv/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SKTUtilsTv;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		A48DA0361CBE2446000DCCED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SKTUtilsTv/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SKTUtilsTv;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		A4D1BF861CB77EB4001B455A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4D1BF871CB77EB4001B455A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A4D1BF891CB77EB4001B455A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SKTUtils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SKTUtils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A4D1BF8A1CB77EB4001B455A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SKTUtils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SKTUtils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A48DA0371CBE2446000DCCED /* Build configuration list for PBXNativeTarget "SKTUtilsTv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A48DA0351CBE2446000DCCED /* Debug */,
+				A48DA0361CBE2446000DCCED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A4D1BF7A1CB77EB4001B455A /* Build configuration list for PBXProject "SKTUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4D1BF861CB77EB4001B455A /* Debug */,
+				A4D1BF871CB77EB4001B455A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4D1BF881CB77EB4001B455A /* Build configuration list for PBXNativeTarget "SKTUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4D1BF891CB77EB4001B455A /* Debug */,
+				A4D1BF8A1CB77EB4001B455A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4D1BF771CB77EB4001B455A /* Project object */;
+}
