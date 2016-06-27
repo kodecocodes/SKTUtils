@@ -94,7 +94,7 @@ class FloatTests: XCTestCase {
   func testAllAngles() {
     let startAngle = CGFloat(-360)
     let endAngle = CGFloat(360)
-    for angle in startAngle.stride(through: endAngle, by: 0.5) {
+    for angle in stride(from: startAngle, through: endAngle, by: 0.5) {
       let radians = angle.degreesToRadians()
       XCTAssertEqualWithAccuracy(radians.radiansToDegrees(), angle, accuracy: 1.0e6)
     }

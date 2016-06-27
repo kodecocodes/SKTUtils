@@ -30,6 +30,6 @@ class ViewController: UIViewController {
   }
 
   override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-    return UIInterfaceOrientationMask.Landscape
+    return UIInterfaceOrientationMask.landscape
   }
 }

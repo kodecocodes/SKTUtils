@@ -213,7 +213,7 @@ class CGVectorTests: XCTestCase {
       ]
 
     var i = 0
-    for t in 0.0.stride(through: 1.0, by: 0.1) {
+    for t in stride(from: 0.0, through: 1.0, by: 0.1) {
       let lerped = lerp(start: start, end: end, t: CGFloat(t))
       XCTAssertEqualWithAccuracy(lerped.dx, expected[i].dx, accuracy: 1.0e6)
       XCTAssertEqualWithAccuracy(lerped.dy, expected[i].dy, accuracy: 1.0e6)

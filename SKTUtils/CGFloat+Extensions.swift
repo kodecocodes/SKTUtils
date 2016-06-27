@@ -43,7 +43,7 @@ public extension CGFloat {
   /**
    * Ensures that the float value stays between the given values, inclusive.
    */
-  public func clamped(v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+  public func clamped(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     let min = v1 < v2 ? v1 : v2
     let max = v1 > v2 ? v1 : v2
     return self < min ? min : (self > max ? max : self)
@@ -52,7 +52,7 @@ public extension CGFloat {
   /**
    * Ensures that the float value stays between the given values, inclusive.
    */
-  public mutating func clamp(v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+  public mutating func clamp(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     self = clamped(v1, v2)
     return self
   }
@@ -74,7 +74,7 @@ public extension CGFloat {
   /**
    * Returns a random floating point number in the range min...max, inclusive.
    */
-  public static func random(min min: CGFloat, max: CGFloat) -> CGFloat {
+  public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
     assert(min < max)
     return CGFloat.random() * (max - min) + min
   }
@@ -91,9 +91,9 @@ public extension CGFloat {
  * Returns the shortest angle between two angles. The result is always between
  * -π and π.
  */
-public func shortestAngleBetween(angle1: CGFloat, angle2: CGFloat) -> CGFloat {
+public func shortestAngleBetween(_ angle1: CGFloat, angle2: CGFloat) -> CGFloat {
     let twoπ = π * 2.0
-    var angle = (angle2 - angle1) % twoπ
+    var angle = (angle2 - angle1).truncatingRemainder(dividingBy: twoπ)
     if (angle >= π) {
         angle = angle - twoπ
     }
