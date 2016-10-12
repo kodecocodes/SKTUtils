@@ -82,7 +82,7 @@ public extension CGVector {
   /**
    * Calculates the distance between two CGVectors. Pythagoras!
    */
-  public func distanceTo(vector: CGVector) -> CGFloat {
+  public func distance(to vector: CGVector) -> CGFloat {
     return (self - vector).length()
   }
 
