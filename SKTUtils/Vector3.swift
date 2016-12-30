@@ -61,7 +61,7 @@ extension Vector3 {
    *
    * DEPRECATED: Use the == operator instead.
    */
-  public func equalToScalar(value: CGFloat) -> Bool {
+  public func equalToScalar(_ value: CGFloat) -> Bool {
     return x == value && y == value && z == value
   }
   
@@ -93,14 +93,14 @@ extension Vector3 {
   /**
    * Calculates the dot product with another Vector3.
    */
-  public func dot(vector: Vector3) -> CGFloat {
+  public func dot(_ vector: Vector3) -> CGFloat {
     return Vector3.dotProduct(self, right: vector)
   }
 
   /**
    * Calculates the cross product with another Vector3.
    */
-  public func cross(vector: Vector3) -> Vector3 {
+  public func cross(_ vector: Vector3) -> Vector3 {
     return Vector3.crossProduct(self, right: vector)
   }
 
@@ -109,7 +109,7 @@ extension Vector3 {
    *
    * DEPRECATED: Use dot() instead.
    */
-  public static func dotProduct(left: Vector3, right: Vector3) -> CGFloat {
+  public static func dotProduct(_ left: Vector3, right: Vector3) -> CGFloat {
     return left.x * right.x + left.y * right.y + left.z * right.z
   }
   
@@ -118,7 +118,7 @@ extension Vector3 {
    *
    * DEPRECATED: Use cross() instead.
    */
-  public static func crossProduct(left: Vector3, right: Vector3) -> Vector3 {
+  public static func crossProduct(_ left: Vector3, right: Vector3) -> Vector3 {
     let crossProduct = Vector3(x: left.y * right.z - left.z * right.y,
                                y: left.z * right.x - left.x * right.z,
                                z: left.x * right.y - left.y * right.x)
@@ -136,7 +136,7 @@ public func + (left: Vector3, right: Vector3) -> Vector3 {
 /**
  * Increments a Vector3 with the value of another.
  */
-public func += (inout left: Vector3, right: Vector3) {
+public func += (left: inout Vector3, right: Vector3) {
   left = left + right
 }
 
@@ -150,7 +150,7 @@ public func - (left: Vector3, right: Vector3) -> Vector3 {
 /**
  * Decrements a Vector3 with the value of another.
  */
-public func -= (inout left: Vector3, right: Vector3) {
+public func -= (left: inout Vector3, right: Vector3) {
   left = left - right
 }
 
@@ -164,7 +164,7 @@ public func * (left: Vector3, right: Vector3) -> Vector3 {
 /**
  * Multiplies a Vector3 with another.
  */
-public func *= (inout left: Vector3, right: Vector3) {
+public func *= (left: inout Vector3, right: Vector3) {
   left = left * right
 }
 
@@ -179,7 +179,7 @@ public func * (vector: Vector3, scalar: CGFloat) -> Vector3 {
 /**
  * Multiplies the x,y,z fields of a Vector3 with the same scalar value.
  */
-public func *= (inout vector: Vector3, scalar: CGFloat) {
+public func *= (vector: inout Vector3, scalar: CGFloat) {
   vector = vector * scalar
 }
 
@@ -193,7 +193,7 @@ public func / (left: Vector3, right: Vector3) -> Vector3 {
 /**
  * Divides a Vector3 by another.
  */
-public func /= (inout left: Vector3, right: Vector3) {
+public func /= (left: inout Vector3, right: Vector3) {
   left = left / right
 }
 
@@ -208,13 +208,13 @@ public func / (vector: Vector3, scalar: CGFloat) -> Vector3 {
 /**
  * Divides the x,y,z fields of a Vector3 by the same scalar value.
  */
-public func /= (inout vector: Vector3, scalar: CGFloat) {
+public func /= (vector: inout Vector3, scalar: CGFloat) {
   vector = vector / scalar
 }
 
 /**
  * Performs a linear interpolation between two Vector3 values.
  */
-public func lerp(start start: Vector3, end: Vector3, t: CGFloat) -> Vector3 {
+public func lerp(start: Vector3, end: Vector3, t: CGFloat) -> Vector3 {
   return start + (end - start) * t
 }

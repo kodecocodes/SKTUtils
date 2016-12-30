@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3558F7521D21A7E200AC8ABC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3558F7511D21A7E200AC8ABC /* Launch Screen.storyboard */; };
 		7B0610101945ED26002D27B1 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */; };
 		7B0610121945ED26002D27B1 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */; };
 		7B0610141945ED26002D27B1 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3558F7511D21A7E200AC8ABC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7B06100A1945ED26002D27B1 /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
 		7B06100B1945ED26002D27B1 /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
 		7B06100C1945ED26002D27B1 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				7BAE7870182FBA95009B4DA0 /* Images.xcassets */,
 				7BAE7865182FBA95009B4DA0 /* Main.storyboard */,
 				7BAE785A182FBA95009B4DA0 /* Supporting Files */,
+				3558F7511D21A7E200AC8ABC /* Launch Screen.storyboard */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -188,11 +191,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
 					7BAE784D182FBA95009B4DA0 = {
-						DevelopmentTeam = MGCEKGP4Y4;
+						DevelopmentTeam = KFCNEC27GU;
+						DevelopmentTeamName = "Razeware LLC";
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -219,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3558F7521D21A7E200AC8ABC /* Launch Screen.storyboard in Resources */,
 				7BAE785E182FBA95009B4DA0 /* InfoPlist.strings in Resources */,
 				7BAE7871182FBA95009B4DA0 /* Images.xcassets in Resources */,
 				7BAE7890182FBBB6009B4DA0 /* Ball.png in Resources */,
@@ -287,14 +293,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -326,13 +337,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -361,6 +377,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -385,6 +402,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",

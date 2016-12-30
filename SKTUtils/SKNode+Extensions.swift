@@ -39,8 +39,8 @@ public extension SKNode {
    * Runs an action on the node that performs a closure or function after 
    * a given time.
    */
-  public func afterDelay(delay: NSTimeInterval, runBlock block: dispatch_block_t) {
-    runAction(SKAction.sequence([SKAction.waitForDuration(delay), SKAction.runBlock(block)]))
+  public func afterDelay(_ delay: TimeInterval, runBlock block: @escaping () -> Void) {
+    run(SKAction.sequence([SKAction.wait(forDuration: delay), SKAction.run(block)]))
   }
 
   /**
@@ -62,7 +62,7 @@ public extension SKNode {
    * @param rate How fast the node rotates. Must have a value between 0.0 and
    *        1.0, where smaller means slower; 1.0 is instantaneous.
    */
-  public func rotateToVelocity(velocity: CGVector, rate: CGFloat) {
+  public func rotateToVelocity(_ velocity: CGVector, rate: CGFloat) {
     // Determine what the rotation angle of the node ought to be based on the
     // current velocity of its physics body. This assumes that at 0 degrees the
     // node is pointed up, not to the right, so to compensate we subtract π/4
