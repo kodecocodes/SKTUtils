@@ -33,7 +33,7 @@ public extension SKAction {
   /**
    * Performs a block after the specified delay.
    */
-  public class func afterDelay(_ delay: TimeInterval, runBlock block: () -> Void) -> SKAction {
+  public class func afterDelay(_ delay: TimeInterval, runBlock block: @escaping () -> Void) -> SKAction {
     return SKAction.afterDelay(delay, performAction: SKAction.run(block))
   }
 

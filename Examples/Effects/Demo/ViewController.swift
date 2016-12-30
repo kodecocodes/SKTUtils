@@ -20,16 +20,4 @@ class ViewController: UIViewController {
       skView.presentScene(scene)
     }
   }
-
-  override func prefersStatusBarHidden() -> Bool {
-    return true
-  }
-
-  override func shouldAutorotate() -> Bool {
-    return true
-  }
-
-  override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-    return UIInterfaceOrientationMask.landscape
-  }
 }

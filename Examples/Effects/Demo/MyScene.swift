@@ -39,10 +39,10 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
   let sceneBackgroundColor = SKColorWithRGB(8, g: 57, b: 71)
   let borderColor = SKColorWithRGB(160, g: 160, b: 160)
-  let borderFlashColor = SKColor.white()
+  let borderFlashColor = SKColor.white
   let barrierColor = SKColorWithRGB(212, g: 212, b: 212)
-  let barrierFlashColor = SKColor.white()
-  let ballFlashColor  = SKColor.red()
+  let barrierFlashColor = SKColor.white
+  let ballFlashColor  = SKColor.red
 
   // ---- Initialization ----
 
@@ -132,18 +132,18 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     // and weird stuff will happen. So make a new SKNode, give it the physics
     // body, and add the node that you're scaling as a child node!
 
-    var rect = CGRect(x: 0, y: 0, width: BorderThickness, height: length)
+    let rect = CGRect(x: 0, y: 0, width: BorderThickness, height: length)
 
     let node = SKShapeNode()
     node.path = UIBezierPath(rect: rect).cgPath
     node.fillColor = borderColor
-    node.strokeColor = SKColor.clear()
+    node.strokeColor = SKColor.clear
     node.lineWidth = 0
     node.glowWidth = 0
     node.name = horizontal ? "horizontalBorder" : "verticalBorder"
     node.position = CGPoint(x: -BorderThickness/2, y: -length/2)
-  
-    rect.offsetInPlace(dx: -BorderThickness/2, dy: -length/2)
+
+    rect.offsetBy(dx: -BorderThickness/2, dy: -length/2)
 
     let body = SKPhysicsBody(polygonFrom: UIBezierPath(rect: rect).cgPath)
     body.isDynamic = false
@@ -189,7 +189,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let shapeNode = SKShapeNode()
     shapeNode.path = path.cgPath
     shapeNode.fillColor = barrierColor
-    shapeNode.strokeColor = SKColor.clear()
+    shapeNode.strokeColor = SKColor.clear
     shapeNode.lineWidth = 0
     shapeNode.glowWidth = 0
     shapeNode.position = CGPoint(x: -width/2, y: -height/2)
@@ -378,11 +378,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   }
 
   func didBegin(_ contact: SKPhysicsContact) {
-    checkContactBetweenBody1(body1: contact.bodyA, body2: contact.bodyB, contactPoint: contact.contactPoint)
-    checkContactBetweenBody1(body1: contact.bodyB, body2: contact.bodyA, contactPoint: contact.contactPoint)
+    checkContactBetween(body1: contact.bodyA, body2: contact.bodyB, contactPoint: contact.contactPoint)
+    checkContactBetween(body1: contact.bodyB, body2: contact.bodyA, contactPoint: contact.contactPoint)
   }
 
-  func checkContactBetweenBody1(body1: SKPhysicsBody, body2: SKPhysicsBody, contactPoint: CGPoint) {
+  func checkContactBetween(body1: SKPhysicsBody, body2: SKPhysicsBody, contactPoint: CGPoint) {
     if body1.categoryBitMask & BallCategory != 0 {
       handleBallCollision(node: body1.node!)
 

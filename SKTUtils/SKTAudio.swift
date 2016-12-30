@@ -35,7 +35,7 @@ public class SKTAudio {
   }
 
   public func playBackgroundMusic(_ filename: String) {
-    let url = Bundle.main().urlForResource(filename, withExtension: nil)
+    let url = Bundle.main.url(forResource: filename, withExtension: nil)
     if (url == nil) {
       print("Could not find file: \(filename)")
       return
@@ -74,7 +74,7 @@ public class SKTAudio {
   }
 
   public func playSoundEffect(_ filename: String) {
-    let url = Bundle.main().urlForResource(filename, withExtension: nil)
+    let url = Bundle.main.url(forResource: filename, withExtension: nil)
     if (url == nil) {
       print("Could not find file: \(filename)")
       return
