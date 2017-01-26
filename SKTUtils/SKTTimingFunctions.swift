@@ -26,6 +26,8 @@
 import Foundation
 import CoreGraphics
 
+var SKTDefaultTimingFunction = SKTTimingFunctionLinear
+
 public func SKTTimingFunctionLinear(_ t: CGFloat) -> CGFloat {
   return t
 }
