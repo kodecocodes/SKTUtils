@@ -36,7 +36,7 @@ public class SKTEffect {
   public init(node: SKNode, duration: TimeInterval) {
     self.node = node
     self.duration = duration
-    timingFunction = SKTTimingFunctionLinear
+    timingFunction = SKTDefaultTimingFunction
   }
 
   public func update(_ t: CGFloat) {

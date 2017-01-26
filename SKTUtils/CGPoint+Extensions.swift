@@ -85,6 +85,13 @@ public extension CGPoint {
   public func distanceTo(_ point: CGPoint) -> CGFloat {
     return (self - point).length()
   }
+    
+  /**
+   * Calculates the squared distance between two CGPoints. Pythagoras!
+   */
+  public func distanceSquaredTo(_ point: CGPoint) -> CGFloat {
+    return (self - point).lengthSquared()
+  }
 
   /**
    * Returns the angle in radians of the vector described by the CGPoint.
