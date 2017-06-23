@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014 Razeware LLC
+ * Copyright (c) 2013-2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -42,6 +42,7 @@ public extension CGPoint {
   /**
    * Adds (dx, dy) to the point.
    */
+  @discardableResult
   public mutating func offset(dx: CGFloat, dy: CGFloat) -> CGPoint {
     x += dx
     y += dy
@@ -74,6 +75,7 @@ public extension CGPoint {
   /**
    * Normalizes the vector described by the CGPoint to length 1.0.
    */
+  @discardableResult
   public mutating func normalize() -> CGPoint {
     self = normalized()
     return self

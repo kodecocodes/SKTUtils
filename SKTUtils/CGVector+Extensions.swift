@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014 Razeware LLC
+ * Copyright (c) 2013-2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -42,6 +42,7 @@ public extension CGVector {
   /**
    * Adds (dx, dy) to the vector.
    */
+  @discardableResult
   public mutating func offset(dx: CGFloat, dy: CGFloat) -> CGVector {
     self.dx += dx
     self.dy += dy
@@ -74,6 +75,7 @@ public extension CGVector {
   /**
    * Normalizes the vector described by the CGVector to length 1.0.
    */
+  @discardableResult
   public mutating func normalize() -> CGVector {
     self = normalized()
     return self

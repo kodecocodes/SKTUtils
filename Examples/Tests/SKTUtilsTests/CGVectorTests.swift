@@ -87,14 +87,14 @@ class CGVectorTests: XCTestCase {
   func testInitWith45DegreeAngle() {
     let a = π/4.0
     let v = CGVector(angle: a)
-    XCTAssertEqualWithAccuracy(v.dx, 1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(v.dy, 1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v.dx, 1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(v.dy, 1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testInitWith90DegreeAngle() {
     let a = π/2.0
     let v = CGVector(angle: a)
-    XCTAssertEqualWithAccuracy(v.dx, CGFloat(0.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v.dx, CGFloat(0.0), accuracy: CGFloat(Float.ulpOfOne))
     XCTAssertEqual(v.dy, CGFloat(1.0))
   }
 
@@ -102,14 +102,14 @@ class CGVectorTests: XCTestCase {
     let a = π
     let v = CGVector(angle: a)
     XCTAssertEqual(v.dx, -1.0)
-    XCTAssertEqualWithAccuracy(v.dy, CGFloat(0.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v.dy, CGFloat(0.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testInitWithMinus135DegreeAngle() {
     let a = -3.0*π/4.0
     let v = CGVector(angle: a)
-    XCTAssertEqualWithAccuracy(v.dx, -1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(v.dy, -1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v.dx, -1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(v.dy, -1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testZeroDegreeAngle() {
@@ -134,7 +134,7 @@ class CGVectorTests: XCTestCase {
 
   func testMinus135DegreeAngle() {
     let v = CGVector(dx: -1.0/sqrt(2.0), dy: -1.0/sqrt(2.0))
-    XCTAssertEqualWithAccuracy(v.angle, -3.0*π/4.0, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v.angle, -3.0*π/4.0, accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testLengthHorizontalUnitVector() {
@@ -163,17 +163,17 @@ class CGVectorTests: XCTestCase {
   }
 
   func testDistance() {
-    XCTAssertEqualWithAccuracy(v1.distanceTo(v2), CGFloat(100.6230589874), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v1.distanceTo(v2), CGFloat(100.6230589874), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testThatLengthEqualsDistance() {
-    XCTAssertEqualWithAccuracy(v1.distanceTo(v2), (v1 - v2).length(), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v1.distanceTo(v2), (v1 - v2).length(), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testNormalized() {
     let normalized = v1.normalized()
-    XCTAssertEqualWithAccuracy(normalized.dx, 2.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(normalized.dy, 1.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(normalized.dx, 2.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(normalized.dy, 1.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testThatNormalizedDoesNotChangeOriginalValue() {
@@ -185,8 +185,8 @@ class CGVectorTests: XCTestCase {
 
   func testThatNormalizeReturnsNewValue() {
     v1.normalize()
-    XCTAssertEqualWithAccuracy(v1.dx, 2.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(v1.dy, 1.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v1.dx, 2.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(v1.dy, 1.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testThatNormalizingKeepsSameAngle() {

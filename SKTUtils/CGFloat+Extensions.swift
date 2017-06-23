@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014 Razeware LLC
+ * Copyright (c) 2013-2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 import CoreGraphics
 
 /** The value of π as a CGFloat */
-let π = CGFloat(M_PI)
+let π = CGFloat(Double.pi)
 
 public extension CGFloat {
   /**
@@ -52,6 +52,7 @@ public extension CGFloat {
   /**
    * Ensures that the float value stays between the given values, inclusive.
    */
+  @discardableResult
   public mutating func clamp(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     self = clamped(v1, v2)
     return self

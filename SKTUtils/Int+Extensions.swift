@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014 Razeware LLC
+ * Copyright (c) 2013-2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,11 +37,13 @@ public extension Int {
   /**
    * Ensures that the integer value stays with the specified range.
    */
+  @discardableResult
   public mutating func clamp(_ range: Range<Int>) -> Int {
     self = clamped(range)
     return self
   }
 
+  @discardableResult
   public mutating func clamp(_ range: ClosedRange<Int>) -> Int {
     self = clamped(range)
     return self
@@ -59,6 +61,7 @@ public extension Int {
   /**
    * Ensures that the integer value stays between the given values, inclusive.
    */
+  @discardableResult
   public mutating func clamp(_ v1: Int, _ v2: Int) -> Int {
     self = clamped(v1, v2)
     return self
