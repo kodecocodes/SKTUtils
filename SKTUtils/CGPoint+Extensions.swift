@@ -52,7 +52,7 @@ public extension CGPoint {
    * Returns the length (magnitude) of the vector described by the CGPoint.
    */
   public func length() -> CGFloat {
-    return sqrt(x*x + y*y)
+    return hypot(x, y)
   }
 
   /**
