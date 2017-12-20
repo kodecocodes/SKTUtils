@@ -52,7 +52,7 @@ public extension CGVector {
    * Returns the length (magnitude) of the vector described by the CGVector.
    */
   public func length() -> CGFloat {
-    return sqrt(dx*dx + dy*dy)
+    return hypot(dx, dy)
   }
 
   /**
