@@ -206,6 +206,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -390,7 +391,7 @@
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -417,7 +418,7 @@
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",

@@ -25,7 +25,7 @@ import SpriteKit
 public extension SKNode {
 
   /** Lets you treat the node's scale as a CGPoint value. */
-  public var scaleAsPoint: CGPoint {
+  var scaleAsPoint: CGPoint {
     get {
       return CGPoint(x: xScale, y: yScale)
     }

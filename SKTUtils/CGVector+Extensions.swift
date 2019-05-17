@@ -27,7 +27,7 @@ public extension CGVector {
   /**
    * Creates a new CGVector given a CGPoint.
    */
-  public init(point: CGPoint) {
+  init(point: CGPoint) {
     self.init(dx: point.x, dy: point.y)
   }
   
@@ -35,7 +35,7 @@ public extension CGVector {
    * Given an angle in radians, creates a vector of length 1.0 and returns the
    * result as a new CGVector. An angle of 0 is assumed to point to the right.
    */
-  public init(angle: CGFloat) {
+  init(angle: CGFloat) {
     self.init(dx: cos(angle), dy: sin(angle))
   }
 
@@ -92,7 +92,7 @@ public extension CGVector {
    * Returns the angle in radians of the vector described by the CGVector.
    * The range of the angle is -π to π; an angle of 0 points to the right.
    */
-  public var angle: CGFloat {
+  var angle: CGFloat {
     return atan2(dy, dx)
   }
 }
