@@ -458,7 +458,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if COLOR_GLITCH {
-      run(SKAction.colorGlitchWithScene(self, originalColor: sceneBackgroundColor, duration:0.1))
+        run(SKAction.colorGlitch(with: self, originalColor: sceneBackgroundColor, duration:0.1))
     }
   }
 
@@ -584,7 +584,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let inverseVelocity = CGPoint(x: -velocity.dx, y: -velocity.dy)
     let hitVector = inverseVelocity / 50
 
-    worldLayer.run(SKAction.screenShakeWithNode(worldLayer, amount: hitVector, oscillations: 10, duration:3))
+    worldLayer.run(SKAction.screenShake(with: worldLayer, amount: hitVector, oscillations: 10, duration:3))
   }
 
   /**
@@ -592,7 +592,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    */
   func screenZoomWithVelocity(velocity: CGVector) {
     let amount = CGPoint(x: 1.02, y: 1.02)
-    worldPivot.run(SKAction.screenZoomWithNode(worldPivot, amount: amount, oscillations: 10, duration: 3))
+    worldPivot.run(SKAction.screenZoom(with: worldPivot, amount: amount, oscillations: 10, duration: 3))
   }
 
   /**
@@ -606,7 +606,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let distanceToCenter = (point.y - length) / length
     let angle = CGFloat(10).degreesToRadians() * distanceToCenter
 
-    worldPivot.run(SKAction.screenRotateWithNode(worldPivot, angle: angle, oscillations: 1, duration: 1))
+    worldPivot.run(SKAction.screenRotate(with: worldPivot, angle: angle, oscillations: 1, duration: 1))
   }
 
   /**

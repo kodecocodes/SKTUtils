@@ -83,7 +83,7 @@ public extension CGPoint {
   /**
    * Calculates the distance between two CGPoints. Pythagoras!
    */
-  func distanceTo(_ point: CGPoint) -> CGFloat {
+  func distance(to point: CGPoint) -> CGFloat {
     return (self - point).length()
   }
 
