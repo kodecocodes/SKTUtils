@@ -26,11 +26,11 @@ public extension Int {
   /**
    * Ensures that the integer value stays with the specified range.
    */
-  public func clamped(_ range: Range<Int>) -> Int {
+  func clamped(_ range: Range<Int>) -> Int {
     return (self < range.lowerBound) ? range.lowerBound : ((self >= range.upperBound) ? range.upperBound - 1: self)
   }
 
-  public func clamped(_ range: ClosedRange<Int>) -> Int {
+  func clamped(_ range: ClosedRange<Int>) -> Int {
     return (self < range.lowerBound) ? range.lowerBound : ((self > range.upperBound) ? range.upperBound: self)
   }
 
@@ -52,7 +52,7 @@ public extension Int {
   /**
    * Ensures that the integer value stays between the given values, inclusive.
    */
-  public func clamped(_ v1: Int, _ v2: Int) -> Int {
+  func clamped(_ v1: Int, _ v2: Int) -> Int {
     let min = v1 < v2 ? v1 : v2
     let max = v1 > v2 ? v1 : v2
     return self < min ? min : (self > max ? max : self)

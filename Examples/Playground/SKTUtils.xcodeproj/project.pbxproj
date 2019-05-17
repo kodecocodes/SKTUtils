@@ -171,7 +171,7 @@
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = KFCNEC27GU;
 						DevelopmentTeamName = "Razeware LLC";
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					481EEDC219B3AF5500469716 = {
 						CreatedOnToolsVersion = 6.0;
@@ -185,6 +185,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 481EEDAE19B3AF5500469716;
@@ -366,8 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -387,8 +387,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

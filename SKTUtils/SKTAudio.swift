@@ -34,7 +34,7 @@ public class SKTAudio {
     return SKTAudioInstance
   }
 
-  public func playBackgroundMusic(_ filename: String) {
+  func playBackgroundMusic(_ filename: String) {
     let url = Bundle.main.url(forResource: filename, withExtension: nil)
     if (url == nil) {
       print("Could not find file: \(filename)")
@@ -57,7 +57,7 @@ public class SKTAudio {
     }
   }
 
-  public func pauseBackgroundMusic() {
+  func pauseBackgroundMusic() {
     if let player = backgroundMusicPlayer {
       if player.isPlaying {
         player.pause()
@@ -65,7 +65,7 @@ public class SKTAudio {
     }
   }
 
-  public func resumeBackgroundMusic() {
+  func resumeBackgroundMusic() {
     if let player = backgroundMusicPlayer {
       if !player.isPlaying {
         player.play()
@@ -73,7 +73,7 @@ public class SKTAudio {
     }
   }
 
-  public func playSoundEffect(_ filename: String) {
+  func playSoundEffect(_ filename: String) {
     let url = Bundle.main.url(forResource: filename, withExtension: nil)
     if (url == nil) {
       print("Could not find file: \(filename)")

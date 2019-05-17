@@ -26,19 +26,19 @@
 import Foundation
 import CoreGraphics
 
-public func SKTTimingFunctionLinear(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionLinear(_ t: CGFloat) -> CGFloat {
   return t
 }
 
-public func SKTTimingFunctionQuadraticEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuadraticEaseIn(_ t: CGFloat) -> CGFloat {
   return t * t
 }
 
-public func SKTTimingFunctionQuadraticEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuadraticEaseOut(_ t: CGFloat) -> CGFloat {
   return t * (2.0 - t)
 }
 
-public func SKTTimingFunctionQuadraticEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuadraticEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     return 2.0 * t * t
   } else {
@@ -56,7 +56,7 @@ func SKTTimingFunctionCubicEaseOut(_ t: CGFloat) -> CGFloat {
   return 1.0 + f * f * f
 }
 
-public func SKTTimingFunctionCubicEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionCubicEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     return 4.0 * t * t * t
   } else {
@@ -65,16 +65,16 @@ public func SKTTimingFunctionCubicEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionQuarticEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuarticEaseIn(_ t: CGFloat) -> CGFloat {
   return t * t * t * t
 }
 
-public func SKTTimingFunctionQuarticEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuarticEaseOut(_ t: CGFloat) -> CGFloat {
   let f = t - 1.0
   return 1.0 - f * f * f * f
 }
 
-public func SKTTimingFunctionQuarticEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuarticEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     return 8.0 * t * t * t * t
   } else {
@@ -83,11 +83,11 @@ public func SKTTimingFunctionQuarticEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionQuinticEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuinticEaseIn(_ t: CGFloat) -> CGFloat {
   return t * t * t * t * t
 }
 
-public func SKTTimingFunctionQuinticEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionQuinticEaseOut(_ t: CGFloat) -> CGFloat {
   let f = t - 1.0
   return 1.0 + f * f * f * f * f
 }
@@ -101,27 +101,27 @@ func SKTTimingFunctionQuinticEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionSineEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionSineEaseIn(_ t: CGFloat) -> CGFloat {
   return sin((t - 1.0) * π/2) + 1.0
 }
 
-public func SKTTimingFunctionSineEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionSineEaseOut(_ t: CGFloat) -> CGFloat {
   return sin(t * π/2)
 }
 
-public func SKTTimingFunctionSineEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionSineEaseInOut(_ t: CGFloat) -> CGFloat {
   return 0.5 * (1.0 - cos(t * π))
 }
 
-public func SKTTimingFunctionCircularEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionCircularEaseIn(_ t: CGFloat) -> CGFloat {
   return 1.0 - sqrt(1.0 - t * t)
 }
 
-public func SKTTimingFunctionCircularEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionCircularEaseOut(_ t: CGFloat) -> CGFloat {
   return sqrt((2.0 - t) * t)
 }
 
-public func SKTTimingFunctionCircularEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionCircularEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     return 0.5 * (1.0 - sqrt(1.0 - 4.0 * t * t))
   } else {
@@ -129,15 +129,15 @@ public func SKTTimingFunctionCircularEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionExponentialEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionExponentialEaseIn(_ t: CGFloat) -> CGFloat {
   return (t == 0.0) ? t : pow(2.0, 10.0 * (t - 1.0))
 }
 
-public func SKTTimingFunctionExponentialEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionExponentialEaseOut(_ t: CGFloat) -> CGFloat {
   return (t == 1.0) ? t : 1.0 - pow(2.0, -10.0 * t)
 }
 
-public func SKTTimingFunctionExponentialEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionExponentialEaseInOut(_ t: CGFloat) -> CGFloat {
   if t == 0.0 || t == 1.0 {
     return t
   } else if t < 0.5 {
@@ -147,15 +147,15 @@ public func SKTTimingFunctionExponentialEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionElasticEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionElasticEaseIn(_ t: CGFloat) -> CGFloat {
   return sin(13.0 * π/2 * t) * pow(2.0, 10.0 * (t - 1.0))
 }
 
-public func SKTTimingFunctionElasticEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionElasticEaseOut(_ t: CGFloat) -> CGFloat {
   return sin(-13.0 * π/2 * (t + 1.0)) * pow(2.0, -10.0 * t) + 1.0
 }
 
-public func SKTTimingFunctionElasticEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionElasticEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     return 0.5 * sin(13.0 * π * t) * pow(2.0, 20.0 * t - 10.0)
   } else {
@@ -163,18 +163,18 @@ public func SKTTimingFunctionElasticEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionBackEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionBackEaseIn(_ t: CGFloat) -> CGFloat {
   let s: CGFloat = 1.70158
   return ((s + 1.0) * t - s) * t * t
 }
 
-public func SKTTimingFunctionBackEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionBackEaseOut(_ t: CGFloat) -> CGFloat {
   let s: CGFloat = 1.70158
   let f = 1.0 - t
   return 1.0 - ((s + 1.0) * f - s) * f * f
 }
 
-public func SKTTimingFunctionBackEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionBackEaseInOut(_ t: CGFloat) -> CGFloat {
   let s: CGFloat = 1.70158
   if t < 0.5 {
     let f = 2.0 * t
@@ -185,16 +185,16 @@ public func SKTTimingFunctionBackEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionExtremeBackEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionExtremeBackEaseIn(_ t: CGFloat) -> CGFloat {
   return (t * t - sin(t * π)) * t
 }
 
-public func SKTTimingFunctionExtremeBackEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionExtremeBackEaseOut(_ t: CGFloat) -> CGFloat {
   let f = 1.0 - t
   return 1.0 - (f * f - sin(f * π)) * f
 }
 
-public func SKTTimingFunctionExtremeBackEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionExtremeBackEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     let f = 2.0 * t
     return 0.5 * (f * f - sin(f * π)) * f
@@ -204,11 +204,11 @@ public func SKTTimingFunctionExtremeBackEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionBounceEaseIn(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionBounceEaseIn(_ t: CGFloat) -> CGFloat {
   return 1.0 - SKTTimingFunctionBounceEaseOut(1.0 - t)
 }
 
-public func SKTTimingFunctionBounceEaseOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionBounceEaseOut(_ t: CGFloat) -> CGFloat {
   if t < 1.0 / 2.75 {
     return 7.5625 * t * t
   } else if t < 2.0 / 2.75 {
@@ -223,7 +223,7 @@ public func SKTTimingFunctionBounceEaseOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionBounceEaseInOut(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionBounceEaseInOut(_ t: CGFloat) -> CGFloat {
   if t < 0.5 {
     return 0.5 * SKTTimingFunctionBounceEaseIn(t * 2.0)
   } else {
@@ -231,10 +231,10 @@ public func SKTTimingFunctionBounceEaseInOut(_ t: CGFloat) -> CGFloat {
   }
 }
 
-public func SKTTimingFunctionSmoothstep(_ t: CGFloat) -> CGFloat {
+func SKTTimingFunctionSmoothstep(_ t: CGFloat) -> CGFloat {
   return t * t * (3 - 2 * t)
 }
 
-public func SKTCreateShakeFunction(_ oscillations: Int) -> (CGFloat) -> CGFloat {
+func SKTCreateShakeFunction(_ oscillations: Int) -> (CGFloat) -> CGFloat {
   return {t in -pow(2.0, -10.0 * t) * sin(t * π * CGFloat(oscillations) * 2.0) + 1.0}
 }

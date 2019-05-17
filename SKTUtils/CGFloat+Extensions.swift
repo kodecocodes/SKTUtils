@@ -29,21 +29,21 @@ public extension CGFloat {
   /**
    * Converts an angle in degrees to radians.
    */
-  public func degreesToRadians() -> CGFloat {
+  func degreesToRadians() -> CGFloat {
     return π * self / 180.0
   }
 
   /**
    * Converts an angle in radians to degrees.
    */
-  public func radiansToDegrees() -> CGFloat {
+  func radiansToDegrees() -> CGFloat {
     return self * 180.0 / π
   }
 
   /**
    * Ensures that the float value stays between the given values, inclusive.
    */
-  public func clamped(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+  func clamped(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     let min = v1 < v2 ? v1 : v2
     let max = v1 > v2 ? v1 : v2
     return self < min ? min : (self > max ? max : self)
@@ -61,7 +61,7 @@ public extension CGFloat {
   /**
    * Returns 1.0 if a floating point value is positive; -1.0 if it is negative.
    */
-  public func sign() -> CGFloat {
+  func sign() -> CGFloat {
     return (self >= 0.0) ? 1.0 : -1.0
   }
 
@@ -92,7 +92,7 @@ public extension CGFloat {
  * Returns the shortest angle between two angles. The result is always between
  * -π and π.
  */
-public func shortestAngleBetween(_ angle1: CGFloat, angle2: CGFloat) -> CGFloat {
+func shortestAngleBetween(_ angle1: CGFloat, angle2: CGFloat) -> CGFloat {
     let twoπ = π * 2.0
     var angle = (angle2 - angle1).truncatingRemainder(dividingBy: twoπ)
     if (angle >= π) {

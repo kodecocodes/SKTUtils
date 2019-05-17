@@ -52,14 +52,14 @@ public extension CGVector {
   /**
    * Returns the length (magnitude) of the vector described by the CGVector.
    */
-  public func length() -> CGFloat {
+  func length() -> CGFloat {
     return sqrt(dx*dx + dy*dy)
   }
 
   /**
    * Returns the squared length of the vector described by the CGVector.
    */
-  public func lengthSquared() -> CGFloat {
+  func lengthSquared() -> CGFloat {
     return dx*dx + dy*dy
   }
 
@@ -84,7 +84,7 @@ public extension CGVector {
   /**
    * Calculates the distance between two CGVectors. Pythagoras!
    */
-  public func distanceTo(_ vector: CGVector) -> CGFloat {
+  func distanceTo(_ vector: CGVector) -> CGFloat {
     return (self - vector).length()
   }
 
@@ -100,42 +100,42 @@ public extension CGVector {
 /**
  * Adds two CGVector values and returns the result as a new CGVector.
  */
-public func + (left: CGVector, right: CGVector) -> CGVector {
+func + (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx + right.dx, dy: left.dy + right.dy)
 }
 
 /**
  * Increments a CGVector with the value of another.
  */
-public func += (left: inout CGVector, right: CGVector) {
+func += (left: inout CGVector, right: CGVector) {
   left = left + right
 }
 
 /**
  * Subtracts two CGVector values and returns the result as a new CGVector.
  */
-public func - (left: CGVector, right: CGVector) -> CGVector {
+func - (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx - right.dx, dy: left.dy - right.dy)
 }
 
 /**
  * Decrements a CGVector with the value of another.
  */
-public func -= (left: inout CGVector, right: CGVector) {
+func -= (left: inout CGVector, right: CGVector) {
   left = left - right
 }
 
 /**
  * Multiplies two CGVector values and returns the result as a new CGVector.
  */
-public func * (left: CGVector, right: CGVector) -> CGVector {
+func * (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx * right.dx, dy: left.dy * right.dy)
 }
 
 /**
  * Multiplies a CGVector with another.
  */
-public func *= (left: inout CGVector, right: CGVector) {
+func *= (left: inout CGVector, right: CGVector) {
   left = left * right
 }
 
@@ -143,28 +143,28 @@ public func *= (left: inout CGVector, right: CGVector) {
  * Multiplies the x and y fields of a CGVector with the same scalar value and
  * returns the result as a new CGVector.
  */
-public func * (vector: CGVector, scalar: CGFloat) -> CGVector {
+func * (vector: CGVector, scalar: CGFloat) -> CGVector {
   return CGVector(dx: vector.dx * scalar, dy: vector.dy * scalar)
 }
 
 /**
  * Multiplies the x and y fields of a CGVector with the same scalar value.
  */
-public func *= (vector: inout CGVector, scalar: CGFloat) {
+func *= (vector: inout CGVector, scalar: CGFloat) {
   vector = vector * scalar
 }
 
 /**
  * Divides two CGVector values and returns the result as a new CGVector.
  */
-public func / (left: CGVector, right: CGVector) -> CGVector {
+func / (left: CGVector, right: CGVector) -> CGVector {
   return CGVector(dx: left.dx / right.dx, dy: left.dy / right.dy)
 }
 
 /**
  * Divides a CGVector by another.
  */
-public func /= (left: inout CGVector, right: CGVector) {
+func /= (left: inout CGVector, right: CGVector) {
   left = left / right
 }
 
@@ -172,20 +172,20 @@ public func /= (left: inout CGVector, right: CGVector) {
  * Divides the dx and dy fields of a CGVector by the same scalar value and
  * returns the result as a new CGVector.
  */
-public func / (vector: CGVector, scalar: CGFloat) -> CGVector {
+func / (vector: CGVector, scalar: CGFloat) -> CGVector {
   return CGVector(dx: vector.dx / scalar, dy: vector.dy / scalar)
 }
 
 /**
  * Divides the dx and dy fields of a CGVector by the same scalar value.
  */
-public func /= (vector: inout CGVector, scalar: CGFloat) {
+func /= (vector: inout CGVector, scalar: CGFloat) {
   vector = vector / scalar
 }
 
 /**
  * Performs a linear interpolation between two CGVector values.
  */
-public func lerp(start: CGVector, end: CGVector, t: CGFloat) -> CGVector {
+func lerp(start: CGVector, end: CGVector, t: CGFloat) -> CGVector {
   return start + (end - start) * t
 }
