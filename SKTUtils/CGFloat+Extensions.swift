@@ -64,28 +64,6 @@ public extension CGFloat {
   func sign() -> CGFloat {
     return (self >= 0.0) ? 1.0 : -1.0
   }
-
-  /**
-   * Returns a random floating point number between 0.0 and 1.0, inclusive.
-   */
-  static func random() -> CGFloat {
-    return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
-  }
-
-  /**
-   * Returns a random floating point number in the range min...max, inclusive.
-   */
-  static func random(min: CGFloat, max: CGFloat) -> CGFloat {
-    assert(min < max)
-    return CGFloat.random() * (max - min) + min
-  }
-
-  /**
-   * Randomly returns either 1.0 or -1.0.
-   */
-  static func randomSign() -> CGFloat {
-    return (arc4random_uniform(2) == 0) ? 1.0 : -1.0
-  }
 }
 
 /**
