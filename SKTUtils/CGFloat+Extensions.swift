@@ -53,7 +53,7 @@ public extension CGFloat {
    * Ensures that the float value stays between the given values, inclusive.
    */
   @discardableResult
-  public mutating func clamp(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+  mutating func clamp(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     self = clamped(v1, v2)
     return self
   }
@@ -68,14 +68,14 @@ public extension CGFloat {
   /**
    * Returns a random floating point number between 0.0 and 1.0, inclusive.
    */
-  public static func random() -> CGFloat {
+  static func random() -> CGFloat {
     return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
   }
 
   /**
    * Returns a random floating point number in the range min...max, inclusive.
    */
-  public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
+  static func random(min: CGFloat, max: CGFloat) -> CGFloat {
     assert(min < max)
     return CGFloat.random() * (max - min) + min
   }
@@ -83,7 +83,7 @@ public extension CGFloat {
   /**
    * Randomly returns either 1.0 or -1.0.
    */
-  public static func randomSign() -> CGFloat {
+  static func randomSign() -> CGFloat {
     return (arc4random_uniform(2) == 0) ? 1.0 : -1.0
   }
 }

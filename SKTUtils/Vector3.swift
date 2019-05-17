@@ -83,7 +83,7 @@ extension Vector3 {
   /**
    * Normalizes the vector described by this Vector3 object.
    */
-  public mutating func normalize() {
+  mutating func normalize() {
     let scale = 1.0/length()
     x *= scale
     y *= scale
@@ -109,7 +109,7 @@ extension Vector3 {
    *
    * DEPRECATED: Use dot() instead.
    */
-  public static func dotProduct(_ left: Vector3, right: Vector3) -> CGFloat {
+  static func dotProduct(_ left: Vector3, right: Vector3) -> CGFloat {
     return left.x * right.x + left.y * right.y + left.z * right.z
   }
   
@@ -118,7 +118,7 @@ extension Vector3 {
    *
    * DEPRECATED: Use cross() instead.
    */
-  public static func crossProduct(_ left: Vector3, right: Vector3) -> Vector3 {
+  static func crossProduct(_ left: Vector3, right: Vector3) -> Vector3 {
     let crossProduct = Vector3(x: left.y * right.z - left.z * right.y,
                                y: left.z * right.x - left.x * right.z,
                                z: left.x * right.y - left.y * right.x)

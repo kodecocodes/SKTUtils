@@ -43,7 +43,7 @@ public extension CGVector {
    * Adds (dx, dy) to the vector.
    */
   @discardableResult
-  public mutating func offset(dx: CGFloat, dy: CGFloat) -> CGVector {
+  mutating func offset(dx: CGFloat, dy: CGFloat) -> CGVector {
     self.dx += dx
     self.dy += dy
     return self
@@ -76,7 +76,7 @@ public extension CGVector {
    * Normalizes the vector described by the CGVector to length 1.0.
    */
   @discardableResult
-  public mutating func normalize() -> CGVector {
+  mutating func normalize() -> CGVector {
     self = normalized()
     return self
   }
