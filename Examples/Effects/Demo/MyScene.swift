@@ -164,7 +164,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   func addEffectToBorder(border: SKNode, startPosition: CGPoint, endPosition: CGPoint, delay: TimeInterval) {
     let moveEffect = SKTMoveEffect(node: border, duration: 0.5, startPosition: startPosition, endPosition: endPosition)
     moveEffect.timingFunction = SKTTimingFunctionBounceEaseOut
-    border.run(SKAction.afterDelay(delay, performAction: SKAction.actionWithEffect(moveEffect)))
+    border.run(SKAction.after(delay: delay, performAction: SKAction.actionWithEffect(moveEffect)))
   }
 
   /** 
@@ -272,7 +272,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     for ball in [ball1, ball2] {
       addEffectToBall(ball: ball)
 
-      ball.run(SKAction.afterDelay(1, runBlock:{
+        ball.run(SKAction.after(delay: 1, runBlock:{
         // Assign a random angle to the ball's velocity.
         let ballSpeed: CGFloat = 200
 
