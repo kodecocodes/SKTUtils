@@ -66,30 +66,4 @@ public extension Int {
     self = clamped(v1, v2)
     return self
   }
-
-  /**
-   * Returns a random integer in the specified range.
-   */
-  static func random(_ range: Range<Int>) -> Int {
-    return Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound - 1))) + range.lowerBound
-  }
-
-  static func random(_ range: ClosedRange<Int>) -> Int {
-    return Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
-  }
-
-  /**
-   * Returns a random integer between 0 and n-1.
-   */
-  static func random(_ n: Int) -> Int {
-    return Int(arc4random_uniform(UInt32(n)))
-  }
-
-  /**
-   * Returns a random integer in the range min...max, inclusive.
-   */
-  static func random(min: Int, max: Int) -> Int {
-    assert(min < max)
-    return Int(arc4random_uniform(UInt32(max - min + 1))) + min
-  }
 }
