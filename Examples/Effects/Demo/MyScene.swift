@@ -164,7 +164,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
   func addEffectToBorder(border: SKNode, startPosition: CGPoint, endPosition: CGPoint, delay: TimeInterval) {
     let moveEffect = SKTMoveEffect(node: border, duration: 0.5, startPosition: startPosition, endPosition: endPosition)
     moveEffect.timingFunction = SKTTimingFunctionBounceEaseOut
-    border.run(SKAction.afterDelay(delay, performAction: SKAction.actionWithEffect(moveEffect)))
+    border.run(SKAction.after(delay: delay, performAction: SKAction.actionWithEffect(moveEffect)))
   }
 
   /** 
@@ -229,7 +229,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
     // Also rotate and fade in the barrier. It's OK to apply these to the 
     // pivotNode directly.
-    let rotateEffect = SKTRotateEffect(node: pivotNode, duration: 1, startAngle: CGFloat.random() * π/4, endAngle:pivotNode.zRotation)
+    let rotateEffect = SKTRotateEffect(node: pivotNode, duration: 1, startAngle: CGFloat.random(in: 0 ..< π/4), endAngle:pivotNode.zRotation)
     rotateEffect.timingFunction = SKTTimingFunctionBackEaseOut
 
     pivotNode.alpha = 0
@@ -272,10 +272,11 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     for ball in [ball1, ball2] {
       addEffectToBall(ball: ball)
 
-      ball.run(SKAction.afterDelay(1, runBlock:{
+        ball.run(SKAction.after(delay: 1, runBlock:{
         // Assign a random angle to the ball's velocity.
         let ballSpeed: CGFloat = 200
-        let angle = (CGFloat.random() * 360).degreesToRadians()
+
+        let angle = CGFloat.random(in: 0 ..< 360).degreesToRadians()
         ball.physicsBody!.velocity = CGVector(dx: cos(angle)*ballSpeed, dy: sin(angle)*ballSpeed)
       }))
     }
@@ -355,7 +356,8 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     worldLayer.enumerateChildNodes(withName: "ball") {(node, stop) in
       let speed: CGFloat = 50
-      let impulse = CGVector(dx: CGFloat.random(min: -speed, max: speed), dy: CGFloat.random(min: -speed, max: speed))
+
+      let impulse = CGVector(dx: CGFloat.random(in: -speed ..< speed), dy: CGFloat.random(in: -speed ..< speed))
       node.physicsBody!.applyImpulse(impulse)
 
       if STRETCH_BALL {
@@ -456,7 +458,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     }
 
     if COLOR_GLITCH {
-      run(SKAction.colorGlitchWithScene(self, originalColor: sceneBackgroundColor, duration:0.1))
+        run(SKAction.colorGlitch(with: self, originalColor: sceneBackgroundColor, duration:0.1))
     }
   }
 
@@ -582,7 +584,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let inverseVelocity = CGPoint(x: -velocity.dx, y: -velocity.dy)
     let hitVector = inverseVelocity / 50
 
-    worldLayer.run(SKAction.screenShakeWithNode(worldLayer, amount: hitVector, oscillations: 10, duration:3))
+    worldLayer.run(SKAction.screenShake(with: worldLayer, amount: hitVector, oscillations: 10, duration:3))
   }
 
   /**
@@ -590,7 +592,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
    */
   func screenZoomWithVelocity(velocity: CGVector) {
     let amount = CGPoint(x: 1.02, y: 1.02)
-    worldPivot.run(SKAction.screenZoomWithNode(worldPivot, amount: amount, oscillations: 10, duration: 3))
+    worldPivot.run(SKAction.screenZoom(with: worldPivot, amount: amount, oscillations: 10, duration: 3))
   }
 
   /**
@@ -604,7 +606,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     let distanceToCenter = (point.y - length) / length
     let angle = CGFloat(10).degreesToRadians() * distanceToCenter
 
-    worldPivot.run(SKAction.screenRotateWithNode(worldPivot, angle: angle, oscillations: 1, duration: 1))
+    worldPivot.run(SKAction.screenRotate(with: worldPivot, angle: angle, oscillations: 1, duration: 1))
   }
 
   /**

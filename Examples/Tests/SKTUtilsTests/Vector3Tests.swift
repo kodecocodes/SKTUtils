@@ -106,9 +106,9 @@ class Vector3Tests: XCTestCase {
 
   func testNormalized() {
     let normalized = v1.normalized()
-    XCTAssertEqualWithAccuracy(normalized.x, 4.0/sqrt(21.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(normalized.y, 2.0/sqrt(21.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(normalized.z, 1.0/sqrt(21.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(normalized.x, 4.0/sqrt(21.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(normalized.y, 2.0/sqrt(21.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(normalized.z, 1.0/sqrt(21.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testThatNormalizedDoesNotChangeOriginalValue() {
@@ -121,9 +121,9 @@ class Vector3Tests: XCTestCase {
 
   func testThatNormalizeReturnsNewValue() {
     v1.normalize()
-    XCTAssertEqualWithAccuracy(v1.x, 4.0/sqrt(21.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(v1.y, 2.0/sqrt(21.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(v1.z, 1.0/sqrt(21.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v1.x, 4.0/sqrt(21.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(v1.y, 2.0/sqrt(21.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(v1.z, 1.0/sqrt(21.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testLerp() {

@@ -116,14 +116,14 @@ class CGPointTests: XCTestCase {
   func testInitWith45DegreeAngle() {
     let a = π/4.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, 1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(pt.y, 1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.x, 1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(pt.y, 1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testInitWith90DegreeAngle() {
     let a = π/2.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, CGFloat(0.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.x, CGFloat(0.0), accuracy: CGFloat(Float.ulpOfOne))
     XCTAssertEqual(pt.y, CGFloat(1.0))
   }
 
@@ -131,14 +131,14 @@ class CGPointTests: XCTestCase {
     let a = π
     let pt = CGPoint(angle: a)
     XCTAssertEqual(pt.x, -1.0)
-    XCTAssertEqualWithAccuracy(pt.y, CGFloat(0.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.y, CGFloat(0.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testInitWithMinus135DegreeAngle() {
     let a = -3.0*π/4.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, -1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(pt.y, -1.0/sqrt(2.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.x, -1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(pt.y, -1.0/sqrt(2.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testZeroDegreeAngle() {
@@ -163,7 +163,7 @@ class CGPointTests: XCTestCase {
 
   func testMinus135DegreeAngle() {
     let pt = CGPoint(x: -1.0/sqrt(2.0), y: -1.0/sqrt(2.0))
-    XCTAssertEqualWithAccuracy(pt.angle, -3.0*π/4.0, accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.angle, -3.0*π/4.0, accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testLengthHorizontalUnitVector() {
@@ -192,17 +192,17 @@ class CGPointTests: XCTestCase {
   }
 
   func testDistance() {
-    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), CGFloat(100.6230589874), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), CGFloat(100.6230589874), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testThatLengthEqualsDistance() {
-    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), (pt1 - pt2).length(), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), (pt1 - pt2).length(), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testNormalized() {
     let normalized = pt1.normalized()
-    XCTAssertEqualWithAccuracy(normalized.x, 2.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(normalized.y, 1.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(normalized.x, 2.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(normalized.y, 1.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
   }
 
   func testThatNormalizedDoesNotChangeOriginalValue() {
@@ -214,8 +214,8 @@ class CGPointTests: XCTestCase {
 
   func testThatNormalizeReturnsNewValue() {
     pt1.normalize()
-    XCTAssertEqualWithAccuracy(pt1.x, 2.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
-    XCTAssertEqualWithAccuracy(pt1.y, 1.0/sqrt(5.0), accuracy: CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.x, 2.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
+    XCTAssertEqualWithAccuracy(pt1.y, 1.0/sqrt(5.0), accuracy: CGFloat(Float.ulpOfOne))
   }
   
   func testThatNormalizingKeepsSameAngle() {
@@ -227,7 +227,7 @@ class CGPointTests: XCTestCase {
     let start = CGPoint(x: -100, y: -75)
     let end = CGPoint(x: 100, y: 25)
 
-    let expected = [
+    let expected: [CGPoint] = [
       CGPoint(x: -100, y: -75),
       CGPoint(x: -80, y: -65),
       CGPoint(x: -60, y: -55),

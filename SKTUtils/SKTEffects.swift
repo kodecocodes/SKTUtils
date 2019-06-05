@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014 Razeware LLC
+ * Copyright (c) 2013-2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ public class SKTEffect {
     timingFunction = SKTTimingFunctionLinear
   }
 
-  public func update(_ t: CGFloat) {
+  func update(_ t: CGFloat) {
     // subclasses implement this
   }
 }
@@ -120,7 +120,7 @@ public class SKTRotateEffect: SKTEffect {
  * Wrapper that allows you to use SKTEffect objects as regular SKActions.
  */
 public extension SKAction {
-  public class func actionWithEffect(_ effect: SKTEffect) -> SKAction {
+    class func actionWithEffect(_ effect: SKTEffect) -> SKAction {
     return SKAction.customAction(withDuration: effect.duration) { node, elapsedTime in
       var t = elapsedTime / CGFloat(effect.duration)
 
